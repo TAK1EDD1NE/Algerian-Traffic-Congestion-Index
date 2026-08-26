@@ -1,0 +1,2269 @@
+city,day_of_week,hour,congestion_index
+Ain Temouchent,0,0,7.2
+Ain Temouchent,0,2,9.2
+Ain Temouchent,0,4,6.9
+Ain Temouchent,0,6,0.6
+Ain Temouchent,0,8,10.5
+Ain Temouchent,0,10,10.3
+Ain Temouchent,0,12,3.7
+Ain Temouchent,0,14,9.9
+Ain Temouchent,0,16,7.0
+Ain Temouchent,0,18,9.4
+Ain Temouchent,0,20,13.8
+Ain Temouchent,0,22,6.4
+Ain Temouchent,1,0,7.0
+Ain Temouchent,1,2,6.8
+Ain Temouchent,1,4,5.8
+Ain Temouchent,1,6,2.0
+Ain Temouchent,1,8,5.9
+Ain Temouchent,1,10,12.0
+Ain Temouchent,1,12,12.0
+Ain Temouchent,1,14,8.1
+Ain Temouchent,1,16,8.5
+Ain Temouchent,1,18,4.6
+Ain Temouchent,1,20,4.2
+Ain Temouchent,1,22,11.3
+Ain Temouchent,2,0,9.0
+Ain Temouchent,2,2,4.9
+Ain Temouchent,2,4,11.2
+Ain Temouchent,2,6,9.7
+Ain Temouchent,2,8,5.7
+Ain Temouchent,2,10,9.6
+Ain Temouchent,2,12,10.5
+Ain Temouchent,2,14,7.7
+Ain Temouchent,2,16,6.3
+Ain Temouchent,2,18,5.7
+Ain Temouchent,2,20,5.3
+Ain Temouchent,2,22,4.5
+Ain Temouchent,3,0,5.9
+Ain Temouchent,3,2,5.6
+Ain Temouchent,3,4,4.7
+Ain Temouchent,3,6,7.7
+Ain Temouchent,3,8,8.6
+Ain Temouchent,3,10,9.8
+Ain Temouchent,3,12,13.9
+Ain Temouchent,3,14,11.7
+Ain Temouchent,3,16,11.2
+Ain Temouchent,3,18,6.9
+Ain Temouchent,3,20,4.2
+Ain Temouchent,3,22,10.6
+Ain Temouchent,4,0,5.9
+Ain Temouchent,4,2,4.4
+Ain Temouchent,4,4,4.1
+Ain Temouchent,4,6,10.0
+Ain Temouchent,4,8,10.8
+Ain Temouchent,4,10,7.3
+Ain Temouchent,4,12,13.2
+Ain Temouchent,4,14,11.1
+Ain Temouchent,4,16,12.0
+Ain Temouchent,4,18,7.6
+Ain Temouchent,4,20,9.3
+Ain Temouchent,4,22,5.1
+Ain Temouchent,5,0,6.0
+Ain Temouchent,5,2,6.9
+Ain Temouchent,5,4,8.9
+Ain Temouchent,5,6,4.2
+Ain Temouchent,5,8,8.0
+Ain Temouchent,5,10,9.0
+Ain Temouchent,5,12,5.7
+Ain Temouchent,5,14,2.6
+Ain Temouchent,5,16,8.6
+Ain Temouchent,5,18,10.6
+Ain Temouchent,5,20,11.3
+Ain Temouchent,5,22,9.3
+Ain Temouchent,6,0,9.9
+Ain Temouchent,6,2,8.0
+Ain Temouchent,6,4,4.7
+Ain Temouchent,6,6,9.9
+Ain Temouchent,6,8,8.5
+Ain Temouchent,6,10,8.0
+Ain Temouchent,6,12,11.9
+Ain Temouchent,6,14,11.2
+Ain Temouchent,6,16,9.7
+Ain Temouchent,6,18,6.4
+Ain Temouchent,6,20,11.2
+Ain Temouchent,6,22,5.5
+Alger,0,0,2.6
+Alger,0,2,0.4
+Alger,0,4,0.1
+Alger,0,6,1.5
+Alger,0,8,26.9
+Alger,0,10,35.6
+Alger,0,12,46.4
+Alger,0,14,37.6
+Alger,0,16,44.4
+Alger,0,18,29.5
+Alger,0,20,21.4
+Alger,0,22,9.1
+Alger,1,0,2.7
+Alger,1,2,0.2
+Alger,1,4,0.1
+Alger,1,6,0.2
+Alger,1,8,29.6
+Alger,1,10,45.0
+Alger,1,12,55.3
+Alger,1,14,43.5
+Alger,1,16,51.0
+Alger,1,18,36.1
+Alger,1,20,11.0
+Alger,1,22,9.7
+Alger,2,0,3.0
+Alger,2,2,0.5
+Alger,2,4,0.1
+Alger,2,6,0.1
+Alger,2,8,20.0
+Alger,2,10,29.3
+Alger,2,12,41.4
+Alger,2,14,33.3
+Alger,2,16,34.1
+Alger,2,18,24.2
+Alger,2,20,15.2
+Alger,2,22,10.8
+Alger,3,0,2.3
+Alger,3,2,0.7
+Alger,3,4,0.3
+Alger,3,6,0.6
+Alger,3,8,25.8
+Alger,3,10,36.1
+Alger,3,12,49.3
+Alger,3,14,43.8
+Alger,3,16,50.3
+Alger,3,18,32.4
+Alger,3,20,15.9
+Alger,3,22,9.7
+Alger,4,0,3.0
+Alger,4,2,0.1
+Alger,4,4,0.2
+Alger,4,6,0.1
+Alger,4,8,15.1
+Alger,4,10,29.4
+Alger,4,12,41.5
+Alger,4,14,33.4
+Alger,4,16,28.3
+Alger,4,18,30.8
+Alger,4,20,22.0
+Alger,4,22,19.5
+Alger,5,0,6.7
+Alger,5,2,1.0
+Alger,5,4,0.1
+Alger,5,6,0.0
+Alger,5,8,0.7
+Alger,5,10,1.2
+Alger,5,12,1.4
+Alger,5,14,1.4
+Alger,5,16,5.7
+Alger,5,18,16.1
+Alger,5,20,33.6
+Alger,5,22,22.3
+Alger,6,0,5.1
+Alger,6,2,0.4
+Alger,6,4,0.1
+Alger,6,6,0.1
+Alger,6,8,1.2
+Alger,6,10,14.8
+Alger,6,12,29.1
+Alger,6,14,22.6
+Alger,6,16,20.2
+Alger,6,18,19.5
+Alger,6,20,20.4
+Alger,6,22,12.6
+Annaba,0,0,2.3
+Annaba,0,2,0.5
+Annaba,0,4,0.7
+Annaba,0,6,2.0
+Annaba,0,8,13.5
+Annaba,0,10,31.3
+Annaba,0,12,33.3
+Annaba,0,14,28.8
+Annaba,0,16,27.3
+Annaba,0,18,21.4
+Annaba,0,20,19.1
+Annaba,0,22,11.5
+Annaba,1,0,2.9
+Annaba,1,2,0.2
+Annaba,1,4,0.5
+Annaba,1,6,0.4
+Annaba,1,8,8.9
+Annaba,1,10,24.8
+Annaba,1,12,31.1
+Annaba,1,14,27.8
+Annaba,1,16,26.8
+Annaba,1,18,17.6
+Annaba,1,20,16.5
+Annaba,1,22,8.6
+Annaba,2,0,1.6
+Annaba,2,2,0.5
+Annaba,2,4,0.7
+Annaba,2,6,0.6
+Annaba,2,8,8.2
+Annaba,2,10,20.5
+Annaba,2,12,29.6
+Annaba,2,14,21.7
+Annaba,2,16,18.8
+Annaba,2,18,20.6
+Annaba,2,20,22.2
+Annaba,2,22,11.8
+Annaba,3,0,3.0
+Annaba,3,2,0.5
+Annaba,3,4,0.5
+Annaba,3,6,0.3
+Annaba,3,8,7.1
+Annaba,3,10,26.1
+Annaba,3,12,32.5
+Annaba,3,14,30.4
+Annaba,3,16,27.7
+Annaba,3,18,22.2
+Annaba,3,20,19.8
+Annaba,3,22,13.6
+Annaba,4,0,3.1
+Annaba,4,2,0.5
+Annaba,4,4,0.3
+Annaba,4,6,0.6
+Annaba,4,8,6.3
+Annaba,4,10,17.5
+Annaba,4,12,29.7
+Annaba,4,14,31.5
+Annaba,4,16,20.3
+Annaba,4,18,30.8
+Annaba,4,20,33.5
+Annaba,4,22,21.6
+Annaba,5,0,10.0
+Annaba,5,2,2.0
+Annaba,5,4,0.5
+Annaba,5,6,0.2
+Annaba,5,8,1.4
+Annaba,5,10,2.7
+Annaba,5,12,1.5
+Annaba,5,14,2.5
+Annaba,5,16,7.5
+Annaba,5,18,28.7
+Annaba,5,20,37.2
+Annaba,5,22,27.3
+Annaba,6,0,8.8
+Annaba,6,2,0.4
+Annaba,6,4,0.0
+Annaba,6,6,0.8
+Annaba,6,8,1.1
+Annaba,6,10,11.8
+Annaba,6,12,19.3
+Annaba,6,14,14.9
+Annaba,6,16,14.9
+Annaba,6,18,26.3
+Annaba,6,20,25.7
+Annaba,6,22,13.5
+Batna,0,0,0.8
+Batna,0,2,0.3
+Batna,0,4,0.4
+Batna,0,6,0.3
+Batna,0,8,8.5
+Batna,0,10,22.9
+Batna,0,12,30.5
+Batna,0,14,15.9
+Batna,0,16,14.4
+Batna,0,18,17.8
+Batna,0,20,12.9
+Batna,0,22,3.0
+Batna,1,0,0.8
+Batna,1,2,0.5
+Batna,1,4,0.6
+Batna,1,6,0.3
+Batna,1,8,6.8
+Batna,1,10,26.0
+Batna,1,12,33.1
+Batna,1,14,15.1
+Batna,1,16,15.3
+Batna,1,18,17.7
+Batna,1,20,8.0
+Batna,1,22,3.1
+Batna,2,0,0.7
+Batna,2,2,0.2
+Batna,2,4,0.6
+Batna,2,6,0.5
+Batna,2,8,7.6
+Batna,2,10,23.4
+Batna,2,12,24.6
+Batna,2,14,18.0
+Batna,2,16,29.9
+Batna,2,18,20.7
+Batna,2,20,10.3
+Batna,2,22,2.5
+Batna,3,0,1.6
+Batna,3,2,0.2
+Batna,3,4,0.5
+Batna,3,6,0.9
+Batna,3,8,9.0
+Batna,3,10,23.7
+Batna,3,12,30.0
+Batna,3,14,19.1
+Batna,3,16,16.5
+Batna,3,18,20.5
+Batna,3,20,8.2
+Batna,3,22,2.7
+Batna,4,0,0.6
+Batna,4,2,0.3
+Batna,4,4,0.5
+Batna,4,6,0.2
+Batna,4,8,4.8
+Batna,4,10,24.1
+Batna,4,12,31.8
+Batna,4,14,17.7
+Batna,4,16,13.6
+Batna,4,18,23.6
+Batna,4,20,13.5
+Batna,4,22,4.2
+Batna,5,0,1.4
+Batna,5,2,0.5
+Batna,5,4,0.2
+Batna,5,6,0.6
+Batna,5,8,0.7
+Batna,5,10,2.1
+Batna,5,12,0.7
+Batna,5,14,1.1
+Batna,5,16,1.9
+Batna,5,18,8.5
+Batna,5,20,8.8
+Batna,5,22,3.8
+Batna,6,0,0.9
+Batna,6,2,0.4
+Batna,6,4,0.2
+Batna,6,6,0.0
+Batna,6,8,2.2
+Batna,6,10,17.7
+Batna,6,12,24.3
+Batna,6,14,12.1
+Batna,6,16,10.1
+Batna,6,18,21.8
+Batna,6,20,11.9
+Batna,6,22,3.0
+Bejaia,0,0,1.1
+Bejaia,0,2,1.0
+Bejaia,0,4,0.6
+Bejaia,0,6,1.6
+Bejaia,0,8,21.0
+Bejaia,0,10,37.0
+Bejaia,0,12,47.4
+Bejaia,0,14,32.8
+Bejaia,0,16,34.3
+Bejaia,0,18,23.1
+Bejaia,0,20,11.7
+Bejaia,0,22,7.5
+Bejaia,1,0,2.0
+Bejaia,1,2,0.1
+Bejaia,1,4,1.3
+Bejaia,1,6,1.1
+Bejaia,1,8,25.3
+Bejaia,1,10,37.8
+Bejaia,1,12,53.0
+Bejaia,1,14,42.2
+Bejaia,1,16,44.3
+Bejaia,1,18,29.7
+Bejaia,1,20,11.8
+Bejaia,1,22,5.4
+Bejaia,2,0,1.5
+Bejaia,2,2,1.3
+Bejaia,2,4,1.1
+Bejaia,2,6,1.4
+Bejaia,2,8,17.8
+Bejaia,2,10,30.5
+Bejaia,2,12,34.6
+Bejaia,2,14,28.2
+Bejaia,2,16,29.4
+Bejaia,2,18,25.2
+Bejaia,2,20,13.0
+Bejaia,2,22,6.4
+Bejaia,3,0,1.7
+Bejaia,3,2,0.9
+Bejaia,3,4,0.8
+Bejaia,3,6,2.2
+Bejaia,3,8,21.0
+Bejaia,3,10,32.6
+Bejaia,3,12,37.8
+Bejaia,3,14,37.6
+Bejaia,3,16,38.0
+Bejaia,3,18,24.6
+Bejaia,3,20,15.8
+Bejaia,3,22,7.3
+Bejaia,4,0,2.1
+Bejaia,4,2,0.8
+Bejaia,4,4,1.5
+Bejaia,4,6,1.6
+Bejaia,4,8,17.8
+Bejaia,4,10,35.4
+Bejaia,4,12,44.2
+Bejaia,4,14,33.3
+Bejaia,4,16,32.7
+Bejaia,4,18,30.9
+Bejaia,4,20,25.9
+Bejaia,4,22,11.2
+Bejaia,5,0,3.6
+Bejaia,5,2,1.1
+Bejaia,5,4,0.3
+Bejaia,5,6,1.3
+Bejaia,5,8,2.1
+Bejaia,5,10,5.4
+Bejaia,5,12,9.5
+Bejaia,5,14,7.5
+Bejaia,5,16,9.2
+Bejaia,5,18,16.8
+Bejaia,5,20,27.1
+Bejaia,5,22,16.3
+Bejaia,6,0,1.8
+Bejaia,6,2,1.5
+Bejaia,6,4,0.6
+Bejaia,6,6,2.5
+Bejaia,6,8,3.3
+Bejaia,6,10,16.9
+Bejaia,6,12,26.2
+Bejaia,6,14,23.2
+Bejaia,6,16,20.0
+Bejaia,6,18,20.8
+Bejaia,6,20,15.3
+Bejaia,6,22,4.3
+Biskra,0,0,1.6
+Biskra,0,2,4.1
+Biskra,0,4,3.2
+Biskra,0,6,2.1
+Biskra,0,8,13.6
+Biskra,0,10,23.3
+Biskra,0,12,22.3
+Biskra,0,14,11.4
+Biskra,0,16,9.6
+Biskra,0,18,10.9
+Biskra,0,20,6.0
+Biskra,0,22,6.9
+Biskra,1,0,3.5
+Biskra,1,2,3.0
+Biskra,1,4,2.6
+Biskra,1,6,4.2
+Biskra,1,8,19.5
+Biskra,1,10,27.0
+Biskra,1,12,23.9
+Biskra,1,14,11.3
+Biskra,1,16,3.9
+Biskra,1,18,10.2
+Biskra,1,20,5.3
+Biskra,1,22,9.3
+Biskra,2,0,5.3
+Biskra,2,2,3.5
+Biskra,2,4,2.3
+Biskra,2,6,2.7
+Biskra,2,8,11.7
+Biskra,2,10,22.7
+Biskra,2,12,18.0
+Biskra,2,14,12.8
+Biskra,2,16,3.1
+Biskra,2,18,11.5
+Biskra,2,20,4.2
+Biskra,2,22,0.6
+Biskra,3,0,4.3
+Biskra,3,2,4.4
+Biskra,3,4,3.4
+Biskra,3,6,4.6
+Biskra,3,8,12.6
+Biskra,3,10,24.2
+Biskra,3,12,23.4
+Biskra,3,14,10.6
+Biskra,3,16,7.1
+Biskra,3,18,10.6
+Biskra,3,20,3.7
+Biskra,3,22,5.6
+Biskra,4,0,3.6
+Biskra,4,2,3.9
+Biskra,4,4,1.8
+Biskra,4,6,4.3
+Biskra,4,8,13.1
+Biskra,4,10,23.7
+Biskra,4,12,21.2
+Biskra,4,14,6.2
+Biskra,4,16,4.7
+Biskra,4,18,9.6
+Biskra,4,20,9.0
+Biskra,4,22,9.0
+Biskra,5,0,2.6
+Biskra,5,2,2.9
+Biskra,5,4,3.6
+Biskra,5,6,4.1
+Biskra,5,8,1.9
+Biskra,5,10,5.6
+Biskra,5,12,3.1
+Biskra,5,14,3.6
+Biskra,5,16,2.9
+Biskra,5,18,3.2
+Biskra,5,20,4.8
+Biskra,5,22,7.8
+Biskra,6,0,4.4
+Biskra,6,2,3.0
+Biskra,6,4,3.0
+Biskra,6,6,2.2
+Biskra,6,8,6.6
+Biskra,6,10,18.8
+Biskra,6,12,15.7
+Biskra,6,14,6.2
+Biskra,6,16,4.6
+Biskra,6,18,12.3
+Biskra,6,20,4.8
+Biskra,6,22,7.7
+Blida,0,0,1.3
+Blida,0,2,0.5
+Blida,0,4,0.3
+Blida,0,6,0.4
+Blida,0,8,15.9
+Blida,0,10,33.3
+Blida,0,12,50.2
+Blida,0,14,31.4
+Blida,0,16,20.1
+Blida,0,18,11.3
+Blida,0,20,23.3
+Blida,0,22,12.3
+Blida,1,0,4.8
+Blida,1,2,0.3
+Blida,1,4,0.0
+Blida,1,6,0.3
+Blida,1,8,16.7
+Blida,1,10,34.8
+Blida,1,12,48.6
+Blida,1,14,28.4
+Blida,1,16,33.0
+Blida,1,18,26.2
+Blida,1,20,12.5
+Blida,1,22,7.7
+Blida,2,0,2.0
+Blida,2,2,0.4
+Blida,2,4,0.0
+Blida,2,6,0.1
+Blida,2,8,15.6
+Blida,2,10,25.1
+Blida,2,12,37.7
+Blida,2,14,22.5
+Blida,2,16,19.2
+Blida,2,18,14.4
+Blida,2,20,13.4
+Blida,2,22,10.3
+Blida,3,0,2.1
+Blida,3,2,0.4
+Blida,3,4,0.0
+Blida,3,6,0.4
+Blida,3,8,13.8
+Blida,3,10,29.2
+Blida,3,12,45.0
+Blida,3,14,28.4
+Blida,3,16,28.5
+Blida,3,18,14.6
+Blida,3,20,15.1
+Blida,3,22,6.7
+Blida,4,0,2.6
+Blida,4,2,0.0
+Blida,4,4,0.0
+Blida,4,6,0.3
+Blida,4,8,10.6
+Blida,4,10,26.6
+Blida,4,12,38.8
+Blida,4,14,27.2
+Blida,4,16,17.0
+Blida,4,18,19.8
+Blida,4,20,20.5
+Blida,4,22,10.4
+Blida,5,0,1.7
+Blida,5,2,0.5
+Blida,5,4,0.1
+Blida,5,6,0.0
+Blida,5,8,1.3
+Blida,5,10,3.1
+Blida,5,12,2.7
+Blida,5,14,1.5
+Blida,5,16,2.8
+Blida,5,18,9.2
+Blida,5,20,15.5
+Blida,5,22,10.7
+Blida,6,0,1.3
+Blida,6,2,0.2
+Blida,6,4,0.0
+Blida,6,6,0.0
+Blida,6,8,1.8
+Blida,6,10,12.6
+Blida,6,12,25.6
+Blida,6,14,16.2
+Blida,6,16,14.9
+Blida,6,18,14.8
+Blida,6,20,19.3
+Blida,6,22,7.2
+Bordj Bou Arreridj,0,0,0.7
+Bordj Bou Arreridj,0,2,0.2
+Bordj Bou Arreridj,0,4,1.1
+Bordj Bou Arreridj,0,6,0.1
+Bordj Bou Arreridj,0,8,8.5
+Bordj Bou Arreridj,0,10,16.8
+Bordj Bou Arreridj,0,12,16.0
+Bordj Bou Arreridj,0,14,11.9
+Bordj Bou Arreridj,0,16,11.3
+Bordj Bou Arreridj,0,18,10.5
+Bordj Bou Arreridj,0,20,4.1
+Bordj Bou Arreridj,0,22,2.0
+Bordj Bou Arreridj,1,0,0.7
+Bordj Bou Arreridj,1,2,1.0
+Bordj Bou Arreridj,1,4,0.1
+Bordj Bou Arreridj,1,6,0.3
+Bordj Bou Arreridj,1,8,10.1
+Bordj Bou Arreridj,1,10,16.5
+Bordj Bou Arreridj,1,12,18.1
+Bordj Bou Arreridj,1,14,12.3
+Bordj Bou Arreridj,1,16,14.4
+Bordj Bou Arreridj,1,18,7.4
+Bordj Bou Arreridj,1,20,3.9
+Bordj Bou Arreridj,1,22,2.9
+Bordj Bou Arreridj,2,0,0.3
+Bordj Bou Arreridj,2,2,1.0
+Bordj Bou Arreridj,2,4,0.2
+Bordj Bou Arreridj,2,6,0.2
+Bordj Bou Arreridj,2,8,7.6
+Bordj Bou Arreridj,2,10,19.5
+Bordj Bou Arreridj,2,12,16.2
+Bordj Bou Arreridj,2,14,13.3
+Bordj Bou Arreridj,2,16,11.1
+Bordj Bou Arreridj,2,18,9.7
+Bordj Bou Arreridj,2,20,4.2
+Bordj Bou Arreridj,2,22,2.9
+Bordj Bou Arreridj,3,0,0.6
+Bordj Bou Arreridj,3,2,1.0
+Bordj Bou Arreridj,3,4,0.5
+Bordj Bou Arreridj,3,6,0.4
+Bordj Bou Arreridj,3,8,6.7
+Bordj Bou Arreridj,3,10,16.5
+Bordj Bou Arreridj,3,12,18.5
+Bordj Bou Arreridj,3,14,12.5
+Bordj Bou Arreridj,3,16,13.5
+Bordj Bou Arreridj,3,18,11.0
+Bordj Bou Arreridj,3,20,4.4
+Bordj Bou Arreridj,3,22,2.3
+Bordj Bou Arreridj,4,0,0.5
+Bordj Bou Arreridj,4,2,2.1
+Bordj Bou Arreridj,4,4,0.9
+Bordj Bou Arreridj,4,6,0.1
+Bordj Bou Arreridj,4,8,4.3
+Bordj Bou Arreridj,4,10,14.2
+Bordj Bou Arreridj,4,12,19.5
+Bordj Bou Arreridj,4,14,12.2
+Bordj Bou Arreridj,4,16,10.2
+Bordj Bou Arreridj,4,18,7.4
+Bordj Bou Arreridj,4,20,6.0
+Bordj Bou Arreridj,4,22,3.9
+Bordj Bou Arreridj,5,0,0.6
+Bordj Bou Arreridj,5,2,1.5
+Bordj Bou Arreridj,5,4,0.6
+Bordj Bou Arreridj,5,6,0.0
+Bordj Bou Arreridj,5,8,0.7
+Bordj Bou Arreridj,5,10,6.1
+Bordj Bou Arreridj,5,12,1.2
+Bordj Bou Arreridj,5,14,2.0
+Bordj Bou Arreridj,5,16,1.7
+Bordj Bou Arreridj,5,18,6.5
+Bordj Bou Arreridj,5,20,4.4
+Bordj Bou Arreridj,5,22,2.0
+Bordj Bou Arreridj,6,0,0.8
+Bordj Bou Arreridj,6,2,0.5
+Bordj Bou Arreridj,6,4,0.6
+Bordj Bou Arreridj,6,6,0.5
+Bordj Bou Arreridj,6,8,2.9
+Bordj Bou Arreridj,6,10,18.3
+Bordj Bou Arreridj,6,12,10.7
+Bordj Bou Arreridj,6,14,7.9
+Bordj Bou Arreridj,6,16,8.5
+Bordj Bou Arreridj,6,18,12.9
+Bordj Bou Arreridj,6,20,4.0
+Bordj Bou Arreridj,6,22,2.3
+Bouira,0,0,1.2
+Bouira,0,2,0.8
+Bouira,0,4,1.6
+Bouira,0,6,0.8
+Bouira,0,8,7.1
+Bouira,0,10,20.8
+Bouira,0,12,21.0
+Bouira,0,14,8.7
+Bouira,0,16,12.1
+Bouira,0,18,3.8
+Bouira,0,20,1.7
+Bouira,0,22,10.6
+Bouira,1,0,2.5
+Bouira,1,2,1.3
+Bouira,1,4,1.2
+Bouira,1,6,1.1
+Bouira,1,8,6.7
+Bouira,1,10,25.6
+Bouira,1,12,18.3
+Bouira,1,14,10.1
+Bouira,1,16,8.9
+Bouira,1,18,4.8
+Bouira,1,20,2.1
+Bouira,1,22,1.8
+Bouira,2,0,4.3
+Bouira,2,2,1.4
+Bouira,2,4,0.3
+Bouira,2,6,1.2
+Bouira,2,8,5.0
+Bouira,2,10,17.2
+Bouira,2,12,19.1
+Bouira,2,14,9.4
+Bouira,2,16,9.6
+Bouira,2,18,4.6
+Bouira,2,20,3.5
+Bouira,2,22,0.9
+Bouira,3,0,1.8
+Bouira,3,2,1.6
+Bouira,3,4,1.3
+Bouira,3,6,1.1
+Bouira,3,8,5.3
+Bouira,3,10,14.3
+Bouira,3,12,18.0
+Bouira,3,14,12.7
+Bouira,3,16,7.3
+Bouira,3,18,4.3
+Bouira,3,20,4.1
+Bouira,3,22,0.8
+Bouira,4,0,0.7
+Bouira,4,2,0.8
+Bouira,4,4,0.9
+Bouira,4,6,0.7
+Bouira,4,8,6.4
+Bouira,4,10,16.9
+Bouira,4,12,18.9
+Bouira,4,14,13.8
+Bouira,4,16,8.5
+Bouira,4,18,8.3
+Bouira,4,20,3.5
+Bouira,4,22,2.7
+Bouira,5,0,2.9
+Bouira,5,2,1.1
+Bouira,5,4,2.1
+Bouira,5,6,1.6
+Bouira,5,8,1.5
+Bouira,5,10,1.7
+Bouira,5,12,1.4
+Bouira,5,14,3.7
+Bouira,5,16,2.2
+Bouira,5,18,4.4
+Bouira,5,20,2.4
+Bouira,5,22,4.5
+Bouira,6,0,1.0
+Bouira,6,2,1.0
+Bouira,6,4,0.0
+Bouira,6,6,1.1
+Bouira,6,8,6.7
+Bouira,6,10,19.5
+Bouira,6,12,18.2
+Bouira,6,14,12.8
+Bouira,6,16,7.7
+Bouira,6,18,9.3
+Bouira,6,20,3.5
+Bouira,6,22,3.7
+Boumerdes,0,0,1.2
+Boumerdes,0,2,0.2
+Boumerdes,0,4,0.3
+Boumerdes,0,6,0.4
+Boumerdes,0,8,7.2
+Boumerdes,0,10,14.0
+Boumerdes,0,12,20.9
+Boumerdes,0,14,14.7
+Boumerdes,0,16,19.4
+Boumerdes,0,18,13.5
+Boumerdes,0,20,9.8
+Boumerdes,0,22,5.1
+Boumerdes,1,0,1.2
+Boumerdes,1,2,0.5
+Boumerdes,1,4,0.3
+Boumerdes,1,6,0.4
+Boumerdes,1,8,6.4
+Boumerdes,1,10,16.4
+Boumerdes,1,12,22.3
+Boumerdes,1,14,15.8
+Boumerdes,1,16,19.8
+Boumerdes,1,18,8.8
+Boumerdes,1,20,6.2
+Boumerdes,1,22,5.4
+Boumerdes,2,0,0.6
+Boumerdes,2,2,0.2
+Boumerdes,2,4,0.2
+Boumerdes,2,6,0.2
+Boumerdes,2,8,5.7
+Boumerdes,2,10,12.8
+Boumerdes,2,12,17.1
+Boumerdes,2,14,13.5
+Boumerdes,2,16,14.0
+Boumerdes,2,18,11.0
+Boumerdes,2,20,7.1
+Boumerdes,2,22,4.9
+Boumerdes,3,0,1.0
+Boumerdes,3,2,0.1
+Boumerdes,3,4,0.2
+Boumerdes,3,6,0.4
+Boumerdes,3,8,5.8
+Boumerdes,3,10,12.1
+Boumerdes,3,12,17.5
+Boumerdes,3,14,16.0
+Boumerdes,3,16,21.3
+Boumerdes,3,18,9.5
+Boumerdes,3,20,7.0
+Boumerdes,3,22,4.1
+Boumerdes,4,0,1.4
+Boumerdes,4,2,0.2
+Boumerdes,4,4,0.0
+Boumerdes,4,6,0.0
+Boumerdes,4,8,2.8
+Boumerdes,4,10,12.2
+Boumerdes,4,12,18.6
+Boumerdes,4,14,11.9
+Boumerdes,4,16,13.0
+Boumerdes,4,18,13.3
+Boumerdes,4,20,10.8
+Boumerdes,4,22,8.4
+Boumerdes,5,0,1.2
+Boumerdes,5,2,1.0
+Boumerdes,5,4,0.5
+Boumerdes,5,6,0.2
+Boumerdes,5,8,1.9
+Boumerdes,5,10,3.7
+Boumerdes,5,12,1.2
+Boumerdes,5,14,2.5
+Boumerdes,5,16,2.5
+Boumerdes,5,18,9.0
+Boumerdes,5,20,22.5
+Boumerdes,5,22,12.1
+Boumerdes,6,0,1.2
+Boumerdes,6,2,0.2
+Boumerdes,6,4,0.7
+Boumerdes,6,6,1.9
+Boumerdes,6,8,2.5
+Boumerdes,6,10,23.5
+Boumerdes,6,12,20.4
+Boumerdes,6,14,11.7
+Boumerdes,6,16,10.5
+Boumerdes,6,18,13.2
+Boumerdes,6,20,12.1
+Boumerdes,6,22,5.6
+Chlef,0,0,5.9
+Chlef,0,2,0.3
+Chlef,0,4,0.9
+Chlef,0,6,4.9
+Chlef,0,8,8.0
+Chlef,0,10,21.1
+Chlef,0,12,21.6
+Chlef,0,14,13.7
+Chlef,0,16,13.4
+Chlef,0,18,5.6
+Chlef,0,20,3.5
+Chlef,0,22,4.0
+Chlef,1,0,2.1
+Chlef,1,2,0.7
+Chlef,1,4,0.4
+Chlef,1,6,0.2
+Chlef,1,8,4.7
+Chlef,1,10,18.8
+Chlef,1,12,23.2
+Chlef,1,14,12.4
+Chlef,1,16,8.0
+Chlef,1,18,4.9
+Chlef,1,20,5.5
+Chlef,1,22,5.5
+Chlef,2,0,0.5
+Chlef,2,2,0.8
+Chlef,2,4,0.2
+Chlef,2,6,0.6
+Chlef,2,8,4.4
+Chlef,2,10,17.2
+Chlef,2,12,18.9
+Chlef,2,14,8.6
+Chlef,2,16,6.6
+Chlef,2,18,3.0
+Chlef,2,20,6.0
+Chlef,2,22,6.4
+Chlef,3,0,1.7
+Chlef,3,2,1.3
+Chlef,3,4,1.7
+Chlef,3,6,0.3
+Chlef,3,8,4.4
+Chlef,3,10,12.5
+Chlef,3,12,12.0
+Chlef,3,14,10.9
+Chlef,3,16,6.3
+Chlef,3,18,5.6
+Chlef,3,20,6.0
+Chlef,3,22,5.9
+Chlef,4,0,1.9
+Chlef,4,2,0.5
+Chlef,4,4,1.2
+Chlef,4,6,1.4
+Chlef,4,8,6.0
+Chlef,4,10,14.9
+Chlef,4,12,20.4
+Chlef,4,14,19.3
+Chlef,4,16,6.7
+Chlef,4,18,12.1
+Chlef,4,20,10.3
+Chlef,4,22,6.2
+Chlef,5,0,4.5
+Chlef,5,2,2.3
+Chlef,5,4,2.6
+Chlef,5,6,0.9
+Chlef,5,8,1.6
+Chlef,5,10,1.9
+Chlef,5,12,0.8
+Chlef,5,14,1.6
+Chlef,5,16,1.2
+Chlef,5,18,2.5
+Chlef,5,20,4.7
+Chlef,5,22,4.0
+Chlef,6,0,2.1
+Chlef,6,2,0.4
+Chlef,6,4,0.5
+Chlef,6,6,0.5
+Chlef,6,8,1.8
+Chlef,6,10,14.3
+Chlef,6,12,18.2
+Chlef,6,14,7.3
+Chlef,6,16,6.5
+Chlef,6,18,10.2
+Chlef,6,20,9.5
+Chlef,6,22,7.2
+Constantine,0,0,0.3
+Constantine,0,2,0.6
+Constantine,0,4,0.4
+Constantine,0,6,0.1
+Constantine,0,8,16.8
+Constantine,0,10,28.5
+Constantine,0,12,36.7
+Constantine,0,14,19.1
+Constantine,0,16,15.8
+Constantine,0,18,17.0
+Constantine,0,20,12.3
+Constantine,0,22,6.2
+Constantine,1,0,1.4
+Constantine,1,2,0.0
+Constantine,1,4,0.1
+Constantine,1,6,0.5
+Constantine,1,8,15.1
+Constantine,1,10,32.0
+Constantine,1,12,34.8
+Constantine,1,14,21.9
+Constantine,1,16,21.1
+Constantine,1,18,21.8
+Constantine,1,20,12.7
+Constantine,1,22,4.2
+Constantine,2,0,0.5
+Constantine,2,2,0.5
+Constantine,2,4,0.3
+Constantine,2,6,0.9
+Constantine,2,8,7.6
+Constantine,2,10,19.1
+Constantine,2,12,29.2
+Constantine,2,14,21.7
+Constantine,2,16,13.5
+Constantine,2,18,18.3
+Constantine,2,20,13.9
+Constantine,2,22,4.3
+Constantine,3,0,0.7
+Constantine,3,2,0.3
+Constantine,3,4,0.5
+Constantine,3,6,0.1
+Constantine,3,8,12.4
+Constantine,3,10,26.7
+Constantine,3,12,34.2
+Constantine,3,14,19.6
+Constantine,3,16,18.5
+Constantine,3,18,19.7
+Constantine,3,20,14.7
+Constantine,3,22,5.0
+Constantine,4,0,0.4
+Constantine,4,2,0.3
+Constantine,4,4,0.7
+Constantine,4,6,0.3
+Constantine,4,8,6.5
+Constantine,4,10,24.2
+Constantine,4,12,34.7
+Constantine,4,14,22.3
+Constantine,4,16,16.4
+Constantine,4,18,26.0
+Constantine,4,20,18.4
+Constantine,4,22,5.7
+Constantine,5,0,1.2
+Constantine,5,2,0.8
+Constantine,5,4,0.1
+Constantine,5,6,0.7
+Constantine,5,8,1.2
+Constantine,5,10,3.1
+Constantine,5,12,2.9
+Constantine,5,14,0.4
+Constantine,5,16,1.2
+Constantine,5,18,16.4
+Constantine,5,20,18.0
+Constantine,5,22,5.7
+Constantine,6,0,0.3
+Constantine,6,2,0.0
+Constantine,6,4,0.1
+Constantine,6,6,0.9
+Constantine,6,8,1.0
+Constantine,6,10,11.3
+Constantine,6,12,22.9
+Constantine,6,14,12.4
+Constantine,6,16,10.2
+Constantine,6,18,16.8
+Constantine,6,20,16.8
+Constantine,6,22,3.8
+Djelfa,0,0,4.7
+Djelfa,0,2,0.3
+Djelfa,0,4,0.0
+Djelfa,0,6,0.1
+Djelfa,0,8,10.1
+Djelfa,0,10,18.0
+Djelfa,0,12,40.2
+Djelfa,0,14,21.3
+Djelfa,0,16,12.8
+Djelfa,0,18,24.7
+Djelfa,0,20,17.1
+Djelfa,0,22,11.7
+Djelfa,1,0,5.7
+Djelfa,1,2,0.4
+Djelfa,1,4,0.7
+Djelfa,1,6,0.3
+Djelfa,1,8,6.3
+Djelfa,1,10,26.7
+Djelfa,1,12,42.0
+Djelfa,1,14,24.0
+Djelfa,1,16,16.6
+Djelfa,1,18,26.6
+Djelfa,1,20,16.9
+Djelfa,1,22,10.2
+Djelfa,2,0,3.4
+Djelfa,2,2,0.6
+Djelfa,2,4,0.6
+Djelfa,2,6,0.6
+Djelfa,2,8,2.6
+Djelfa,2,10,25.0
+Djelfa,2,12,29.9
+Djelfa,2,14,21.5
+Djelfa,2,16,10.8
+Djelfa,2,18,22.4
+Djelfa,2,20,17.8
+Djelfa,2,22,12.8
+Djelfa,3,0,2.8
+Djelfa,3,2,0.0
+Djelfa,3,4,0.7
+Djelfa,3,6,0.6
+Djelfa,3,8,6.3
+Djelfa,3,10,26.0
+Djelfa,3,12,38.4
+Djelfa,3,14,22.2
+Djelfa,3,16,14.2
+Djelfa,3,18,31.3
+Djelfa,3,20,12.0
+Djelfa,3,22,12.2
+Djelfa,4,0,2.2
+Djelfa,4,2,1.3
+Djelfa,4,4,0.0
+Djelfa,4,6,0.0
+Djelfa,4,8,5.8
+Djelfa,4,10,24.2
+Djelfa,4,12,37.3
+Djelfa,4,14,12.7
+Djelfa,4,16,9.2
+Djelfa,4,18,24.7
+Djelfa,4,20,20.1
+Djelfa,4,22,8.9
+Djelfa,5,0,6.0
+Djelfa,5,2,0.3
+Djelfa,5,4,0.4
+Djelfa,5,6,0.0
+Djelfa,5,8,0.3
+Djelfa,5,10,1.7
+Djelfa,5,12,3.5
+Djelfa,5,14,2.2
+Djelfa,5,16,4.6
+Djelfa,5,18,20.1
+Djelfa,5,20,23.8
+Djelfa,5,22,11.5
+Djelfa,6,0,3.6
+Djelfa,6,2,3.5
+Djelfa,6,4,0.0
+Djelfa,6,6,0.0
+Djelfa,6,8,1.3
+Djelfa,6,10,9.9
+Djelfa,6,12,13.3
+Djelfa,6,14,9.5
+Djelfa,6,16,5.4
+Djelfa,6,18,27.4
+Djelfa,6,20,22.6
+Djelfa,6,22,9.5
+El Tarf,0,0,0.5
+El Tarf,0,2,2.5
+El Tarf,0,4,4.3
+El Tarf,0,6,3.7
+El Tarf,0,8,5.0
+El Tarf,0,10,6.5
+El Tarf,0,12,3.8
+El Tarf,0,14,3.6
+El Tarf,0,16,5.9
+El Tarf,0,18,2.4
+El Tarf,0,20,5.0
+El Tarf,0,22,4.1
+El Tarf,1,0,5.4
+El Tarf,1,2,6.3
+El Tarf,1,4,2.1
+El Tarf,1,6,1.6
+El Tarf,1,8,3.7
+El Tarf,1,10,5.8
+El Tarf,1,12,5.4
+El Tarf,1,14,3.6
+El Tarf,1,16,3.4
+El Tarf,1,18,2.6
+El Tarf,1,20,4.9
+El Tarf,1,22,2.4
+El Tarf,2,0,4.7
+El Tarf,2,2,3.7
+El Tarf,2,4,3.5
+El Tarf,2,6,3.4
+El Tarf,2,8,4.0
+El Tarf,2,10,7.6
+El Tarf,2,12,4.1
+El Tarf,2,14,3.8
+El Tarf,2,16,5.5
+El Tarf,2,18,4.5
+El Tarf,2,20,2.2
+El Tarf,2,22,3.5
+El Tarf,3,0,5.0
+El Tarf,3,2,5.8
+El Tarf,3,4,2.9
+El Tarf,3,6,3.0
+El Tarf,3,8,3.9
+El Tarf,3,10,5.3
+El Tarf,3,12,4.9
+El Tarf,3,14,4.4
+El Tarf,3,16,3.8
+El Tarf,3,18,3.1
+El Tarf,3,20,1.9
+El Tarf,3,22,4.4
+El Tarf,4,0,2.6
+El Tarf,4,2,4.6
+El Tarf,4,4,4.0
+El Tarf,4,6,3.3
+El Tarf,4,8,4.3
+El Tarf,4,10,8.3
+El Tarf,4,12,4.4
+El Tarf,4,14,3.1
+El Tarf,4,16,3.3
+El Tarf,4,18,4.5
+El Tarf,4,20,1.6
+El Tarf,4,22,4.1
+El Tarf,5,0,1.2
+El Tarf,5,2,2.9
+El Tarf,5,4,3.5
+El Tarf,5,6,3.3
+El Tarf,5,8,3.0
+El Tarf,5,10,4.5
+El Tarf,5,12,3.2
+El Tarf,5,14,1.5
+El Tarf,5,16,3.1
+El Tarf,5,18,4.4
+El Tarf,5,20,5.0
+El Tarf,5,22,3.0
+El Tarf,6,0,5.2
+El Tarf,6,2,2.8
+El Tarf,6,4,3.5
+El Tarf,6,6,0.2
+El Tarf,6,8,2.9
+El Tarf,6,10,5.9
+El Tarf,6,12,4.7
+El Tarf,6,14,2.2
+El Tarf,6,16,5.1
+El Tarf,6,18,8.3
+El Tarf,6,20,2.7
+El Tarf,6,22,2.9
+Jijel,0,0,4.4
+Jijel,0,2,2.5
+Jijel,0,4,1.6
+Jijel,0,6,0.9
+Jijel,0,8,4.3
+Jijel,0,10,18.7
+Jijel,0,12,32.0
+Jijel,0,14,19.7
+Jijel,0,16,22.8
+Jijel,0,18,18.2
+Jijel,0,20,14.7
+Jijel,0,22,7.4
+Jijel,1,0,2.2
+Jijel,1,2,1.9
+Jijel,1,4,1.7
+Jijel,1,6,0.8
+Jijel,1,8,4.9
+Jijel,1,10,21.8
+Jijel,1,12,34.6
+Jijel,1,14,19.6
+Jijel,1,16,21.8
+Jijel,1,18,23.8
+Jijel,1,20,13.0
+Jijel,1,22,7.6
+Jijel,2,0,2.4
+Jijel,2,2,0.9
+Jijel,2,4,2.9
+Jijel,2,6,2.1
+Jijel,2,8,5.6
+Jijel,2,10,17.0
+Jijel,2,12,29.5
+Jijel,2,14,20.0
+Jijel,2,16,19.6
+Jijel,2,18,19.4
+Jijel,2,20,15.6
+Jijel,2,22,6.6
+Jijel,3,0,4.5
+Jijel,3,2,2.5
+Jijel,3,4,2.1
+Jijel,3,6,0.2
+Jijel,3,8,6.1
+Jijel,3,10,21.5
+Jijel,3,12,32.1
+Jijel,3,14,20.2
+Jijel,3,16,19.6
+Jijel,3,18,22.8
+Jijel,3,20,13.6
+Jijel,3,22,11.3
+Jijel,4,0,6.4
+Jijel,4,2,1.1
+Jijel,4,4,1.4
+Jijel,4,6,1.2
+Jijel,4,8,6.3
+Jijel,4,10,21.5
+Jijel,4,12,37.3
+Jijel,4,14,22.6
+Jijel,4,16,21.6
+Jijel,4,18,29.4
+Jijel,4,20,24.1
+Jijel,4,22,13.0
+Jijel,5,0,11.2
+Jijel,5,2,1.9
+Jijel,5,4,1.5
+Jijel,5,6,1.3
+Jijel,5,8,4.3
+Jijel,5,10,5.1
+Jijel,5,12,3.5
+Jijel,5,14,2.6
+Jijel,5,16,6.0
+Jijel,5,18,14.8
+Jijel,5,20,16.8
+Jijel,5,22,16.1
+Jijel,6,0,4.0
+Jijel,6,2,2.3
+Jijel,6,4,1.2
+Jijel,6,6,1.6
+Jijel,6,8,1.8
+Jijel,6,10,16.5
+Jijel,6,12,28.4
+Jijel,6,14,18.7
+Jijel,6,16,16.6
+Jijel,6,18,21.0
+Jijel,6,20,19.2
+Jijel,6,22,4.6
+MSila,0,0,1.4
+MSila,0,2,2.8
+MSila,0,4,3.1
+MSila,0,6,4.0
+MSila,0,8,33.0
+MSila,0,10,51.5
+MSila,0,12,44.8
+MSila,0,14,24.6
+MSila,0,16,16.7
+MSila,0,18,14.8
+MSila,0,20,5.6
+MSila,0,22,1.8
+MSila,1,0,1.3
+MSila,1,2,2.6
+MSila,1,4,3.5
+MSila,1,6,2.6
+MSila,1,8,29.6
+MSila,1,10,53.7
+MSila,1,12,46.7
+MSila,1,14,24.6
+MSila,1,16,20.6
+MSila,1,18,21.4
+MSila,1,20,8.4
+MSila,1,22,3.2
+MSila,2,0,3.1
+MSila,2,2,2.1
+MSila,2,4,2.2
+MSila,2,6,2.5
+MSila,2,8,23.7
+MSila,2,10,39.5
+MSila,2,12,44.0
+MSila,2,14,26.7
+MSila,2,16,17.4
+MSila,2,18,15.9
+MSila,2,20,4.5
+MSila,2,22,2.9
+MSila,3,0,4.1
+MSila,3,2,2.2
+MSila,3,4,2.5
+MSila,3,6,1.9
+MSila,3,8,25.2
+MSila,3,10,48.0
+MSila,3,12,49.8
+MSila,3,14,29.0
+MSila,3,16,18.3
+MSila,3,18,18.9
+MSila,3,20,4.5
+MSila,3,22,3.4
+MSila,4,0,5.6
+MSila,4,2,1.0
+MSila,4,4,2.2
+MSila,4,6,4.3
+MSila,4,8,25.3
+MSila,4,10,43.1
+MSila,4,12,39.8
+MSila,4,14,25.2
+MSila,4,16,19.0
+MSila,4,18,9.4
+MSila,4,20,9.6
+MSila,4,22,6.2
+MSila,5,0,4.3
+MSila,5,2,3.2
+MSila,5,4,2.3
+MSila,5,6,2.5
+MSila,5,8,5.5
+MSila,5,10,3.0
+MSila,5,12,5.7
+MSila,5,14,3.3
+MSila,5,16,3.6
+MSila,5,18,14.2
+MSila,5,20,8.4
+MSila,5,22,4.8
+MSila,6,0,2.9
+MSila,6,2,2.1
+MSila,6,4,2.1
+MSila,6,6,2.9
+MSila,6,8,18.4
+MSila,6,10,31.5
+MSila,6,12,33.8
+MSila,6,14,18.4
+MSila,6,16,15.6
+MSila,6,18,14.6
+MSila,6,20,6.5
+MSila,6,22,5.3
+Mascara,0,0,5.7
+Mascara,0,2,4.2
+Mascara,0,4,4.9
+Mascara,0,6,5.0
+Mascara,0,8,7.7
+Mascara,0,10,21.5
+Mascara,0,12,44.5
+Mascara,0,14,18.5
+Mascara,0,16,20.3
+Mascara,0,18,14.4
+Mascara,0,20,9.0
+Mascara,0,22,3.1
+Mascara,1,0,5.5
+Mascara,1,2,4.7
+Mascara,1,4,4.8
+Mascara,1,6,4.2
+Mascara,1,8,16.1
+Mascara,1,10,40.4
+Mascara,1,12,43.5
+Mascara,1,14,19.6
+Mascara,1,16,10.2
+Mascara,1,18,17.2
+Mascara,1,20,11.3
+Mascara,1,22,8.1
+Mascara,2,0,5.8
+Mascara,2,2,4.3
+Mascara,2,4,4.1
+Mascara,2,6,3.8
+Mascara,2,8,4.9
+Mascara,2,10,35.6
+Mascara,2,12,31.1
+Mascara,2,14,24.6
+Mascara,2,16,14.1
+Mascara,2,18,21.9
+Mascara,2,20,14.9
+Mascara,2,22,7.5
+Mascara,3,0,7.5
+Mascara,3,2,3.8
+Mascara,3,4,4.6
+Mascara,3,6,7.1
+Mascara,3,8,11.0
+Mascara,3,10,39.0
+Mascara,3,12,36.4
+Mascara,3,14,19.1
+Mascara,3,16,28.1
+Mascara,3,18,14.8
+Mascara,3,20,22.1
+Mascara,3,22,7.8
+Mascara,4,0,7.0
+Mascara,4,2,2.3
+Mascara,4,4,5.6
+Mascara,4,6,5.5
+Mascara,4,8,4.3
+Mascara,4,10,22.3
+Mascara,4,12,24.5
+Mascara,4,14,17.0
+Mascara,4,16,7.2
+Mascara,4,18,14.3
+Mascara,4,20,29.3
+Mascara,4,22,11.8
+Mascara,5,0,8.2
+Mascara,5,2,3.4
+Mascara,5,4,3.9
+Mascara,5,6,3.0
+Mascara,5,8,3.9
+Mascara,5,10,4.6
+Mascara,5,12,5.2
+Mascara,5,14,8.2
+Mascara,5,16,6.0
+Mascara,5,18,7.3
+Mascara,5,20,11.1
+Mascara,5,22,12.6
+Mascara,6,0,5.8
+Mascara,6,2,5.7
+Mascara,6,4,5.8
+Mascara,6,6,7.2
+Mascara,6,8,10.4
+Mascara,6,10,19.4
+Mascara,6,12,15.7
+Mascara,6,14,9.7
+Mascara,6,16,6.4
+Mascara,6,18,22.1
+Mascara,6,20,22.3
+Mascara,6,22,10.0
+Medea,0,0,2.3
+Medea,0,2,0.1
+Medea,0,4,0.6
+Medea,0,6,1.1
+Medea,0,8,5.1
+Medea,0,10,18.6
+Medea,0,12,22.2
+Medea,0,14,11.3
+Medea,0,16,13.1
+Medea,0,18,10.0
+Medea,0,20,9.1
+Medea,0,22,3.7
+Medea,1,0,0.6
+Medea,1,2,0.2
+Medea,1,4,0.2
+Medea,1,6,0.5
+Medea,1,8,8.4
+Medea,1,10,17.4
+Medea,1,12,23.6
+Medea,1,14,18.9
+Medea,1,16,12.9
+Medea,1,18,11.2
+Medea,1,20,6.2
+Medea,1,22,4.0
+Medea,2,0,2.3
+Medea,2,2,0.2
+Medea,2,4,0.3
+Medea,2,6,1.2
+Medea,2,8,3.9
+Medea,2,10,14.3
+Medea,2,12,18.0
+Medea,2,14,13.9
+Medea,2,16,16.7
+Medea,2,18,10.7
+Medea,2,20,8.3
+Medea,2,22,2.7
+Medea,3,0,2.0
+Medea,3,2,0.3
+Medea,3,4,0.5
+Medea,3,6,0.6
+Medea,3,8,5.6
+Medea,3,10,17.8
+Medea,3,12,21.1
+Medea,3,14,12.7
+Medea,3,16,16.1
+Medea,3,18,11.8
+Medea,3,20,8.3
+Medea,3,22,3.3
+Medea,4,0,1.1
+Medea,4,2,1.0
+Medea,4,4,0.3
+Medea,4,6,0.3
+Medea,4,8,1.2
+Medea,4,10,15.6
+Medea,4,12,16.9
+Medea,4,14,12.1
+Medea,4,16,15.9
+Medea,4,18,16.0
+Medea,4,20,17.3
+Medea,4,22,5.3
+Medea,5,0,1.9
+Medea,5,2,0.7
+Medea,5,4,0.5
+Medea,5,6,0.2
+Medea,5,8,0.3
+Medea,5,10,0.9
+Medea,5,12,1.8
+Medea,5,14,2.2
+Medea,5,16,0.9
+Medea,5,18,3.5
+Medea,5,20,10.6
+Medea,5,22,1.6
+Medea,6,0,1.8
+Medea,6,2,0.3
+Medea,6,4,0.6
+Medea,6,6,0.6
+Medea,6,8,0.7
+Medea,6,10,14.9
+Medea,6,12,20.3
+Medea,6,14,14.2
+Medea,6,16,12.7
+Medea,6,18,11.5
+Medea,6,20,8.6
+Medea,6,22,2.1
+Mostaganem,0,0,1.2
+Mostaganem,0,2,0.1
+Mostaganem,0,4,0.1
+Mostaganem,0,6,0.0
+Mostaganem,0,8,9.0
+Mostaganem,0,10,26.2
+Mostaganem,0,12,31.5
+Mostaganem,0,14,25.4
+Mostaganem,0,16,14.9
+Mostaganem,0,18,12.1
+Mostaganem,0,20,7.6
+Mostaganem,0,22,7.7
+Mostaganem,1,0,1.4
+Mostaganem,1,2,0.3
+Mostaganem,1,4,0.0
+Mostaganem,1,6,0.0
+Mostaganem,1,8,4.7
+Mostaganem,1,10,24.4
+Mostaganem,1,12,26.0
+Mostaganem,1,14,24.2
+Mostaganem,1,16,23.2
+Mostaganem,1,18,11.1
+Mostaganem,1,20,9.2
+Mostaganem,1,22,5.6
+Mostaganem,2,0,2.2
+Mostaganem,2,2,0.3
+Mostaganem,2,4,0.3
+Mostaganem,2,6,0.2
+Mostaganem,2,8,4.6
+Mostaganem,2,10,19.0
+Mostaganem,2,12,24.3
+Mostaganem,2,14,20.3
+Mostaganem,2,16,17.9
+Mostaganem,2,18,12.7
+Mostaganem,2,20,8.3
+Mostaganem,2,22,6.5
+Mostaganem,3,0,1.7
+Mostaganem,3,2,0.1
+Mostaganem,3,4,0.0
+Mostaganem,3,6,0.1
+Mostaganem,3,8,2.3
+Mostaganem,3,10,22.0
+Mostaganem,3,12,27.1
+Mostaganem,3,14,21.4
+Mostaganem,3,16,19.4
+Mostaganem,3,18,15.7
+Mostaganem,3,20,11.6
+Mostaganem,3,22,6.9
+Mostaganem,4,0,2.4
+Mostaganem,4,2,0.0
+Mostaganem,4,4,0.0
+Mostaganem,4,6,0.4
+Mostaganem,4,8,4.0
+Mostaganem,4,10,23.6
+Mostaganem,4,12,27.7
+Mostaganem,4,14,21.7
+Mostaganem,4,16,19.8
+Mostaganem,4,18,16.9
+Mostaganem,4,20,17.2
+Mostaganem,4,22,10.5
+Mostaganem,5,0,3.1
+Mostaganem,5,2,0.3
+Mostaganem,5,4,0.2
+Mostaganem,5,6,0.0
+Mostaganem,5,8,1.1
+Mostaganem,5,10,3.4
+Mostaganem,5,12,2.5
+Mostaganem,5,14,2.7
+Mostaganem,5,16,6.4
+Mostaganem,5,18,13.1
+Mostaganem,5,20,31.2
+Mostaganem,5,22,15.8
+Mostaganem,6,0,4.3
+Mostaganem,6,2,0.2
+Mostaganem,6,4,0.0
+Mostaganem,6,6,0.0
+Mostaganem,6,8,1.5
+Mostaganem,6,10,20.0
+Mostaganem,6,12,26.2
+Mostaganem,6,14,16.0
+Mostaganem,6,16,14.6
+Mostaganem,6,18,18.3
+Mostaganem,6,20,12.4
+Mostaganem,6,22,3.8
+Oran,0,0,1.9
+Oran,0,2,0.2
+Oran,0,4,0.1
+Oran,0,6,0.4
+Oran,0,8,12.8
+Oran,0,10,32.9
+Oran,0,12,47.8
+Oran,0,14,34.7
+Oran,0,16,35.5
+Oran,0,18,14.9
+Oran,0,20,13.8
+Oran,0,22,7.5
+Oran,1,0,2.8
+Oran,1,2,0.1
+Oran,1,4,0.1
+Oran,1,6,0.2
+Oran,1,8,12.9
+Oran,1,10,36.9
+Oran,1,12,49.2
+Oran,1,14,34.2
+Oran,1,16,35.1
+Oran,1,18,16.5
+Oran,1,20,12.9
+Oran,1,22,7.2
+Oran,2,0,2.4
+Oran,2,2,0.2
+Oran,2,4,0.1
+Oran,2,6,0.2
+Oran,2,8,9.3
+Oran,2,10,27.0
+Oran,2,12,42.6
+Oran,2,14,32.6
+Oran,2,16,30.2
+Oran,2,18,17.8
+Oran,2,20,14.4
+Oran,2,22,8.3
+Oran,3,0,2.9
+Oran,3,2,0.3
+Oran,3,4,0.0
+Oran,3,6,0.2
+Oran,3,8,10.6
+Oran,3,10,34.1
+Oran,3,12,45.4
+Oran,3,14,38.4
+Oran,3,16,35.6
+Oran,3,18,16.5
+Oran,3,20,15.3
+Oran,3,22,9.7
+Oran,4,0,3.7
+Oran,4,2,0.1
+Oran,4,4,0.1
+Oran,4,6,0.2
+Oran,4,8,7.5
+Oran,4,10,34.0
+Oran,4,12,46.7
+Oran,4,14,35.0
+Oran,4,16,26.7
+Oran,4,18,20.9
+Oran,4,20,21.6
+Oran,4,22,13.8
+Oran,5,0,7.0
+Oran,5,2,1.1
+Oran,5,4,0.3
+Oran,5,6,0.3
+Oran,5,8,1.7
+Oran,5,10,5.9
+Oran,5,12,5.7
+Oran,5,14,2.0
+Oran,5,16,5.3
+Oran,5,18,10.2
+Oran,5,20,16.9
+Oran,5,22,10.7
+Oran,6,0,4.1
+Oran,6,2,0.2
+Oran,6,4,0.2
+Oran,6,6,0.2
+Oran,6,8,2.6
+Oran,6,10,16.8
+Oran,6,12,30.4
+Oran,6,14,26.4
+Oran,6,16,21.3
+Oran,6,18,18.0
+Oran,6,20,16.2
+Oran,6,22,6.7
+Setif,0,0,0.8
+Setif,0,2,0.1
+Setif,0,4,0.3
+Setif,0,6,0.5
+Setif,0,8,21.6
+Setif,0,10,38.8
+Setif,0,12,42.9
+Setif,0,14,29.7
+Setif,0,16,18.4
+Setif,0,18,18.1
+Setif,0,20,13.5
+Setif,0,22,6.6
+Setif,1,0,0.9
+Setif,1,2,0.1
+Setif,1,4,0.1
+Setif,1,6,0.0
+Setif,1,8,19.1
+Setif,1,10,35.3
+Setif,1,12,40.3
+Setif,1,14,30.1
+Setif,1,16,24.2
+Setif,1,18,24.2
+Setif,1,20,12.3
+Setif,1,22,5.5
+Setif,2,0,1.0
+Setif,2,2,0.0
+Setif,2,4,0.1
+Setif,2,6,0.1
+Setif,2,8,16.1
+Setif,2,10,33.8
+Setif,2,12,38.4
+Setif,2,14,32.1
+Setif,2,16,23.7
+Setif,2,18,20.8
+Setif,2,20,16.2
+Setif,2,22,6.0
+Setif,3,0,1.4
+Setif,3,2,0.1
+Setif,3,4,0.0
+Setif,3,6,0.0
+Setif,3,8,16.9
+Setif,3,10,34.1
+Setif,3,12,39.6
+Setif,3,14,30.5
+Setif,3,16,27.8
+Setif,3,18,24.9
+Setif,3,20,13.4
+Setif,3,22,5.9
+Setif,4,0,1.1
+Setif,4,2,0.1
+Setif,4,4,0.6
+Setif,4,6,0.0
+Setif,4,8,13.0
+Setif,4,10,34.6
+Setif,4,12,46.4
+Setif,4,14,30.5
+Setif,4,16,21.2
+Setif,4,18,30.3
+Setif,4,20,19.2
+Setif,4,22,9.5
+Setif,5,0,1.7
+Setif,5,2,0.2
+Setif,5,4,0.1
+Setif,5,6,0.2
+Setif,5,8,1.2
+Setif,5,10,3.1
+Setif,5,12,2.3
+Setif,5,14,3.0
+Setif,5,16,3.8
+Setif,5,18,14.8
+Setif,5,20,17.8
+Setif,5,22,6.5
+Setif,6,0,0.2
+Setif,6,2,0.1
+Setif,6,4,0.1
+Setif,6,6,0.0
+Setif,6,8,9.8
+Setif,6,10,29.4
+Setif,6,12,36.2
+Setif,6,14,22.8
+Setif,6,16,19.7
+Setif,6,18,25.1
+Setif,6,20,12.9
+Setif,6,22,5.2
+Sidi Bel Abbes,0,0,0.9
+Sidi Bel Abbes,0,2,0.6
+Sidi Bel Abbes,0,4,0.0
+Sidi Bel Abbes,0,6,0.1
+Sidi Bel Abbes,0,8,3.1
+Sidi Bel Abbes,0,10,14.1
+Sidi Bel Abbes,0,12,20.8
+Sidi Bel Abbes,0,14,7.5
+Sidi Bel Abbes,0,16,7.3
+Sidi Bel Abbes,0,18,8.9
+Sidi Bel Abbes,0,20,8.0
+Sidi Bel Abbes,0,22,6.8
+Sidi Bel Abbes,1,0,2.9
+Sidi Bel Abbes,1,2,0.9
+Sidi Bel Abbes,1,4,0.0
+Sidi Bel Abbes,1,6,0.0
+Sidi Bel Abbes,1,8,2.3
+Sidi Bel Abbes,1,10,14.0
+Sidi Bel Abbes,1,12,13.1
+Sidi Bel Abbes,1,14,7.6
+Sidi Bel Abbes,1,16,5.9
+Sidi Bel Abbes,1,18,7.9
+Sidi Bel Abbes,1,20,10.9
+Sidi Bel Abbes,1,22,5.5
+Sidi Bel Abbes,2,0,1.6
+Sidi Bel Abbes,2,2,0.1
+Sidi Bel Abbes,2,4,0.1
+Sidi Bel Abbes,2,6,0.0
+Sidi Bel Abbes,2,8,2.3
+Sidi Bel Abbes,2,10,12.0
+Sidi Bel Abbes,2,12,15.7
+Sidi Bel Abbes,2,14,9.5
+Sidi Bel Abbes,2,16,7.8
+Sidi Bel Abbes,2,18,8.4
+Sidi Bel Abbes,2,20,10.8
+Sidi Bel Abbes,2,22,4.6
+Sidi Bel Abbes,3,0,1.2
+Sidi Bel Abbes,3,2,0.1
+Sidi Bel Abbes,3,4,0.0
+Sidi Bel Abbes,3,6,0.0
+Sidi Bel Abbes,3,8,2.1
+Sidi Bel Abbes,3,10,11.1
+Sidi Bel Abbes,3,12,15.2
+Sidi Bel Abbes,3,14,8.0
+Sidi Bel Abbes,3,16,5.8
+Sidi Bel Abbes,3,18,7.5
+Sidi Bel Abbes,3,20,10.3
+Sidi Bel Abbes,3,22,6.7
+Sidi Bel Abbes,4,0,2.2
+Sidi Bel Abbes,4,2,0.2
+Sidi Bel Abbes,4,4,0.2
+Sidi Bel Abbes,4,6,0.0
+Sidi Bel Abbes,4,8,4.1
+Sidi Bel Abbes,4,10,14.8
+Sidi Bel Abbes,4,12,21.6
+Sidi Bel Abbes,4,14,10.3
+Sidi Bel Abbes,4,16,8.1
+Sidi Bel Abbes,4,18,13.6
+Sidi Bel Abbes,4,20,16.4
+Sidi Bel Abbes,4,22,9.2
+Sidi Bel Abbes,5,0,3.0
+Sidi Bel Abbes,5,2,0.4
+Sidi Bel Abbes,5,4,0.0
+Sidi Bel Abbes,5,6,0.1
+Sidi Bel Abbes,5,8,0.1
+Sidi Bel Abbes,5,10,2.1
+Sidi Bel Abbes,5,12,0.8
+Sidi Bel Abbes,5,14,0.6
+Sidi Bel Abbes,5,16,1.0
+Sidi Bel Abbes,5,18,2.1
+Sidi Bel Abbes,5,20,11.3
+Sidi Bel Abbes,5,22,5.5
+Sidi Bel Abbes,6,0,1.1
+Sidi Bel Abbes,6,2,0.3
+Sidi Bel Abbes,6,4,0.0
+Sidi Bel Abbes,6,6,0.0
+Sidi Bel Abbes,6,8,0.0
+Sidi Bel Abbes,6,10,9.1
+Sidi Bel Abbes,6,12,12.8
+Sidi Bel Abbes,6,14,4.5
+Sidi Bel Abbes,6,16,4.8
+Sidi Bel Abbes,6,18,11.1
+Sidi Bel Abbes,6,20,15.5
+Sidi Bel Abbes,6,22,5.6
+Skikda,0,0,0.3
+Skikda,0,2,0.0
+Skikda,0,4,0.0
+Skikda,0,6,0.0
+Skikda,0,8,12.1
+Skikda,0,10,29.4
+Skikda,0,12,31.8
+Skikda,0,14,26.2
+Skikda,0,16,35.4
+Skikda,0,18,28.5
+Skikda,0,20,11.4
+Skikda,0,22,7.8
+Skikda,1,0,1.1
+Skikda,1,2,0.0
+Skikda,1,4,0.0
+Skikda,1,6,0.0
+Skikda,1,8,4.0
+Skikda,1,10,32.1
+Skikda,1,12,41.9
+Skikda,1,14,31.9
+Skikda,1,16,48.8
+Skikda,1,18,26.3
+Skikda,1,20,11.9
+Skikda,1,22,2.2
+Skikda,2,0,1.4
+Skikda,2,2,0.1
+Skikda,2,4,0.0
+Skikda,2,6,0.0
+Skikda,2,8,7.5
+Skikda,2,10,25.0
+Skikda,2,12,33.7
+Skikda,2,14,33.5
+Skikda,2,16,32.0
+Skikda,2,18,24.4
+Skikda,2,20,12.5
+Skikda,2,22,5.0
+Skikda,3,0,0.3
+Skikda,3,2,0.0
+Skikda,3,4,0.0
+Skikda,3,6,0.1
+Skikda,3,8,12.2
+Skikda,3,10,34.8
+Skikda,3,12,50.4
+Skikda,3,14,29.3
+Skikda,3,16,33.3
+Skikda,3,18,29.1
+Skikda,3,20,17.1
+Skikda,3,22,10.9
+Skikda,4,0,1.5
+Skikda,4,2,0.2
+Skikda,4,4,0.1
+Skikda,4,6,0.1
+Skikda,4,8,0.7
+Skikda,4,10,38.4
+Skikda,4,12,39.7
+Skikda,4,14,38.5
+Skikda,4,16,32.9
+Skikda,4,18,33.9
+Skikda,4,20,26.4
+Skikda,4,22,9.9
+Skikda,5,0,5.0
+Skikda,5,2,0.2
+Skikda,5,4,0.2
+Skikda,5,6,0.2
+Skikda,5,8,2.3
+Skikda,5,10,14.0
+Skikda,5,12,9.1
+Skikda,5,14,3.2
+Skikda,5,16,9.3
+Skikda,5,18,26.1
+Skikda,5,20,15.6
+Skikda,5,22,19.2
+Skikda,6,0,4.0
+Skikda,6,2,0.0
+Skikda,6,4,0.0
+Skikda,6,6,0.0
+Skikda,6,8,1.6
+Skikda,6,10,14.4
+Skikda,6,12,30.4
+Skikda,6,14,27.2
+Skikda,6,16,22.8
+Skikda,6,18,34.1
+Skikda,6,20,18.2
+Skikda,6,22,2.2
+Tiaret,0,0,3.1
+Tiaret,0,2,3.1
+Tiaret,0,4,5.4
+Tiaret,0,6,3.1
+Tiaret,0,8,6.5
+Tiaret,0,10,23.6
+Tiaret,0,12,25.0
+Tiaret,0,14,13.5
+Tiaret,0,16,9.9
+Tiaret,0,18,12.1
+Tiaret,0,20,9.6
+Tiaret,0,22,2.8
+Tiaret,1,0,2.1
+Tiaret,1,2,1.2
+Tiaret,1,4,1.7
+Tiaret,1,6,3.0
+Tiaret,1,8,3.0
+Tiaret,1,10,22.4
+Tiaret,1,12,20.7
+Tiaret,1,14,9.8
+Tiaret,1,16,12.6
+Tiaret,1,18,13.5
+Tiaret,1,20,10.1
+Tiaret,1,22,2.9
+Tiaret,2,0,2.1
+Tiaret,2,2,2.0
+Tiaret,2,4,1.2
+Tiaret,2,6,1.9
+Tiaret,2,8,6.4
+Tiaret,2,10,22.5
+Tiaret,2,12,17.8
+Tiaret,2,14,9.3
+Tiaret,2,16,7.1
+Tiaret,2,18,8.1
+Tiaret,2,20,6.3
+Tiaret,2,22,3.0
+Tiaret,3,0,2.0
+Tiaret,3,2,2.7
+Tiaret,3,4,2.2
+Tiaret,3,6,2.6
+Tiaret,3,8,9.2
+Tiaret,3,10,22.0
+Tiaret,3,12,26.2
+Tiaret,3,14,14.5
+Tiaret,3,16,17.0
+Tiaret,3,18,9.2
+Tiaret,3,20,3.7
+Tiaret,3,22,1.0
+Tiaret,4,0,3.4
+Tiaret,4,2,2.7
+Tiaret,4,4,2.6
+Tiaret,4,6,1.5
+Tiaret,4,8,2.2
+Tiaret,4,10,17.1
+Tiaret,4,12,15.8
+Tiaret,4,14,5.5
+Tiaret,4,16,6.1
+Tiaret,4,18,11.9
+Tiaret,4,20,7.3
+Tiaret,4,22,3.9
+Tiaret,5,0,2.0
+Tiaret,5,2,2.3
+Tiaret,5,4,1.2
+Tiaret,5,6,2.3
+Tiaret,5,8,3.2
+Tiaret,5,10,4.4
+Tiaret,5,12,2.3
+Tiaret,5,14,4.0
+Tiaret,5,16,0.7
+Tiaret,5,18,5.1
+Tiaret,5,20,3.8
+Tiaret,5,22,2.5
+Tiaret,6,0,3.0
+Tiaret,6,2,1.9
+Tiaret,6,4,3.6
+Tiaret,6,6,1.8
+Tiaret,6,8,4.5
+Tiaret,6,10,13.9
+Tiaret,6,12,12.0
+Tiaret,6,14,7.5
+Tiaret,6,16,6.6
+Tiaret,6,18,7.3
+Tiaret,6,20,7.3
+Tiaret,6,22,1.7
+Tipaza,0,0,1.6
+Tipaza,0,2,0.8
+Tipaza,0,4,0.4
+Tipaza,0,6,0.8
+Tipaza,0,8,3.7
+Tipaza,0,10,10.4
+Tipaza,0,12,13.1
+Tipaza,0,14,14.0
+Tipaza,0,16,9.8
+Tipaza,0,18,8.0
+Tipaza,0,20,10.4
+Tipaza,0,22,3.1
+Tipaza,1,0,1.1
+Tipaza,1,2,0.5
+Tipaza,1,4,0.2
+Tipaza,1,6,0.6
+Tipaza,1,8,5.0
+Tipaza,1,10,14.5
+Tipaza,1,12,14.5
+Tipaza,1,14,10.9
+Tipaza,1,16,10.1
+Tipaza,1,18,14.4
+Tipaza,1,20,9.5
+Tipaza,1,22,5.6
+Tipaza,2,0,3.4
+Tipaza,2,2,2.1
+Tipaza,2,4,0.5
+Tipaza,2,6,0.6
+Tipaza,2,8,3.6
+Tipaza,2,10,11.3
+Tipaza,2,12,11.5
+Tipaza,2,14,10.1
+Tipaza,2,16,10.7
+Tipaza,2,18,11.4
+Tipaza,2,20,10.6
+Tipaza,2,22,3.8
+Tipaza,3,0,2.0
+Tipaza,3,2,1.1
+Tipaza,3,4,0.4
+Tipaza,3,6,0.2
+Tipaza,3,8,4.1
+Tipaza,3,10,9.7
+Tipaza,3,12,14.6
+Tipaza,3,14,9.3
+Tipaza,3,16,9.3
+Tipaza,3,18,11.7
+Tipaza,3,20,6.5
+Tipaza,3,22,4.2
+Tipaza,4,0,1.2
+Tipaza,4,2,0.5
+Tipaza,4,4,0.1
+Tipaza,4,6,0.4
+Tipaza,4,8,3.5
+Tipaza,4,10,12.3
+Tipaza,4,12,14.8
+Tipaza,4,14,11.6
+Tipaza,4,16,12.3
+Tipaza,4,18,17.7
+Tipaza,4,20,14.3
+Tipaza,4,22,4.5
+Tipaza,5,0,1.0
+Tipaza,5,2,1.1
+Tipaza,5,4,1.0
+Tipaza,5,6,0.4
+Tipaza,5,8,1.1
+Tipaza,5,10,3.0
+Tipaza,5,12,2.4
+Tipaza,5,14,2.9
+Tipaza,5,16,8.5
+Tipaza,5,18,15.6
+Tipaza,5,20,20.7
+Tipaza,5,22,12.3
+Tipaza,6,0,1.5
+Tipaza,6,2,0.9
+Tipaza,6,4,0.5
+Tipaza,6,6,1.0
+Tipaza,6,8,0.9
+Tipaza,6,10,10.6
+Tipaza,6,12,15.1
+Tipaza,6,14,10.7
+Tipaza,6,16,11.6
+Tipaza,6,18,15.4
+Tipaza,6,20,12.3
+Tipaza,6,22,3.6
+Tizi Ouzou,0,0,1.4
+Tizi Ouzou,0,2,0.8
+Tizi Ouzou,0,4,0.7
+Tizi Ouzou,0,6,0.1
+Tizi Ouzou,0,8,29.9
+Tizi Ouzou,0,10,39.9
+Tizi Ouzou,0,12,35.2
+Tizi Ouzou,0,14,24.1
+Tizi Ouzou,0,16,22.6
+Tizi Ouzou,0,18,7.8
+Tizi Ouzou,0,20,7.5
+Tizi Ouzou,0,22,2.3
+Tizi Ouzou,1,0,1.4
+Tizi Ouzou,1,2,0.6
+Tizi Ouzou,1,4,1.1
+Tizi Ouzou,1,6,0.8
+Tizi Ouzou,1,8,23.6
+Tizi Ouzou,1,10,38.6
+Tizi Ouzou,1,12,38.2
+Tizi Ouzou,1,14,26.0
+Tizi Ouzou,1,16,23.9
+Tizi Ouzou,1,18,7.9
+Tizi Ouzou,1,20,7.0
+Tizi Ouzou,1,22,2.6
+Tizi Ouzou,2,0,0.9
+Tizi Ouzou,2,2,1.2
+Tizi Ouzou,2,4,0.0
+Tizi Ouzou,2,6,0.3
+Tizi Ouzou,2,8,20.9
+Tizi Ouzou,2,10,32.9
+Tizi Ouzou,2,12,35.8
+Tizi Ouzou,2,14,26.1
+Tizi Ouzou,2,16,19.3
+Tizi Ouzou,2,18,8.3
+Tizi Ouzou,2,20,5.8
+Tizi Ouzou,2,22,4.0
+Tizi Ouzou,3,0,1.3
+Tizi Ouzou,3,2,0.7
+Tizi Ouzou,3,4,0.5
+Tizi Ouzou,3,6,0.8
+Tizi Ouzou,3,8,24.5
+Tizi Ouzou,3,10,40.3
+Tizi Ouzou,3,12,36.5
+Tizi Ouzou,3,14,25.4
+Tizi Ouzou,3,16,24.6
+Tizi Ouzou,3,18,10.5
+Tizi Ouzou,3,20,7.2
+Tizi Ouzou,3,22,3.9
+Tizi Ouzou,4,0,0.8
+Tizi Ouzou,4,2,1.1
+Tizi Ouzou,4,4,0.6
+Tizi Ouzou,4,6,1.6
+Tizi Ouzou,4,8,11.3
+Tizi Ouzou,4,10,26.9
+Tizi Ouzou,4,12,34.5
+Tizi Ouzou,4,14,23.7
+Tizi Ouzou,4,16,17.9
+Tizi Ouzou,4,18,10.0
+Tizi Ouzou,4,20,9.8
+Tizi Ouzou,4,22,3.4
+Tizi Ouzou,5,0,1.5
+Tizi Ouzou,5,2,0.6
+Tizi Ouzou,5,4,1.0
+Tizi Ouzou,5,6,3.1
+Tizi Ouzou,5,8,1.6
+Tizi Ouzou,5,10,4.3
+Tizi Ouzou,5,12,2.9
+Tizi Ouzou,5,14,2.3
+Tizi Ouzou,5,16,1.1
+Tizi Ouzou,5,18,2.1
+Tizi Ouzou,5,20,5.7
+Tizi Ouzou,5,22,2.1
+Tizi Ouzou,6,0,1.1
+Tizi Ouzou,6,2,0.1
+Tizi Ouzou,6,4,0.6
+Tizi Ouzou,6,6,1.3
+Tizi Ouzou,6,8,5.7
+Tizi Ouzou,6,10,20.1
+Tizi Ouzou,6,12,25.6
+Tizi Ouzou,6,14,15.3
+Tizi Ouzou,6,16,11.2
+Tizi Ouzou,6,18,8.1
+Tizi Ouzou,6,20,6.7
+Tizi Ouzou,6,22,1.3
+Tlemcen,0,0,2.3
+Tlemcen,0,2,1.3
+Tlemcen,0,4,0.7
+Tlemcen,0,6,1.0
+Tlemcen,0,8,9.0
+Tlemcen,0,10,22.5
+Tlemcen,0,12,30.1
+Tlemcen,0,14,17.7
+Tlemcen,0,16,13.8
+Tlemcen,0,18,9.2
+Tlemcen,0,20,15.5
+Tlemcen,0,22,7.9
+Tlemcen,1,0,1.7
+Tlemcen,1,2,1.1
+Tlemcen,1,4,1.3
+Tlemcen,1,6,0.8
+Tlemcen,1,8,8.5
+Tlemcen,1,10,24.6
+Tlemcen,1,12,27.3
+Tlemcen,1,14,13.9
+Tlemcen,1,16,13.2
+Tlemcen,1,18,7.7
+Tlemcen,1,20,17.3
+Tlemcen,1,22,10.5
+Tlemcen,2,0,2.2
+Tlemcen,2,2,1.2
+Tlemcen,2,4,0.6
+Tlemcen,2,6,0.7
+Tlemcen,2,8,7.9
+Tlemcen,2,10,14.6
+Tlemcen,2,12,29.2
+Tlemcen,2,14,16.1
+Tlemcen,2,16,14.8
+Tlemcen,2,18,9.6
+Tlemcen,2,20,15.8
+Tlemcen,2,22,9.1
+Tlemcen,3,0,2.3
+Tlemcen,3,2,1.4
+Tlemcen,3,4,0.9
+Tlemcen,3,6,0.8
+Tlemcen,3,8,5.0
+Tlemcen,3,10,17.3
+Tlemcen,3,12,31.1
+Tlemcen,3,14,17.6
+Tlemcen,3,16,16.6
+Tlemcen,3,18,6.6
+Tlemcen,3,20,21.7
+Tlemcen,3,22,10.9
+Tlemcen,4,0,3.0
+Tlemcen,4,2,0.0
+Tlemcen,4,4,0.3
+Tlemcen,4,6,2.1
+Tlemcen,4,8,1.3
+Tlemcen,4,10,13.9
+Tlemcen,4,12,35.9
+Tlemcen,4,14,20.1
+Tlemcen,4,16,13.9
+Tlemcen,4,18,12.0
+Tlemcen,4,20,27.9
+Tlemcen,4,22,16.0
+Tlemcen,5,0,3.6
+Tlemcen,5,2,2.0
+Tlemcen,5,4,1.0
+Tlemcen,5,6,1.4
+Tlemcen,5,8,1.7
+Tlemcen,5,10,1.7
+Tlemcen,5,12,2.1
+Tlemcen,5,14,1.3
+Tlemcen,5,16,2.3
+Tlemcen,5,18,4.6
+Tlemcen,5,20,20.4
+Tlemcen,5,22,13.2
+Tlemcen,6,0,2.0
+Tlemcen,6,2,0.5
+Tlemcen,6,4,2.3
+Tlemcen,6,6,0.7
+Tlemcen,6,8,1.4
+Tlemcen,6,10,8.8
+Tlemcen,6,12,22.5
+Tlemcen,6,14,11.3
+Tlemcen,6,16,7.4
+Tlemcen,6,18,11.3
+Tlemcen,6,20,21.1
+Tlemcen,6,22,6.4

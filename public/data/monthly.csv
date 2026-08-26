@@ -1,0 +1,55 @@
+city,year,month,congestion_index
+Ain Temouchent,2026,6,8.7
+Ain Temouchent,2026,7,11.2
+Alger,2026,6,17.9
+Alger,2026,7,15.3
+Annaba,2026,6,16.2
+Annaba,2026,7,14.3
+Batna,2026,6,11.1
+Batna,2026,7,10.7
+Bejaia,2026,6,17.6
+Bejaia,2026,7,15.0
+Biskra,2026,6,9.5
+Biskra,2026,7,5.6
+Blida,2026,6,14.7
+Blida,2026,7,13.1
+Bordj Bou Arreridj,2026,6,7.2
+Bordj Bou Arreridj,2026,7,7.4
+Bouira,2026,6,6.5
+Bouira,2026,7,4.8
+Boumerdes,2026,6,8.3
+Boumerdes,2026,7,7.0
+Chlef,2026,6,7.3
+Chlef,2026,7,4.3
+Constantine,2026,6,12.6
+Constantine,2026,7,12.0
+Djelfa,2026,6,14.5
+Djelfa,2026,7,11.2
+El Tarf,2026,6,4.0
+El Tarf,2026,7,2.6
+Jijel,2026,6,13.0
+Jijel,2026,7,15.9
+MSila,2026,6,16.5
+MSila,2026,7,12.1
+Mascara,2026,6,15.5
+Mascara,2026,7,10.2
+Medea,2026,6,8.1
+Medea,2026,7,10.0
+Mostaganem,2026,6,12.3
+Mostaganem,2026,7,11.6
+Oran,2026,6,15.6
+Oran,2026,7,16.7
+Setif,2026,6,16.6
+Setif,2026,7,16.1
+Sidi Bel Abbes,2026,6,7.1
+Sidi Bel Abbes,2026,7,4.9
+Skikda,2026,6,17.7
+Skikda,2026,7,18.7
+Tiaret,2026,6,8.0
+Tiaret,2026,7,6.4
+Tipaza,2026,6,7.9
+Tipaza,2026,7,7.0
+Tizi Ouzou,2026,6,11.9
+Tizi Ouzou,2026,7,10.8
+Tlemcen,2026,6,11.5
+Tlemcen,2026,7,9.3

@@ -1,0 +1,325 @@
+city,from_hour,to_hour,delta
+Ain Temouchent,0,2,-0.7
+Ain Temouchent,2,4,0.1
+Ain Temouchent,4,6,-0.3
+Ain Temouchent,6,8,2.0
+Ain Temouchent,8,10,1.2
+Ain Temouchent,10,12,0.7
+Ain Temouchent,12,14,-1.2
+Ain Temouchent,14,16,0.1
+Ain Temouchent,16,18,-1.7
+Ain Temouchent,18,20,1.2
+Ain Temouchent,20,22,-0.9
+Ain Temouchent,22,0,-0.3
+Alger,0,2,-3.2
+Alger,2,4,-0.3
+Alger,4,6,0.2
+Alger,6,8,16.7
+Alger,8,10,10.3
+Alger,10,12,10.4
+Alger,12,14,-6.9
+Alger,14,16,2.6
+Alger,16,18,-6.5
+Alger,18,20,-7.0
+Alger,20,22,-6.6
+Alger,22,0,-9.7
+Annaba,0,2,-3.9
+Annaba,2,4,-0.2
+Annaba,4,6,0.2
+Annaba,6,8,5.9
+Annaba,8,10,12.6
+Annaba,10,12,6.0
+Annaba,12,14,-2.8
+Annaba,14,16,-2.1
+Annaba,16,18,3.5
+Annaba,18,20,0.9
+Annaba,20,22,-9.4
+Annaba,22,0,-10.9
+Batna,0,2,-0.6
+Batna,2,4,0.1
+Batna,4,6,-0.0
+Batna,6,8,5.2
+Batna,8,10,14.3
+Batna,10,12,5.0
+Batna,12,14,-10.9
+Batna,14,16,0.4
+Batna,16,18,4.1
+Batna,18,20,-8.2
+Batna,20,22,-7.3
+Batna,22,0,-2.2
+Bejaia,0,2,-1.0
+Bejaia,2,4,-0.1
+Bejaia,4,6,0.8
+Bejaia,6,8,13.8
+Bejaia,8,10,12.5
+Bejaia,10,12,8.2
+Bejaia,12,14,-6.8
+Bejaia,14,16,0.4
+Bejaia,16,18,-5.3
+Bejaia,18,20,-7.2
+Bejaia,20,22,-8.9
+Bejaia,22,0,-6.4
+Biskra,0,2,-0.0
+Biskra,2,4,-0.7
+Biskra,4,6,0.6
+Biskra,6,8,7.8
+Biskra,8,10,9.4
+Biskra,10,12,-2.5
+Biskra,12,14,-9.3
+Biskra,14,16,-3.8
+Biskra,16,18,4.7
+Biskra,18,20,-4.4
+Biskra,20,22,1.3
+Biskra,22,0,-3.1
+Blida,0,2,-1.9
+Blida,2,4,-0.3
+Blida,4,6,0.1
+Blida,6,8,10.6
+Blida,8,10,12.7
+Blida,10,12,12.0
+Blida,12,14,-13.3
+Blida,14,16,-2.8
+Blida,16,18,-3.6
+Blida,18,20,1.3
+Blida,20,22,-7.7
+Blida,22,0,-7.1
+Bordj Bou Arreridj,0,2,0.4
+Bordj Bou Arreridj,2,4,-0.5
+Bordj Bou Arreridj,4,6,-0.4
+Bordj Bou Arreridj,6,8,5.6
+Bordj Bou Arreridj,8,10,9.6
+Bordj Bou Arreridj,10,12,-1.1
+Bordj Bou Arreridj,12,14,-4.0
+Bordj Bou Arreridj,14,16,-0.2
+Bordj Bou Arreridj,16,18,-0.7
+Bordj Bou Arreridj,18,20,-4.9
+Bordj Bou Arreridj,20,22,-1.8
+Bordj Bou Arreridj,22,0,-2.0
+Bouira,0,2,-0.9
+Bouira,2,4,-0.1
+Bouira,4,6,0.0
+Bouira,6,8,4.4
+Bouira,8,10,11.1
+Bouira,10,12,-0.1
+Bouira,12,14,-6.3
+Bouira,14,16,-2.1
+Bouira,16,18,-2.4
+Bouira,18,20,-2.7
+Bouira,20,22,0.6
+Bouira,22,0,-1.5
+Boumerdes,0,2,-0.8
+Boumerdes,2,4,-0.0
+Boumerdes,4,6,0.2
+Boumerdes,6,8,4.1
+Boumerdes,8,10,8.9
+Boumerdes,10,12,3.3
+Boumerdes,12,14,-4.5
+Boumerdes,14,16,2.0
+Boumerdes,16,18,-3.2
+Boumerdes,18,20,-0.4
+Boumerdes,20,22,-4.3
+Boumerdes,22,0,-5.4
+Chlef,0,2,-1.8
+Chlef,2,4,0.2
+Chlef,4,6,0.2
+Chlef,6,8,3.1
+Chlef,8,10,10.0
+Chlef,10,12,2.1
+Chlef,12,14,-5.9
+Chlef,14,16,-3.6
+Chlef,16,18,-0.7
+Chlef,18,20,0.2
+Chlef,20,22,-0.9
+Chlef,22,0,-2.9
+Constantine,0,2,-0.3
+Constantine,2,4,-0.1
+Constantine,4,6,0.2
+Constantine,6,8,8.2
+Constantine,8,10,12.1
+Constantine,10,12,7.2
+Constantine,12,14,-11.2
+Constantine,14,16,-2.9
+Constantine,16,18,5.6
+Constantine,18,20,-4.1
+Constantine,20,22,-10.3
+Constantine,22,0,-4.3
+Djelfa,0,2,-3.1
+Djelfa,2,4,-0.6
+Djelfa,4,6,-0.1
+Djelfa,6,8,4.5
+Djelfa,8,10,14.1
+Djelfa,10,12,10.4
+Djelfa,12,14,-13.0
+Djelfa,14,16,-5.7
+Djelfa,16,18,14.8
+Djelfa,18,20,-6.7
+Djelfa,20,22,-7.6
+Djelfa,22,0,-6.9
+El Tarf,0,2,0.6
+El Tarf,2,4,-0.7
+El Tarf,4,6,-0.8
+El Tarf,6,8,1.2
+El Tarf,8,10,2.5
+El Tarf,10,12,-1.9
+El Tarf,12,14,-1.2
+El Tarf,14,16,1.1
+El Tarf,16,18,-0.0
+El Tarf,18,20,-0.9
+El Tarf,20,22,0.2
+El Tarf,22,0,0.0
+Jijel,0,2,-3.1
+Jijel,2,4,-0.1
+Jijel,4,6,-0.6
+Jijel,6,8,3.6
+Jijel,8,10,12.7
+Jijel,10,12,10.8
+Jijel,12,14,-10.6
+Jijel,14,16,0.7
+Jijel,16,18,3.1
+Jijel,18,20,-4.6
+Jijel,20,22,-7.2
+Jijel,22,0,-4.5
+MSila,0,2,-0.9
+MSila,2,4,0.3
+MSila,4,6,0.4
+MSila,6,8,20.0
+MSila,8,10,15.7
+MSila,10,12,-0.8
+MSila,12,14,-16.1
+MSila,14,16,-5.8
+MSila,16,18,-0.3
+MSila,18,20,-8.8
+MSila,20,22,-2.8
+MSila,22,0,-0.7
+Mascara,0,2,-2.4
+Mascara,2,4,0.8
+Mascara,4,6,0.3
+Mascara,6,8,3.2
+Mascara,8,10,17.8
+Mascara,10,12,2.6
+Mascara,12,14,-12.0
+Mascara,14,16,-3.5
+Mascara,16,18,2.8
+Mascara,18,20,1.1
+Mascara,20,22,-8.4
+Mascara,22,0,-2.2
+Medea,0,2,-1.3
+Medea,2,4,0.0
+Medea,4,6,0.2
+Medea,6,8,3.0
+Medea,8,10,10.6
+Medea,10,12,3.5
+Medea,12,14,-5.5
+Medea,14,16,0.4
+Medea,16,18,-1.9
+Medea,18,20,-0.9
+Medea,20,22,-6.5
+Medea,22,0,-1.6
+Mostaganem,0,2,-2.1
+Mostaganem,2,4,-0.1
+Mostaganem,4,6,0.0
+Mostaganem,6,8,3.8
+Mostaganem,8,10,15.9
+Mostaganem,10,12,3.8
+Mostaganem,12,14,-4.8
+Mostaganem,14,16,-2.2
+Mostaganem,16,18,-2.3
+Mostaganem,18,20,-0.4
+Mostaganem,20,22,-5.8
+Mostaganem,22,0,-5.8
+Oran,0,2,-3.2
+Oran,2,4,-0.2
+Oran,4,6,0.1
+Oran,6,8,8.0
+Oran,8,10,18.6
+Oran,10,12,11.4
+Oran,12,14,-9.2
+Oran,14,16,-2.0
+Oran,16,18,-10.7
+Oran,18,20,-0.5
+Oran,20,22,-6.8
+Oran,22,0,-5.6
+Setif,0,2,-0.9
+Setif,2,4,0.1
+Setif,4,6,-0.1
+Setif,6,8,13.8
+Setif,8,10,15.9
+Setif,10,12,5.3
+Setif,12,14,-9.6
+Setif,14,16,-5.7
+Setif,16,18,2.8
+Setif,18,20,-7.6
+Setif,20,22,-8.6
+Setif,22,0,-5.4
+Sidi Bel Abbes,0,2,-1.5
+Sidi Bel Abbes,2,4,-0.3
+Sidi Bel Abbes,4,6,0.0
+Sidi Bel Abbes,6,8,2.0
+Sidi Bel Abbes,8,10,9.0
+Sidi Bel Abbes,10,12,3.3
+Sidi Bel Abbes,12,14,-7.4
+Sidi Bel Abbes,14,16,-1.0
+Sidi Bel Abbes,16,18,2.7
+Sidi Bel Abbes,18,20,3.4
+Sidi Bel Abbes,20,22,-5.6
+Sidi Bel Abbes,22,0,-4.4
+Skikda,0,2,-1.9
+Skikda,2,4,-0.0
+Skikda,4,6,0.0
+Skikda,6,8,5.7
+Skikda,8,10,21.1
+Skikda,10,12,7.0
+Skikda,12,14,-6.7
+Skikda,14,16,3.5
+Skikda,16,18,-1.7
+Skikda,18,20,-12.7
+Skikda,20,22,-8.0
+Skikda,22,0,-6.2
+Tiaret,0,2,-0.3
+Tiaret,2,4,0.3
+Tiaret,4,6,-0.2
+Tiaret,6,8,2.7
+Tiaret,8,10,13.0
+Tiaret,10,12,-0.9
+Tiaret,12,14,-8.0
+Tiaret,14,16,-0.6
+Tiaret,16,18,1.0
+Tiaret,18,20,-2.7
+Tiaret,20,22,-4.3
+Tiaret,22,0,-0.0
+Tipaza,0,2,-0.7
+Tipaza,2,4,-0.6
+Tipaza,4,6,0.1
+Tipaza,6,8,2.6
+Tipaza,8,10,7.1
+Tipaza,10,12,2.0
+Tipaza,12,14,-2.3
+Tipaza,14,16,0.4
+Tipaza,16,18,3.1
+Tipaza,18,20,-1.4
+Tipaza,20,22,-6.8
+Tipaza,22,0,-3.6
+Tizi Ouzou,0,2,-0.5
+Tizi Ouzou,2,4,-0.1
+Tizi Ouzou,4,6,0.5
+Tizi Ouzou,6,8,15.7
+Tizi Ouzou,8,10,12.2
+Tizi Ouzou,10,12,0.8
+Tizi Ouzou,12,14,-9.4
+Tizi Ouzou,14,16,-3.2
+Tizi Ouzou,16,18,-9.4
+Tizi Ouzou,18,20,-0.7
+Tizi Ouzou,20,22,-4.3
+Tizi Ouzou,22,0,-1.6
+Tlemcen,0,2,-1.4
+Tlemcen,2,4,-0.0
+Tlemcen,4,6,0.0
+Tlemcen,6,8,3.9
+Tlemcen,8,10,9.8
+Tlemcen,10,12,10.7
+Tlemcen,12,14,-11.5
+Tlemcen,14,16,-2.3
+Tlemcen,16,18,-3.0
+Tlemcen,18,20,11.2
+Tlemcen,20,22,-9.4
+Tlemcen,22,0,-8.1
