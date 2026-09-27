@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CitiesRouteImport } from './routes/cities'
 import { Route as DataRouteImport } from './routes/data'
 import { Route as ExploreRouteImport } from './routes/explore'
-import { Route as HistoricalRouteImport } from './routes/historical'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as CityCityRouteImport } from './routes/city.$city'
 
@@ -37,11 +36,6 @@ const ExploreRoute = ExploreRouteImport.update({
   path: '/explore',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HistoricalRoute = HistoricalRouteImport.update({
-  id: '/historical',
-  path: '/historical',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const MethodologyRoute = MethodologyRouteImport.update({
   id: '/methodology',
   path: '/methodology',
@@ -58,7 +52,6 @@ export interface FileRoutesByFullPath {
   '/cities': typeof CitiesRoute
   '/data': typeof DataRoute
   '/explore': typeof ExploreRoute
-  '/historical': typeof HistoricalRoute
   '/methodology': typeof MethodologyRoute
   '/city/$city': typeof CityCityRoute
 }
@@ -67,7 +60,6 @@ export interface FileRoutesByTo {
   '/cities': typeof CitiesRoute
   '/data': typeof DataRoute
   '/explore': typeof ExploreRoute
-  '/historical': typeof HistoricalRoute
   '/methodology': typeof MethodologyRoute
   '/city/$city': typeof CityCityRoute
 }
@@ -77,36 +69,21 @@ export interface FileRoutesById {
   '/cities': typeof CitiesRoute
   '/data': typeof DataRoute
   '/explore': typeof ExploreRoute
-  '/historical': typeof HistoricalRoute
   '/methodology': typeof MethodologyRoute
   '/city/$city': typeof CityCityRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/cities'
-    | '/data'
-    | '/explore'
-    | '/historical'
-    | '/methodology'
-    | '/city/$city'
+    '/' | '/cities' | '/data' | '/explore' | '/methodology' | '/city/$city'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/cities'
-    | '/data'
-    | '/explore'
-    | '/historical'
-    | '/methodology'
-    | '/city/$city'
+  to: '/' | '/cities' | '/data' | '/explore' | '/methodology' | '/city/$city'
   id:
     | '__root__'
     | '/'
     | '/cities'
     | '/data'
     | '/explore'
-    | '/historical'
     | '/methodology'
     | '/city/$city'
   fileRoutesById: FileRoutesById
@@ -116,7 +93,6 @@ export interface RootRouteChildren {
   CitiesRoute: typeof CitiesRoute
   DataRoute: typeof DataRoute
   ExploreRoute: typeof ExploreRoute
-  HistoricalRoute: typeof HistoricalRoute
   MethodologyRoute: typeof MethodologyRoute
   CityCityRoute: typeof CityCityRoute
 }
@@ -151,13 +127,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExploreRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/historical': {
-      id: '/historical'
-      path: '/historical'
-      fullPath: '/historical'
-      preLoaderRoute: typeof HistoricalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/methodology': {
       id: '/methodology'
       path: '/methodology'
@@ -180,7 +149,6 @@ const rootRouteChildren: RootRouteChildren = {
   CitiesRoute: CitiesRoute,
   DataRoute: DataRoute,
   ExploreRoute: ExploreRoute,
-  HistoricalRoute: HistoricalRoute,
   MethodologyRoute: MethodologyRoute,
   CityCityRoute: CityCityRoute,
 }

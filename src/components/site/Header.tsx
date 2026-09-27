@@ -4,7 +4,6 @@ const NAV = [
   { to: "/", label: "Live Index" },
   { to: "/cities", label: "City Reports" },
   { to: "/explore", label: "Explorer" },
-  { to: "/historical", label: "Historical Data" },
   { to: "/data", label: "Dataset" },
   { to: "/methodology", label: "Methodology" },
 ] as const;
