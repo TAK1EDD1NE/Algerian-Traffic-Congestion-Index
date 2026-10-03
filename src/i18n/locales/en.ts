@@ -371,6 +371,8 @@ export const en = {
   },
   meta: {
     siteName: "Algeria Urban Congestion Index",
+    rootDescription:
+      "A congestion index for Algerian cities: rankings, peak-hour analysis, road-network coverage and daily trends.",
     home: {
       title: "Algeria Urban Congestion Index",
       description:

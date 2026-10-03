@@ -16,8 +16,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { createI18n } from "@/i18n/createI18n";
-import { LOCALE_DIR, isLocale, preferredLocale, useLocale } from "@/i18n/locale";
+import { createI18n, translateFor } from "@/i18n/createI18n";
+import { LOCALE_DIR, isLocale, localeFromPath, preferredLocale, useLocale } from "@/i18n/locale";
 
 /** Pre-locale paths that users may have bookmarked or shared; they are rescued, not 404'd. */
 const LEGACY_SEGMENTS = new Set(["cities", "explore", "data", "methodology", "about", "city"]);
@@ -109,39 +109,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     }
     throw notFound();
   },
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Algeria Urban Congestion Index" },
-      {
-        name: "description",
-        content:
-          "A congestion index for Algerian cities: rankings, peak-hour analysis, road-network coverage and daily trends.",
-      },
-      { name: "author", content: "Algeria Urban Congestion Index" },
-      { property: "og:title", content: "Algeria Urban Congestion Index" },
-      {
-        property: "og:description",
-        content: "Congestion rankings and mobility analytics for Algerian cities.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap",
-      },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-    ],
-  }),
+  head: ({ matches }) => {
+    // The root route has no `$locale` param, so derive the locale from the deepest match's
+    // pathname. A page's own `head` still wins for its `title` because TanStack Router merges
+    // metadata from the shallowest to the deepest match, deepest last.
+    const pathname = matches.at(-1)?.pathname ?? "/";
+    const t = translateFor(localeFromPath(pathname));
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: t("meta.siteName") },
+        { name: "description", content: t("meta.rootDescription") },
+        { name: "author", content: t("meta.siteName") },
+        { property: "og:title", content: t("meta.siteName") },
+        { property: "og:description", content: t("meta.rootDescription") },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap",
+        },
+        { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      ],
+    };
+  },
 
   shellComponent: RootShell,
   component: RootComponent,

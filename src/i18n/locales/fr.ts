@@ -360,6 +360,8 @@ export const fr: Messages = {
   },
   meta: {
     siteName: "Indice de congestion urbaine d'Algérie",
+    rootDescription:
+      "Un indice de congestion pour les villes algériennes : classements, analyse des heures de pointe, couverture du réseau routier et tendances journalières.",
     home: {
       title: "Indice de congestion urbaine d'Algérie",
       description:

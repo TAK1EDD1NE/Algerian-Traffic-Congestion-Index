@@ -67,8 +67,7 @@ export type Dataset = {
   source: "bundled" | "uploaded";
 };
 
-export const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-/** Display keys for DAYS, in the same order. Render with t(DAYS_KEY[dow]). */
+/** Display keys for the weekday labels, indexed by day-of-week (Sun=0 … Sat=6). Render with t(DAYS_KEY[dow]). */
 export const DAYS_KEY = [
   "common.days.sun",
   "common.days.mon",
