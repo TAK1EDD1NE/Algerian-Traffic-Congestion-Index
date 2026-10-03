@@ -120,6 +120,35 @@ export const fr: Messages = {
     noDailyData: "Aucune donnée journalière.",
     indexSeries: "indice",
   },
+  data: {
+    title: "Jeu de données",
+    intro:
+      "Chaque chiffre de ce site est calculé dans le navigateur à partir de trois fichiers CSV. Remplacez-les par vos propres exports de mesures — tout l'indice se recalcule instantanément.",
+    customActive: "CSV personnalisé actif",
+    referenceActive: "Jeu de données de référence",
+    counts: "{{cities}} villes · {{hourly}} lignes horaires · {{monthly}} lignes mensuelles",
+    restore: "Restaurer les données de référence",
+    files: {
+      cities: { note: "Une ligne par ville surveillée — chiffres clés." },
+      hourly: { note: "Une ligne par ville × jour de la semaine × heure." },
+      monthly: { note: "Une ligne par ville × année × mois." },
+    },
+    importCsv: "Importer un CSV",
+    downloadSample: "Télécharger un exemple",
+    previewTitle: "Aperçu de cities.csv",
+    previewSubtitle: "Premières lignes telles qu'analysées",
+    hCity: "Ville",
+    hWilaya: "Wilaya",
+    hIndex: "Indice",
+    hPrevious: "Précédent",
+    hNetwork: "Réseau (km)",
+    hFreeFlow: "Flux libre",
+    hAm: "Matin",
+    hPm: "Après-midi",
+    statusMissing: "{{file}} : colonne(s) manquante(s) {{columns}}",
+    statusLoaded: "{{file}} chargé dans l'indice ({{key}}).",
+    statusReset: "Retour au jeu de données de référence intégré.",
+  },
   cities: {
     breadcrumbCityReports: "Rapports par ville",
     wilayaOf: "Wilaya de {{wilaya}}",
@@ -225,6 +254,14 @@ export const fr: Messages = {
       title: "Explorateur — Indice de congestion urbaine d'Algérie",
       description:
         "Explorateur de congestion détaillé : filtrez par ville, jour de semaine ou week-end et tranche de 2 heures ; comparez autoroutes et routes normales.",
+    },
+    data: {
+      title: "Jeu de données et import CSV — Indice de congestion urbaine d'Algérie",
+      description:
+        "Inspectez le schéma CSV derrière l'indice de congestion algérien, importez vos propres fichiers de mesures ou téléchargez le jeu de données de référence.",
+      ogTitle: "Jeu de données et import CSV — Indice de congestion urbaine d'Algérie",
+      ogDescription:
+        "Schéma CSV, outil d'import et téléchargements pour l'indice de congestion algérien.",
     },
   },
 };

@@ -1,35 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Panel, PanelHeader, PageState } from "@/components/site/Panel";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/locale";
+import { translateFor } from "@/i18n/createI18n";
+import { useFormat } from "@/i18n/format";
 import { CSV_SCHEMA, STORAGE_KEYS, datasetQuery, type DatasetKey } from "@/lib/traffic";
 
 export const Route = createFileRoute("/$locale/data")({
-  head: () => ({
-    meta: [
-      { title: "Dataset & CSV Import — Algeria Urban Congestion Index" },
-      {
-        name: "description",
-        content:
-          "Inspect the CSV schema behind the Algerian congestion index, import your own measurement files, or download the reference dataset.",
-      },
-      { property: "og:title", content: "Dataset & CSV Import — Algeria Urban Congestion Index" },
-      {
-        property: "og:description",
-        content: "CSV schema, import tool and downloads for the Algerian congestion index.",
-      },
-    ],
-  }),
+  head: ({ params }) => {
+    const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
+    const t = translateFor(locale);
+    return {
+      meta: [
+        { title: t("meta.data.title") },
+        { name: "description", content: t("meta.data.description") },
+        { property: "og:title", content: t("meta.data.ogTitle") },
+        { property: "og:description", content: t("meta.data.ogDescription") },
+      ],
+    };
+  },
   component: DataPage,
 });
 
-const FILES: { key: DatasetKey; title: string; note: string }[] = [
-  { key: "cities", title: "cities.csv", note: "One row per monitored city — headline figures." },
-  { key: "hourly", title: "hourly.csv", note: "One row per city × day of week × hour." },
-  { key: "monthly", title: "monthly.csv", note: "One row per city × year × month." },
+type FileNoteKey = "data.files.cities.note" | "data.files.hourly.note" | "data.files.monthly.note";
+
+const FILES: { key: DatasetKey; title: string; noteKey: FileNoteKey }[] = [
+  { key: "cities", title: "cities.csv", noteKey: "data.files.cities.note" },
+  { key: "hourly", title: "hourly.csv", noteKey: "data.files.hourly.note" },
+  { key: "monthly", title: "monthly.csv", noteKey: "data.files.monthly.note" },
 ];
 
+const HEADER_KEYS = [
+  "data.hCity",
+  "data.hWilaya",
+  "data.hIndex",
+  "data.hPrevious",
+  "data.hNetwork",
+  "data.hFreeFlow",
+  "data.hAm",
+  "data.hPm",
+] as const;
+
 function DataPage() {
+  const { t } = useTranslation();
+  const { fmt } = useFormat();
   const { data, isLoading, error } = useQuery(datasetQuery);
   const qc = useQueryClient();
   const [status, setStatus] = useState<string | null>(null);
@@ -43,18 +59,18 @@ function DataPage() {
         .map((h) => h.trim()) ?? [];
     const missing = CSV_SCHEMA[key].filter((c) => !header.includes(c));
     if (missing.length) {
-      setStatus(`${file.name}: missing column(s) ${missing.join(", ")}`);
+      setStatus(t("data.statusMissing", { file: file.name, columns: missing.join(", ") }));
       return;
     }
     window.localStorage.setItem(STORAGE_KEYS[key], text);
     await qc.invalidateQueries({ queryKey: datasetQuery.queryKey });
-    setStatus(`${file.name} loaded into the index (${key}).`);
+    setStatus(t("data.statusLoaded", { file: file.name, key }));
   };
 
   const reset = async () => {
     Object.values(STORAGE_KEYS).forEach((k) => window.localStorage.removeItem(k));
     await qc.invalidateQueries({ queryKey: datasetQuery.queryKey });
-    setStatus("Reverted to the bundled reference dataset.");
+    setStatus(t("data.statusReset"));
   };
 
   if (isLoading || error || !data)
@@ -63,11 +79,8 @@ function DataPage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-8">
       <header className="mb-8 animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
-        <h1 className="text-3xl font-bold tracking-tight">Dataset</h1>
-        <p className="mt-1 max-w-2xl text-muted-foreground">
-          Every figure on this site is computed in the browser from three CSV files. Replace them
-          with your own measurement exports — the whole index recalculates instantly.
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight">{t("data.title")}</h1>
+        <p className="mt-1 max-w-2xl text-muted-foreground">{t("data.intro")}</p>
       </header>
 
       <div className="mb-8 flex flex-wrap items-center gap-3">
@@ -81,18 +94,21 @@ function DataPage() {
                 : "color-mix(in oklab, var(--free) 12%, transparent)",
           }}
         >
-          {data.source === "uploaded" ? "Custom CSV active" : "Reference dataset"}
+          {data.source === "uploaded" ? t("data.customActive") : t("data.referenceActive")}
         </span>
         <span className="num text-xs text-muted-foreground">
-          {data.cities.length} cities · {data.hourly.length} hourly rows · {data.monthly.length}{" "}
-          monthly rows
+          {t("data.counts", {
+            cities: fmt(data.cities.length, 0),
+            hourly: fmt(data.hourly.length, 0),
+            monthly: fmt(data.monthly.length, 0),
+          })}
         </span>
         {data.source === "uploaded" && (
           <button
             onClick={reset}
             className="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold transition-colors hover:bg-secondary"
           >
-            Restore reference data
+            {t("data.restore")}
           </button>
         )}
       </div>
@@ -108,7 +124,7 @@ function DataPage() {
           <Panel key={f.key} className="p-6">
             <div style={{ animation: `rise 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 90}ms both` }}>
               <div className="label-xs mb-2">{f.title}</div>
-              <p className="mb-4 text-sm text-muted-foreground">{f.note}</p>
+              <p className="mb-4 text-sm text-muted-foreground">{t(f.noteKey)}</p>
               <div className="mb-4 space-y-1">
                 {CSV_SCHEMA[f.key].map((col) => (
                   <div
@@ -121,7 +137,7 @@ function DataPage() {
               </div>
               <div className="flex flex-wrap gap-2">
                 <label className="cursor-pointer rounded-lg bg-ink px-3 py-2 text-xs font-semibold text-ink-foreground transition-opacity hover:opacity-90">
-                  Import CSV
+                  {t("data.importCsv")}
                   <input
                     type="file"
                     accept=".csv,text/csv"
@@ -138,7 +154,7 @@ function DataPage() {
                   download
                   className="rounded-lg border border-border px-3 py-2 text-xs font-semibold transition-colors hover:bg-secondary"
                 >
-                  Download sample
+                  {t("data.downloadSample")}
                 </a>
               </div>
             </div>
@@ -147,23 +163,14 @@ function DataPage() {
       </div>
 
       <Panel className="mt-8 overflow-hidden">
-        <PanelHeader title="cities.csv preview" subtitle="First rows as currently parsed" />
+        <PanelHeader title={t("data.previewTitle")} subtitle={t("data.previewSubtitle")} />
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="bg-secondary/50">
-                {[
-                  "City",
-                  "Wilaya",
-                  "Index",
-                  "Previous",
-                  "Network (km)",
-                  "Free flow",
-                  "AM",
-                  "PM",
-                ].map((h) => (
+                {HEADER_KEYS.map((h) => (
                   <th key={h} className="label-xs px-4 py-3">
-                    {h}
+                    {t(h)}
                   </th>
                 ))}
               </tr>

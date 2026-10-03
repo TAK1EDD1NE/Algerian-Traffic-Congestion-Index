@@ -134,6 +134,35 @@ export const en = {
     noDailyData: "No daily data.",
     indexSeries: "index",
   },
+  data: {
+    title: "Dataset",
+    intro:
+      "Every figure on this site is computed in the browser from three CSV files. Replace them with your own measurement exports — the whole index recalculates instantly.",
+    customActive: "Custom CSV active",
+    referenceActive: "Reference dataset",
+    counts: "{{cities}} cities · {{hourly}} hourly rows · {{monthly}} monthly rows",
+    restore: "Restore reference data",
+    files: {
+      cities: { note: "One row per monitored city — headline figures." },
+      hourly: { note: "One row per city × day of week × hour." },
+      monthly: { note: "One row per city × year × month." },
+    },
+    importCsv: "Import CSV",
+    downloadSample: "Download sample",
+    previewTitle: "cities.csv preview",
+    previewSubtitle: "First rows as currently parsed",
+    hCity: "City",
+    hWilaya: "Wilaya",
+    hIndex: "Index",
+    hPrevious: "Previous",
+    hNetwork: "Network (km)",
+    hFreeFlow: "Free flow",
+    hAm: "AM",
+    hPm: "PM",
+    statusMissing: "{{file}}: missing column(s) {{columns}}",
+    statusLoaded: "{{file}} loaded into the index ({{key}}).",
+    statusReset: "Reverted to the bundled reference dataset.",
+  },
   cities: {
     breadcrumbCityReports: "City reports",
     wilayaOf: "Wilaya of {{wilaya}}",
@@ -236,6 +265,13 @@ export const en = {
       title: "Explorer — Algeria Urban Congestion Index",
       description:
         "Detailed congestion explorer: filter by city, weekday vs weekend and 2-hour time window; compare highways vs normal routes.",
+    },
+    data: {
+      title: "Dataset & CSV Import — Algeria Urban Congestion Index",
+      description:
+        "Inspect the CSV schema behind the Algerian congestion index, import your own measurement files, or download the reference dataset.",
+      ogTitle: "Dataset & CSV Import — Algeria Urban Congestion Index",
+      ogDescription: "CSV schema, import tool and downloads for the Algerian congestion index.",
     },
   },
 };
