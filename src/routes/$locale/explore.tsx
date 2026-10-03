@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Bar,
   BarChart,
@@ -14,38 +15,49 @@ import {
 } from "recharts";
 import { ChartTooltip } from "@/components/data/ChartTooltip";
 import { Panel, PageState } from "@/components/site/Panel";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/locale";
+import { translateFor } from "@/i18n/createI18n";
+import { useFormat } from "@/i18n/format";
 import {
   datasetQuery,
   dailyCitySeries,
   dailyNationalSeries,
   deltaSeries,
   filteredHourlyProfile,
-  fmt,
 } from "@/lib/traffic";
 
 export const Route = createFileRoute("/$locale/explore")({
-  head: () => ({
-    meta: [
-      { title: "Explorer — Algeria Urban Congestion Index" },
-      {
-        name: "description",
-        content:
-          "Detailed congestion explorer: filter by city, weekday vs weekend and 2-hour time window; compare highways vs normal routes.",
-      },
-    ],
-  }),
+  head: ({ params }) => {
+    const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
+    const t = translateFor(locale);
+    return {
+      meta: [
+        { title: t("meta.explore.title") },
+        { name: "description", content: t("meta.explore.description") },
+      ],
+    };
+  },
   component: ExplorerPage,
 });
 
-const DAY_GROUPS: { key: string; label: string; days: number[] }[] = [
-  { key: "all", label: "All days", days: [0, 1, 2, 3, 4, 5, 6] },
-  { key: "weekday", label: "Weekday (Sun–Thu)", days: [0, 1, 2, 3, 4] },
-  { key: "weekend", label: "Weekend (Fri–Sat)", days: [5, 6] },
+type DayGroup = {
+  key: "all" | "weekday" | "weekend";
+  labelKey: "explore.allDays" | "explore.weekday" | "explore.weekend";
+  days: number[];
+};
+const DAY_GROUPS: DayGroup[] = [
+  { key: "all", labelKey: "explore.allDays", days: [0, 1, 2, 3, 4, 5, 6] },
+  { key: "weekday", labelKey: "explore.weekday", days: [0, 1, 2, 3, 4] },
+  { key: "weekend", labelKey: "explore.weekend", days: [5, 6] },
 ];
-const ROAD_CLASSES: { key: "combined" | "highway" | "normal"; label: string }[] = [
-  { key: "combined", label: "All roads" },
-  { key: "highway", label: "Highways" },
-  { key: "normal", label: "Normal routes" },
+type RoadClassOption = {
+  key: "combined" | "highway" | "normal";
+  labelKey: "common.allRoads" | "common.highways" | "common.normalRoutes";
+};
+const ROAD_CLASSES: RoadClassOption[] = [
+  { key: "combined", labelKey: "common.allRoads" },
+  { key: "highway", labelKey: "common.highways" },
+  { key: "normal", labelKey: "common.normalRoutes" },
 ];
 const DEFAULT_CITIES = ["Alger", "Oran", "Constantine", "Annaba"];
 const LINE_COLORS = ["var(--signal)", "var(--critical)", "var(--moderate)", "var(--free)"];
@@ -58,6 +70,8 @@ const pill = (on: boolean) =>
   }`;
 
 function ExplorerPage() {
+  const { t } = useTranslation();
+  const { fmt } = useFormat();
   const { data, isLoading, error } = useQuery(datasetQuery);
   const [selected, setSelected] = useState<string[]>(DEFAULT_CITIES);
   const [dayKey, setDayKey] = useState("all");
@@ -142,18 +156,20 @@ function ExplorerPage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-8">
       <header className="mb-8 animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
-        <h1 className="text-3xl font-bold tracking-tight">Explorer</h1>
-        <p className="mt-1 max-w-2xl text-muted-foreground">
-          Slice the index by city, by weekday or weekend and by 2-hour window. Pick up to four
-          cities to overlay their curves.
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight">{t("explore.title")}</h1>
+        <p className="mt-1 max-w-2xl text-muted-foreground">{t("explore.intro")}</p>
       </header>
 
       {/* ---- filters ---- */}
       <Panel className="mb-8 p-6">
         <div className="mb-6">
           <div className="label-xs mb-3">
-            Cities ({selected.length ? `${selected.length}/4 selected` : "national average shown"})
+            {t("explore.citiesFilter")}{" "}
+            {`(${
+              selected.length
+                ? t("explore.citiesSelected", { count: selected.length })
+                : t("explore.citiesNational")
+            })`}
           </div>
           <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto pr-1">
             {cities.map((c) => {
@@ -180,7 +196,7 @@ function ExplorerPage() {
 
         <div className="grid gap-6 sm:grid-cols-3">
           <div>
-            <div className="label-xs mb-3">Days</div>
+            <div className="label-xs mb-3">{t("explore.daysLabel")}</div>
             <div className="flex flex-col items-start gap-1.5">
               {DAY_GROUPS.map((g) => (
                 <button
@@ -188,25 +204,25 @@ function ExplorerPage() {
                   onClick={() => setDayKey(g.key)}
                   className={pill(dayKey === g.key)}
                 >
-                  {g.label}
+                  {t(g.labelKey)}
                 </button>
               ))}
             </div>
           </div>
 
           <div>
-            <div className="label-xs mb-3">Metric</div>
+            <div className="label-xs mb-3">{t("explore.metricLabel")}</div>
             <div className="flex flex-col items-start gap-1.5">
               {(["level", "change"] as const).map((m) => (
                 <button key={m} onClick={() => setMetric(m)} className={pill(metric === m)}>
-                  {m === "level" ? "Congestion level" : "Change vs previous window"}
+                  {m === "level" ? t("explore.metricLevel") : t("explore.metricChange")}
                 </button>
               ))}
             </div>
           </div>
 
           <div>
-            <div className="label-xs mb-3">Road class</div>
+            <div className="label-xs mb-3">{t("explore.roadClassLabel")}</div>
             <div className="flex flex-col items-start gap-1.5">
               {ROAD_CLASSES.map((r) => (
                 <button
@@ -214,13 +230,13 @@ function ExplorerPage() {
                   onClick={() => setRoadClass(r.key)}
                   className={pill(roadClass === r.key)}
                 >
-                  {r.label}
+                  {t(r.labelKey)}
                 </button>
               ))}
             </div>
             {roadClass !== "combined" && (
               <p className="mt-3 text-[11px] text-muted-foreground">
-                Scored on that class's own capacity and calm level.
+                {t("explore.classScoredNote")}
               </p>
             )}
           </div>
@@ -228,11 +244,11 @@ function ExplorerPage() {
 
         {worstWindow && metric === "level" && (
           <p className="num mt-6 text-[11px] text-muted-foreground">
-            Worst window in view:{" "}
-            <span className="font-semibold text-foreground">
-              {worstWindow.city} {worstWindow.label}
-            </span>{" "}
-            at {fmt(worstWindow.value)}%
+            {t("explore.worstWindow", {
+              city: worstWindow.city,
+              window: worstWindow.label,
+              value: fmt(worstWindow.value),
+            })}
           </p>
         )}
       </Panel>
@@ -242,18 +258,17 @@ function ExplorerPage() {
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="font-bold">
-              {metric === "level"
-                ? "Congestion level by 2-hour window"
-                : "How fast congestion changes"}
+              {metric === "level" ? t("explore.chartLevelTitle") : t("explore.chartChangeTitle")}
             </h2>
             <p className="text-xs text-muted-foreground">
-              {metric === "level"
-                ? "Mean index for the selected days"
-                : "Difference between consecutive 2-hour windows (positive = worsening)"}
+              {metric === "level" ? t("explore.chartLevelNote") : t("explore.chartChangeNote")}
               {" · "}
-              {DAY_GROUPS.find((g) => g.key === dayKey)?.label}
+              {t(DAY_GROUPS.find((g) => g.key === dayKey)?.labelKey ?? "explore.allDays")}
               {roadClass !== "combined"
-                ? ` · ${roadClass === "highway" ? "highways" : "normal routes"} only`
+                ? ` · ${t("explore.classOnly", {
+                    class:
+                      roadClass === "highway" ? t("common.highways") : t("common.normalRoutes"),
+                  })}`
                 : ""}
             </p>
           </div>
@@ -316,7 +331,7 @@ function ExplorerPage() {
           </ResponsiveContainer>
         ) : (
           <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
-            Select one or more cities above to draw their curves.
+            {t("explore.selectCitiesPrompt")}
           </div>
         )}
       </Panel>
@@ -325,10 +340,8 @@ function ExplorerPage() {
         {/* highways vs normal */}
         <Panel className="p-6">
           <div className="mb-6">
-            <h2 className="font-bold">Highways vs normal routes</h2>
-            <p className="text-xs text-muted-foreground">
-              Same index formula computed on each road class's own capacity
-            </p>
+            <h2 className="font-bold">{t("explore.highwaysVsNormal")}</h2>
+            <p className="text-xs text-muted-foreground">{t("explore.highwaysVsNormalNote")}</p>
           </div>
           {classRows.length ? (
             <ResponsiveContainer width="100%" height={260}>
@@ -359,10 +372,15 @@ function ExplorerPage() {
                   content={<ChartTooltip unit="%" />}
                   cursor={{ fill: "var(--secondary)" }}
                 />
-                <Bar dataKey="highway" name="Highways" fill="var(--high)" radius={[3, 3, 0, 0]} />
+                <Bar
+                  dataKey="highway"
+                  name={t("common.highways")}
+                  fill="var(--high)"
+                  radius={[3, 3, 0, 0]}
+                />
                 <Bar
                   dataKey="normal"
-                  name="Normal routes"
+                  name={t("common.normalRoutes")}
                   fill="var(--signal)"
                   radius={[3, 3, 0, 0]}
                 />
@@ -370,7 +388,7 @@ function ExplorerPage() {
             </ResponsiveContainer>
           ) : (
             <div className="flex h-52 items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
-              Select cities to compare road classes.
+              {t("explore.selectCitiesClasses")}
             </div>
           )}
         </Panel>
@@ -379,9 +397,11 @@ function ExplorerPage() {
         <Panel className="p-6">
           <div className="mb-6">
             <h2 className="font-bold">
-              {selected.length === 1 ? `${selected[0]} · day by day` : "National · day by day"}
+              {selected.length === 1
+                ? t("explore.dayByDayCity", { city: selected[0] ?? "" })
+                : t("explore.dayByDayNational")}
             </h2>
-            <p className="text-xs text-muted-foreground">Mean index per calendar day</p>
+            <p className="text-xs text-muted-foreground">{t("explore.meanPerDay")}</p>
           </div>
           <TrendMini
             data={
@@ -397,10 +417,11 @@ function ExplorerPage() {
 }
 
 function TrendMini({ data }: { data: { label: string; value: number }[] }) {
+  const { t } = useTranslation();
   if (!data.length)
     return (
       <div className="flex h-52 items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
-        No daily data.
+        {t("explore.noDailyData")}
       </div>
     );
   return (
@@ -430,7 +451,7 @@ function TrendMini({ data }: { data: { label: string; value: number }[] }) {
         <Line
           type="monotone"
           dataKey="value"
-          name="index"
+          name={t("explore.indexSeries")}
           stroke="var(--signal)"
           strokeWidth={2.25}
           dot={false}

@@ -87,6 +87,39 @@ export const fr: Messages = {
     nationalMeanWindow: "Indice moyen national sur la fenêtre de mesure",
     daysRange: "{{count}} jours · du {{from}} au {{to}}",
   },
+  explore: {
+    title: "Explorateur",
+    intro:
+      "Découpez l'indice par ville, par jour de semaine ou week-end et par tranche de 2 heures. Choisissez jusqu'à quatre villes pour superposer leurs courbes.",
+    citiesFilter: "Villes",
+    citiesSelected: "{{count}}/4 sélectionnées",
+    citiesNational: "moyenne nationale affichée",
+    daysLabel: "Jours",
+    allDays: "Tous les jours",
+    weekday: "Jours de semaine (dim–jeu)",
+    weekend: "Week-end (ven–sam)",
+    metricLabel: "Métrique",
+    metricLevel: "Niveau de congestion",
+    metricChange: "Variation vs tranche précédente",
+    roadClassLabel: "Classe de route",
+    classScoredNote: "Calculé sur la capacité et le niveau de calme propres à cette classe.",
+    worstWindow: "Pire tranche affichée : {{city}} {{window}} à {{value}} %",
+    chartLevelTitle: "Niveau de congestion par tranche de 2 heures",
+    chartChangeTitle: "Vitesse de variation de la congestion",
+    chartLevelNote: "Indice moyen pour les jours sélectionnés",
+    chartChangeNote: "Différence entre tranches de 2 heures consécutives (positif = dégradation)",
+    classOnly: "{{class}} uniquement",
+    selectCitiesPrompt: "Sélectionnez une ou plusieurs villes ci-dessus pour tracer leurs courbes.",
+    highwaysVsNormal: "Autoroutes vs routes normales",
+    highwaysVsNormalNote:
+      "Même formule d'indice calculée sur la capacité propre à chaque classe de route",
+    selectCitiesClasses: "Sélectionnez des villes pour comparer les classes de route.",
+    dayByDayCity: "{{city}} · jour après jour",
+    dayByDayNational: "National · jour après jour",
+    meanPerDay: "Indice moyen par jour calendaire",
+    noDailyData: "Aucune donnée journalière.",
+    indexSeries: "indice",
+  },
   cities: {
     breadcrumbCityReports: "Rapports par ville",
     wilayaOf: "Wilaya de {{wilaya}}",
@@ -187,6 +220,11 @@ export const fr: Messages = {
       ogTitle: "Rapport de congestion de {{city}} — Indice de congestion urbaine d'Algérie",
       ogDescription:
         "Profil horaire, carte de densité hebdomadaire et détail par zone pour {{city}}.",
+    },
+    explore: {
+      title: "Explorateur — Indice de congestion urbaine d'Algérie",
+      description:
+        "Explorateur de congestion détaillé : filtrez par ville, jour de semaine ou week-end et tranche de 2 heures ; comparez autoroutes et routes normales.",
     },
   },
 };
