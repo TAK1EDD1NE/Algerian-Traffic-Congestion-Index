@@ -20,17 +20,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DZ Traffic Index — Algeria's Traffic Congestion Index" },
+      { title: "Algeria Urban Congestion Index" },
       {
         name: "description",
         content:
-          "Congestion index for 27 Algerian metropolitan areas: rankings, peak-hour curves, time lost per driver and daily trends.",
+          "Congestion index for 27 Algerian metropolitan areas: rankings, peak-hour curves, road-network coverage and daily trends.",
       },
-      { property: "og:title", content: "DZ Traffic Index — Algeria's Traffic Congestion Index" },
+      { property: "og:title", content: "Algeria Urban Congestion Index" },
       {
         property: "og:description",
         content:
-          "Congestion rankings, peak-hour analysis and time lost per driver across Algerian cities.",
+          "Congestion rankings, peak-hour analysis and network coverage across Algerian cities.",
       },
     ],
   }),
@@ -59,7 +59,7 @@ function Dashboard() {
       <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-4">
         <div className="space-y-6 lg:col-span-3">
           <div className="flex flex-col gap-1 animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
-            <h1 className="text-3xl font-bold tracking-tight">Algerian Traffic Index</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Algeria Urban Congestion Index</h1>
             <p className="text-muted-foreground">
               Congestion across {data.cities.length} metropolitan areas, measured from street-level
               traffic imagery against each zone's own free-flow baseline.
@@ -81,9 +81,7 @@ function Dashboard() {
               style={{ color: national.delta > 0 ? "var(--critical)" : "var(--free)" }}
             >
               <span>{national.delta > 0 ? "▲" : "▼"}</span>
-              <span>
-                {fmt(Math.abs(national.delta))} pts vs previous period
-              </span>
+              <span>{fmt(Math.abs(national.delta))} pts vs previous period</span>
             </div>
             <p className="mt-4 text-xs text-ink-muted">
               Population-weighted across all monitored hubs.
@@ -164,22 +162,22 @@ function Dashboard() {
             </div>
             <div className="flex items-center gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-signal" /> Sun–Wed
+                <span className="size-2 rounded-full bg-signal" /> Sun–Thu
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-muted-foreground" /> Thu–Fri
+                <span className="size-2 rounded-full bg-muted-foreground" /> Fri–Sat
               </span>
             </div>
           </div>
           <HourlyChart hourly={data.hourly} />
           <div className="mt-6 rounded-xl bg-secondary p-4">
             <p className="text-xs leading-relaxed text-muted-foreground">
-              <span className="font-bold text-foreground">Analysis:</span> the national peak lands in
-              the <span className="num font-bold text-foreground">{peak.label}</span> window at{" "}
+              <span className="font-bold text-foreground">Analysis:</span> the national peak lands
+              in the <span className="num font-bold text-foreground">{peak.label}</span> window at{" "}
               <span className="num font-bold" style={{ color: levelColor(peak.workday) }}>
                 {fmt(peak.workday)}%
               </span>{" "}
-              above each zone's calm baseline. Thursday–Friday flows stay below weekday saturation,
+              above each zone's calm baseline. Friday–Saturday flows stay below weekday saturation,
               reflecting the Algerian working week.
             </p>
           </div>
@@ -199,7 +197,11 @@ function Dashboard() {
               {nationalDaily.length} days · June 9 to July 2
             </div>
           </div>
-          <TrendChart data={nationalDaily} series={[{ key: "value", color: "var(--signal)" }]} height={240} />
+          <TrendChart
+            data={nationalDaily}
+            series={[{ key: "value", color: "var(--signal)" }]}
+            height={240}
+          />
         </Panel>
       )}
     </main>

@@ -7,13 +7,13 @@ import { CSV_SCHEMA, STORAGE_KEYS, datasetQuery, type DatasetKey } from "@/lib/t
 export const Route = createFileRoute("/data")({
   head: () => ({
     meta: [
-      { title: "Dataset & CSV Import — DZ Traffic Index" },
+      { title: "Dataset & CSV Import — Algeria Urban Congestion Index" },
       {
         name: "description",
         content:
           "Inspect the CSV schema behind the Algerian congestion index, import your own measurement files, or download the reference dataset.",
       },
-      { property: "og:title", content: "Dataset & CSV Import — DZ Traffic Index" },
+      { property: "og:title", content: "Dataset & CSV Import — Algeria Urban Congestion Index" },
       {
         property: "og:description",
         content: "CSV schema, import tool and downloads for the Algerian congestion index.",
@@ -36,7 +36,11 @@ function DataPage() {
 
   const onUpload = async (key: DatasetKey, file: File) => {
     const text = await file.text();
-    const header = text.split(/\r?\n/)[0]?.split(",").map((h) => h.trim()) ?? [];
+    const header =
+      text
+        .split(/\r?\n/)[0]
+        ?.split(",")
+        .map((h) => h.trim()) ?? [];
     const missing = CSV_SCHEMA[key].filter((c) => !header.includes(c));
     if (missing.length) {
       setStatus(`${file.name}: missing column(s) ${missing.join(", ")}`);
@@ -101,7 +105,7 @@ function DataPage() {
 
       <div className="grid gap-6 lg:grid-cols-3">
         {FILES.map((f, i) => (
-          <Panel key={f.key} className="p-6" >
+          <Panel key={f.key} className="p-6">
             <div style={{ animation: `rise 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 90}ms both` }}>
               <div className="label-xs mb-2">{f.title}</div>
               <p className="mb-4 text-sm text-muted-foreground">{f.note}</p>
@@ -148,13 +152,20 @@ function DataPage() {
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="bg-secondary/50">
-                {[ "City", "Wilaya", "Index", "Previous", "Network (km)", "Free flow", "AM", "PM"].map(
-                  (h) => (
-                    <th key={h} className="label-xs px-4 py-3">
-                      {h}
-                    </th>
-                  ),
-                )}
+                {[
+                  "City",
+                  "Wilaya",
+                  "Index",
+                  "Previous",
+                  "Network (km)",
+                  "Free flow",
+                  "AM",
+                  "PM",
+                ].map((h) => (
+                  <th key={h} className="label-xs px-4 py-3">
+                    {h}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-border">

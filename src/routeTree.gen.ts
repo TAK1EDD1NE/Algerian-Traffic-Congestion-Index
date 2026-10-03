@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as CitiesRouteImport } from './routes/cities'
 import { Route as DataRouteImport } from './routes/data'
 import { Route as ExploreRouteImport } from './routes/explore'
@@ -19,6 +20,11 @@ import { Route as CityCityRouteImport } from './routes/city.$city'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CitiesRoute = CitiesRouteImport.update({
@@ -49,6 +55,7 @@ const CityCityRoute = CityCityRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/cities': typeof CitiesRoute
   '/data': typeof DataRoute
   '/explore': typeof ExploreRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/cities': typeof CitiesRoute
   '/data': typeof DataRoute
   '/explore': typeof ExploreRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/cities': typeof CitiesRoute
   '/data': typeof DataRoute
   '/explore': typeof ExploreRoute
@@ -75,12 +84,26 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/cities' | '/data' | '/explore' | '/methodology' | '/city/$city'
+    | '/'
+    | '/about'
+    | '/cities'
+    | '/data'
+    | '/explore'
+    | '/methodology'
+    | '/city/$city'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cities' | '/data' | '/explore' | '/methodology' | '/city/$city'
+  to:
+    | '/'
+    | '/about'
+    | '/cities'
+    | '/data'
+    | '/explore'
+    | '/methodology'
+    | '/city/$city'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/cities'
     | '/data'
     | '/explore'
@@ -90,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   CitiesRoute: typeof CitiesRoute
   DataRoute: typeof DataRoute
   ExploreRoute: typeof ExploreRoute
@@ -104,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cities': {
@@ -146,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   CitiesRoute: CitiesRoute,
   DataRoute: DataRoute,
   ExploreRoute: ExploreRoute,

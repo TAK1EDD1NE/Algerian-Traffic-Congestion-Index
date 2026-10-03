@@ -44,7 +44,7 @@ export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: stri
         <Area
           type="monotone"
           dataKey="workday"
-          name="Sun–Wed"
+          name="Sun–Thu"
           stroke="var(--signal)"
           strokeWidth={2.5}
           fill="url(#workdayFill)"
@@ -53,7 +53,7 @@ export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: stri
         <Area
           type="monotone"
           dataKey="weekend"
-          name="Thu–Fri"
+          name="Fri–Sat"
           stroke="var(--muted-foreground)"
           strokeWidth={1.5}
           strokeDasharray="4 4"

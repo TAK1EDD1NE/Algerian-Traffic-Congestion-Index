@@ -14,7 +14,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -80,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DZ Traffic Index — Algeria's Traffic Congestion Index" },
+      { title: "Algeria Urban Congestion Index" },
       {
         name: "description",
         content:
-          "The first traffic congestion index for Algeria: city rankings, peak-hour analysis and time lost per driver.",
+          "A congestion index for Algerian cities: rankings, peak-hour analysis, road-network coverage and daily trends.",
       },
-      { name: "author", content: "DZ Traffic Index" },
-      { property: "og:title", content: "DZ Traffic Index" },
+      { name: "author", content: "Algeria Urban Congestion Index" },
+      { property: "og:title", content: "Algeria Urban Congestion Index" },
       {
         property: "og:description",
         content: "Congestion rankings and mobility analytics for Algerian cities.",
@@ -146,4 +145,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

@@ -21,18 +21,16 @@ import {
   deltaSeries,
   filteredHourlyProfile,
   fmt,
-  levelColor,
-  slug,
 } from "@/lib/traffic";
 
 export const Route = createFileRoute("/explore")({
   head: () => ({
     meta: [
-      { title: "Explorer — DZ Traffic Index" },
+      { title: "Explorer — Algeria Urban Congestion Index" },
       {
         name: "description",
         content:
-          "Detailed congestion explorer: filter by city, day of week and 2-hour time window; compare highways vs normal routes.",
+          "Detailed congestion explorer: filter by city, weekday vs weekend and 2-hour time window; compare highways vs normal routes.",
       },
     ],
   }),
@@ -41,16 +39,27 @@ export const Route = createFileRoute("/explore")({
 
 const DAY_GROUPS: { key: string; label: string; days: number[] }[] = [
   { key: "all", label: "All days", days: [0, 1, 2, 3, 4, 5, 6] },
-  { key: "sunwed", label: "Sun–Wed", days: [0, 1, 2, 3] },
-  { key: "thufri", label: "Thu–Fri", days: [4, 5] },
-  { key: "sat", label: "Saturday", days: [6] },
+  { key: "weekday", label: "Weekday (Sun–Thu)", days: [0, 1, 2, 3, 4] },
+  { key: "weekend", label: "Weekend (Fri–Sat)", days: [5, 6] },
 ];
-const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const ROAD_CLASSES: { key: "combined" | "highway" | "normal"; label: string }[] = [
+  { key: "combined", label: "All roads" },
+  { key: "highway", label: "Highways" },
+  { key: "normal", label: "Normal routes" },
+];
+const DEFAULT_CITIES = ["Alger", "Oran", "Constantine", "Annaba"];
 const LINE_COLORS = ["var(--signal)", "var(--critical)", "var(--moderate)", "var(--free)"];
+
+const pill = (on: boolean) =>
+  `rounded-lg px-2.5 py-1.5 text-left text-xs font-semibold transition-colors ${
+    on
+      ? "bg-ink text-ink-foreground"
+      : "border border-border text-muted-foreground hover:bg-secondary"
+  }`;
 
 function ExplorerPage() {
   const { data, isLoading, error } = useQuery(datasetQuery);
-  const [selected, setSelected] = useState<string[]>([]);
+  const [selected, setSelected] = useState<string[]>(DEFAULT_CITIES);
   const [dayKey, setDayKey] = useState("all");
   const [metric, setMetric] = useState<"level" | "change">("level");
   const [roadClass, setRoadClass] = useState<"combined" | "highway" | "normal">("combined");
@@ -96,10 +105,10 @@ function ExplorerPage() {
   }, [series]);
 
   const nationalDaily = useMemo(() => (data ? dailyNationalSeries(data.daily) : []), [data]);
-  const singleDaily = useMemo(
-    () => (data && selected.length === 1 ? dailyCitySeries(data.daily, selected[0]) : []),
-    [data, selected],
-  );
+  const singleDaily = useMemo(() => {
+    const only = selected.length === 1 ? selected[0] : undefined;
+    return data && only ? dailyCitySeries(data.daily, only) : [];
+  }, [data, selected]);
 
   const classRows = useMemo(() => {
     if (!data || !selected.length) return [];
@@ -127,56 +136,57 @@ function ExplorerPage() {
     return best;
   }, [data, selected, dayKey, roadClass]);
 
-  if (isLoading || error || !data) return <PageState loading={isLoading} error={error as Error | null} />;
+  if (isLoading || error || !data)
+    return <PageState loading={isLoading} error={error as Error | null} />;
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-8">
       <header className="mb-8 animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
         <h1 className="text-3xl font-bold tracking-tight">Explorer</h1>
         <p className="mt-1 max-w-2xl text-muted-foreground">
-          Slice the index by city, by day of week and by 2-hour window. Pick up to four cities to
-          overlay their curves.
+          Slice the index by city, by weekday or weekend and by 2-hour window. Pick up to four
+          cities to overlay their curves.
         </p>
       </header>
 
       {/* ---- filters ---- */}
       <Panel className="mb-8 p-6">
-        <div className="grid gap-6 lg:grid-cols-[2fr_1fr_1fr]">
-          <div>
-            <div className="label-xs mb-3">Cities ({selected.length ? `${selected.length}/4 selected` : "national average shown"})</div>
-            <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto pr-1">
-              {cities.map((c) => {
-                const on = selected.includes(c.city);
-                return (
-                  <button
-                    key={c.city}
-                    onClick={() => toggleCity(c.city)}
-                    className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors ${
-                      on
-                        ? "bg-ink text-ink-foreground"
-                        : "border border-border text-muted-foreground hover:bg-secondary"
-                    }`}
-                    style={on ? { background: "var(--signal)", color: "var(--background)" } : undefined}
-                  >
-                    {c.city}
-                  </button>
-                );
-              })}
-            </div>
+        <div className="mb-6">
+          <div className="label-xs mb-3">
+            Cities ({selected.length ? `${selected.length}/4 selected` : "national average shown"})
           </div>
+          <div className="flex max-h-40 flex-wrap gap-1.5 overflow-y-auto pr-1">
+            {cities.map((c) => {
+              const on = selected.includes(c.city);
+              return (
+                <button
+                  key={c.city}
+                  onClick={() => toggleCity(c.city)}
+                  className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors ${
+                    on
+                      ? "bg-ink text-ink-foreground"
+                      : "border border-border text-muted-foreground hover:bg-secondary"
+                  }`}
+                  style={
+                    on ? { background: "var(--signal)", color: "var(--background)" } : undefined
+                  }
+                >
+                  {c.city}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
+        <div className="grid gap-6 sm:grid-cols-3">
           <div>
             <div className="label-xs mb-3">Days</div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-col items-start gap-1.5">
               {DAY_GROUPS.map((g) => (
                 <button
                   key={g.key}
                   onClick={() => setDayKey(g.key)}
-                  className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors ${
-                    dayKey === g.key
-                      ? "bg-ink text-ink-foreground"
-                      : "border border-border text-muted-foreground hover:bg-secondary"
-                  }`}
+                  className={pill(dayKey === g.key)}
                 >
                   {g.label}
                 </button>
@@ -186,50 +196,25 @@ function ExplorerPage() {
 
           <div>
             <div className="label-xs mb-3">Metric</div>
-            <div className="flex gap-1.5">
+            <div className="flex flex-col items-start gap-1.5">
               {(["level", "change"] as const).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => setMetric(m)}
-                  className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors ${
-                    metric === m
-                      ? "bg-ink text-ink-foreground"
-                      : "border border-border text-muted-foreground hover:bg-secondary"
-                  }`}
-                >
+                <button key={m} onClick={() => setMetric(m)} className={pill(metric === m)}>
                   {m === "level" ? "Congestion level" : "Change vs previous window"}
                 </button>
               ))}
             </div>
-            {worstWindow && metric === "level" && (
-              <p className="num mt-3 text-[11px] text-muted-foreground">
-                Worst window in view:{" "}
-                <span className="font-semibold text-foreground">
-                  {worstWindow.city} {worstWindow.label}
-                </span>{" "}
-                at {fmt(worstWindow.value)}%
-              </p>
-            )}
           </div>
 
           <div>
             <div className="label-xs mb-3">Road class</div>
-            <div className="flex gap-1.5">
-              {([
-                ["combined", "All roads"],
-                ["highway", "Highways"],
-                ["normal", "Normal routes"],
-              ] as const).map(([k, label]) => (
+            <div className="flex flex-col items-start gap-1.5">
+              {ROAD_CLASSES.map((r) => (
                 <button
-                  key={k}
-                  onClick={() => setRoadClass(k)}
-                  className={`rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors ${
-                    roadClass === k
-                      ? "bg-ink text-ink-foreground"
-                      : "border border-border text-muted-foreground hover:bg-secondary"
-                  }`}
+                  key={r.key}
+                  onClick={() => setRoadClass(r.key)}
+                  className={pill(roadClass === r.key)}
                 >
-                  {label}
+                  {r.label}
                 </button>
               ))}
             </div>
@@ -240,6 +225,16 @@ function ExplorerPage() {
             )}
           </div>
         </div>
+
+        {worstWindow && metric === "level" && (
+          <p className="num mt-6 text-[11px] text-muted-foreground">
+            Worst window in view:{" "}
+            <span className="font-semibold text-foreground">
+              {worstWindow.city} {worstWindow.label}
+            </span>{" "}
+            at {fmt(worstWindow.value)}%
+          </p>
+        )}
       </Panel>
 
       {/* ---- main chart ---- */}
@@ -247,7 +242,9 @@ function ExplorerPage() {
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="font-bold">
-              {metric === "level" ? "Congestion level by 2-hour window" : "How fast congestion changes"}
+              {metric === "level"
+                ? "Congestion level by 2-hour window"
+                : "How fast congestion changes"}
             </h2>
             <p className="text-xs text-muted-foreground">
               {metric === "level"
@@ -255,13 +252,19 @@ function ExplorerPage() {
                 : "Difference between consecutive 2-hour windows (positive = worsening)"}
               {" · "}
               {DAY_GROUPS.find((g) => g.key === dayKey)?.label}
-              {roadClass !== "combined" ? ` · ${roadClass === "highway" ? "highways" : "normal routes"} only` : ""}
+              {roadClass !== "combined"
+                ? ` · ${roadClass === "highway" ? "highways" : "normal routes"} only`
+                : ""}
             </p>
           </div>
           <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
             {(selected.length ? series : []).map((s) => (
               <span key={s.key} className="flex items-center gap-1.5">
-                <span aria-hidden className="inline-block h-1.5 w-4 rounded-full" style={{ background: s.color }} />
+                <span
+                  aria-hidden
+                  className="inline-block h-1.5 w-4 rounded-full"
+                  style={{ background: s.color }}
+                />
                 {s.key}
               </span>
             ))}
@@ -275,14 +278,22 @@ function ExplorerPage() {
                 dataKey="label"
                 tickLine={false}
                 axisLine={false}
-                tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+                tick={{
+                  fontSize: 10,
+                  fill: "var(--muted-foreground)",
+                  fontFamily: "var(--font-mono)",
+                }}
               />
               <YAxis
                 tickLine={false}
                 axisLine={false}
                 width={44}
                 unit="%"
-                tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+                tick={{
+                  fontSize: 10,
+                  fill: "var(--muted-foreground)",
+                  fontFamily: "var(--font-mono)",
+                }}
               />
               <Tooltip
                 cursor={{ stroke: "var(--signal)", strokeWidth: 1, strokeDasharray: "3 3" }}
@@ -327,18 +338,34 @@ function ExplorerPage() {
                   dataKey="city"
                   tickLine={false}
                   axisLine={false}
-                  tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+                  tick={{
+                    fontSize: 10,
+                    fill: "var(--muted-foreground)",
+                    fontFamily: "var(--font-mono)",
+                  }}
                 />
                 <YAxis
                   tickLine={false}
                   axisLine={false}
                   width={44}
                   unit="%"
-                  tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+                  tick={{
+                    fontSize: 10,
+                    fill: "var(--muted-foreground)",
+                    fontFamily: "var(--font-mono)",
+                  }}
                 />
-                <Tooltip content={<ChartTooltip unit="%" />} cursor={{ fill: "var(--secondary)" }} />
+                <Tooltip
+                  content={<ChartTooltip unit="%" />}
+                  cursor={{ fill: "var(--secondary)" }}
+                />
                 <Bar dataKey="highway" name="Highways" fill="var(--high)" radius={[3, 3, 0, 0]} />
-                <Bar dataKey="normal" name="Normal routes" fill="var(--signal)" radius={[3, 3, 0, 0]} />
+                <Bar
+                  dataKey="normal"
+                  name="Normal routes"
+                  fill="var(--signal)"
+                  radius={[3, 3, 0, 0]}
+                />
               </BarChart>
             </ResponsiveContainer>
           ) : (
@@ -351,7 +378,9 @@ function ExplorerPage() {
         {/* daily trend for single selection */}
         <Panel className="p-6">
           <div className="mb-6">
-            <h2 className="font-bold">{selected.length === 1 ? `${selected[0]} · day by day` : "National · day by day"}</h2>
+            <h2 className="font-bold">
+              {selected.length === 1 ? `${selected[0]} · day by day` : "National · day by day"}
+            </h2>
             <p className="text-xs text-muted-foreground">Mean index per calendar day</p>
           </div>
           <TrendMini
@@ -394,8 +423,18 @@ function TrendMini({ data }: { data: { label: string; value: number }[] }) {
           domain={[0, "auto"]}
           tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
         />
-        <Tooltip content={<ChartTooltip unit="%" />} cursor={{ stroke: "var(--signal)", strokeWidth: 1, strokeDasharray: "3 3" }} />
-        <Line type="monotone" dataKey="value" name="index" stroke="var(--signal)" strokeWidth={2.25} dot={false} />
+        <Tooltip
+          content={<ChartTooltip unit="%" />}
+          cursor={{ stroke: "var(--signal)", strokeWidth: 1, strokeDasharray: "3 3" }}
+        />
+        <Line
+          type="monotone"
+          dataKey="value"
+          name="index"
+          stroke="var(--signal)"
+          strokeWidth={2.25}
+          dot={false}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

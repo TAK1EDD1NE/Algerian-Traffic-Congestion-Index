@@ -133,7 +133,7 @@ export function parseDataset(
   citiesText: string,
   hourlyText: string,
   monthlyText: string,
-): Omit<Dataset, "source"> {
+): Pick<Dataset, "cities" | "hourly" | "monthly"> {
   const cities: CityRow[] = parseCsv(citiesText).map((r) => ({
     city: g(r, "city"),
     wilaya: g(r, "wilaya") || g(r, "city"),
@@ -325,8 +325,8 @@ export function hourlyProfile(hourly: HourlyRow[], city?: string) {
   // measurements come in 2-hour slots; build the profile over 12 slots
   return Array.from({ length: 12 }, (_, s) => {
     const hour = s * 2;
-    const workday = rows.filter((r) => r.hour === hour && r.dayOfWeek >= 0 && r.dayOfWeek <= 3);
-    const weekend = rows.filter((r) => r.hour === hour && (r.dayOfWeek === 4 || r.dayOfWeek === 5));
+    const workday = rows.filter((r) => r.hour === hour && r.dayOfWeek >= 0 && r.dayOfWeek <= 4);
+    const weekend = rows.filter((r) => r.hour === hour && (r.dayOfWeek === 5 || r.dayOfWeek === 6));
     const avg = (list: HourlyRow[]) =>
       list.length ? list.reduce((sum, r) => sum + r.congestionIndex, 0) / list.length : 0;
     return {
@@ -406,7 +406,7 @@ export function dailyNationalSeries(daily: DailyRow[]) {
 
 /**
  * Filterable hourly profile: city x day-group x slot.
- * dayGroup: "all" | "workday" (Sun-Wed) | "weekend" (Thu-Fri) | a specific dow number.
+ * dayGroup: "all" | "workday" (Sun-Thu) | "weekend" (Fri-Sat) | a specific dow number.
  * roadClass: undefined = combined index; "highway"/"normal" = class-specific index
  * from road_classes_hourly.csv when available.
  */
