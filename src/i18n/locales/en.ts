@@ -9,6 +9,9 @@ export const en = {
     indexOnline: "Index Online",
     brandSub: "Algeria Urban Congestion Index",
   },
+  a11y: {
+    language: "Language",
+  },
   common: {
     days: {
       sun: "Sun",

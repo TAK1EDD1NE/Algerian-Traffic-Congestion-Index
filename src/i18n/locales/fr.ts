@@ -11,6 +11,9 @@ export const fr: Messages = {
     indexOnline: "Indice en ligne",
     brandSub: "Indice de congestion urbaine d'Algérie",
   },
+  a11y: {
+    language: "Langue",
+  },
   common: {
     days: { sun: "Dim", mon: "Lun", tue: "Mar", wed: "Mer", thu: "Jeu", fri: "Ven", sat: "Sam" },
     months: {

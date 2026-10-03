@@ -1,4 +1,5 @@
 import { useRouterState } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { LOCALE_STORAGE_KEY, SUPPORTED_LOCALES, useLocale, type Locale } from "@/i18n/locale";
 
 /**
@@ -9,6 +10,7 @@ import { LOCALE_STORAGE_KEY, SUPPORTED_LOCALES, useLocale, type Locale } from "@
 const LABELS: Record<Locale, string> = { en: "EN", fr: "FR" };
 
 export function LanguageSwitcher() {
+  const { t } = useTranslation();
   const current = useLocale();
   // Same page, only the locale segment replaced: /fr/explore -> /en/explore
   const pathname = useRouterState({ select: (state) => state.location.pathname });
@@ -17,7 +19,7 @@ export function LanguageSwitcher() {
     <div
       className="flex shrink-0 items-center rounded-lg border border-border p-0.5"
       role="group"
-      aria-label="Language"
+      aria-label={t("a11y.language")}
     >
       {SUPPORTED_LOCALES.map((locale) => {
         const active = locale === current;
