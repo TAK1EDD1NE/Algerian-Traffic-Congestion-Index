@@ -66,6 +66,15 @@ export const en = {
     datasetErrorTitle: "Dataset could not be read",
     datasetErrorUnknown: "Unknown error while parsing the CSV files.",
   },
+  footer: {
+    body: "An open measurement framework for urban road congestion across Algeria, built as an engineering internship initiative at ESTIN.",
+    dataSource: "Data Source",
+    dataValue: "Bundled CSV reference dataset",
+    coverage: "Coverage",
+    coverageValue: "27 metropolitan areas",
+    about: "About",
+    teamSchool: "Team & school",
+  },
   meta: {
     siteName: "Algeria Urban Congestion Index",
     home: {

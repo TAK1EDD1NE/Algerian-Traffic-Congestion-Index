@@ -51,6 +51,15 @@ export const fr: Messages = {
     datasetErrorTitle: "Le jeu de données n'a pas pu être lu",
     datasetErrorUnknown: "Erreur inconnue lors de l'analyse des fichiers CSV.",
   },
+  footer: {
+    body: "Un cadre de mesure ouvert pour la congestion routière urbaine à travers l'Algérie, issu d'une initiative de stage d'ingénierie à l'ESTIN.",
+    dataSource: "Source des données",
+    dataValue: "Jeu de données CSV de référence intégré",
+    coverage: "Couverture",
+    coverageValue: "27 agglomérations",
+    about: "À propos",
+    teamSchool: "Équipe et école",
+  },
   meta: {
     siteName: "Indice de congestion urbaine d'Algérie",
     home: {

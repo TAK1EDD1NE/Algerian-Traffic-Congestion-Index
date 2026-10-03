@@ -1,4 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
+import { formatNumber } from "@/i18n/format";
+import type { Locale } from "@/i18n/locale";
 import { parseCsv, num, type CsvRow } from "./csv";
 
 const g = (r: CsvRow, k: string) => r[k] ?? "";
@@ -488,5 +490,4 @@ export const slug = (city: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export const fmt = (n: number, digits = 1) =>
-  n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+export const fmt = (n: number, digits = 1, locale: Locale = "en") => formatNumber(n, digits, locale);
