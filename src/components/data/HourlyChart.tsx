@@ -9,10 +9,12 @@ import {
 } from "recharts";
 import { useTranslation } from "react-i18next";
 import { type HourlyRow, hourlyProfile } from "@/lib/traffic";
+import { useFormat } from "@/i18n/format";
 import { ChartTooltip } from "./ChartTooltip";
 
 export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: string }) {
   const { t } = useTranslation();
+  const { raw } = useFormat();
   const data = hourlyProfile(hourly, city);
 
   return (
@@ -37,6 +39,7 @@ export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: stri
           axisLine={false}
           width={44}
           tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+          tickFormatter={(v) => raw(Number(v))}
           unit="%"
         />
         <Tooltip

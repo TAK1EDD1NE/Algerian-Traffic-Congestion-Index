@@ -71,7 +71,7 @@ const pill = (on: boolean) =>
 
 function ExplorerPage() {
   const { t } = useTranslation();
-  const { fmt } = useFormat();
+  const { fmt, raw } = useFormat();
   const { data, isLoading, error } = useQuery(datasetQuery);
   const [selected, setSelected] = useState<string[]>(DEFAULT_CITIES);
   const [dayKey, setDayKey] = useState("all");
@@ -304,6 +304,7 @@ function ExplorerPage() {
                 axisLine={false}
                 width={44}
                 unit="%"
+                tickFormatter={(v) => raw(Number(v))}
                 tick={{
                   fontSize: 10,
                   fill: "var(--muted-foreground)",
@@ -362,6 +363,7 @@ function ExplorerPage() {
                   axisLine={false}
                   width={44}
                   unit="%"
+                  tickFormatter={(v) => raw(Number(v))}
                   tick={{
                     fontSize: 10,
                     fill: "var(--muted-foreground)",
@@ -418,6 +420,7 @@ function ExplorerPage() {
 
 function TrendMini({ data }: { data: { label: string; value: number }[] }) {
   const { t } = useTranslation();
+  const { raw } = useFormat();
   if (!data.length)
     return (
       <div className="flex h-52 items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
@@ -442,6 +445,7 @@ function TrendMini({ data }: { data: { label: string; value: number }[] }) {
           width={44}
           unit="%"
           domain={[0, "auto"]}
+          tickFormatter={(v) => raw(Number(v))}
           tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
         />
         <Tooltip
