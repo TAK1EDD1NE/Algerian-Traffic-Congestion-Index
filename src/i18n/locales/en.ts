@@ -347,6 +347,28 @@ export const en = {
       },
     },
   },
+  about: {
+    title: "About",
+    heading: "About this project",
+    intro:
+      "The Algeria Urban Congestion Index measures urban road congestion across 27 Algerian metropolitan areas from street-level traffic imagery. It was developed as an engineering internship project at ESTIN, the École Supérieure en Sciences et Technologies de l'Informatique et du Numérique.",
+    teamHeading: "The team",
+    schoolHeading: "The school",
+    schoolName:
+      "ESTIN — École Supérieure en Sciences et Technologies de l'Informatique et du Numérique",
+    schoolBody:
+      "A public Algerian engineering school on the Amizour campus, Béjaïa. It recruits nationwide and, after a common core in computer science, students specialise in artificial intelligence / data science or cybersecurity. The school also hosts the LITAN research laboratory. This is the school where the project was built and where Rehail Taki Eddine is a 5th-year student.",
+    people: {
+      rehail: {
+        role: "5th-year student — Artificial Intelligence & Data Science",
+        bio: "I designed and built the measurement pipeline, the congestion index and this web application, from street-level image capture through to the published per-city reports.",
+      },
+      azouaou: {
+        role: "Professor & teacher — Adjunct Director in charge of Information & Communication Systems and External Relations",
+        bio: "I am a professor and researcher at ESTIN. My published work covers Arabic natural language processing, information retrieval and low-resource AI, and I lead the school's external-relations activity.",
+      },
+    },
+  },
   meta: {
     siteName: "Algeria Urban Congestion Index",
     home: {
@@ -390,6 +412,13 @@ export const en = {
       ogTitle: "Methodology — Algeria Urban Congestion Index",
       ogDescription:
         "Free-flow baselines, gridlock-equivalent load and the congestion scale explained.",
+    },
+    about: {
+      title: "About — Algeria Urban Congestion Index",
+      description:
+        "The people and the school behind the Algeria Urban Congestion Index: Rehail Taki Eddine and Pr. Faical Azouaou, and ESTIN.",
+      ogTitle: "About — Algeria Urban Congestion Index",
+      ogDescription: "The team and the school behind the Algeria Urban Congestion Index.",
     },
   },
 };

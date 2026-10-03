@@ -336,6 +336,28 @@ export const fr: Messages = {
       },
     },
   },
+  about: {
+    title: "À propos",
+    heading: "À propos de ce projet",
+    intro:
+      "L'Indice de congestion urbaine d'Algérie mesure la congestion routière urbaine dans 27 agglomérations algériennes à partir d'images du trafic au niveau de la rue. Il a été développé dans le cadre d'un projet de stage d'ingénierie à l'ESTIN, l'École Supérieure en Sciences et Technologies de l'Informatique et du Numérique.",
+    teamHeading: "L'équipe",
+    schoolHeading: "L'école",
+    schoolName:
+      "ESTIN — École Supérieure en Sciences et Technologies de l'Informatique et du Numérique",
+    schoolBody:
+      "Une école d'ingénieurs publique algérienne, sur le campus d'Amizour, à Béjaïa. Elle recrute au niveau national et, après un tronc commun en informatique, les étudiants se spécialisent en intelligence artificielle / science des données ou en cybersécurité. L'école abrite également le laboratoire de recherche LITAN. C'est l'école où le projet a été réalisé et où Rehail Taki Eddine est étudiant en 5e année.",
+    people: {
+      rehail: {
+        role: "Étudiant en 5e année — Intelligence artificielle et science des données",
+        bio: "J'ai conçu et développé la chaîne de mesure, l'indice de congestion et cette application web, depuis la capture des images au niveau de la rue jusqu'à la publication des rapports par ville.",
+      },
+      azouaou: {
+        role: "Professeur et enseignant — Directeur adjoint chargé des systèmes d'information et de communication et des relations extérieures",
+        bio: "Je suis professeur et chercheur à l'ESTIN. Mes travaux publiés portent sur le traitement automatique de la langue arabe, la recherche d'information et l'IA à faibles ressources ; je pilote également l'activité de relations extérieures de l'école.",
+      },
+    },
+  },
   meta: {
     siteName: "Indice de congestion urbaine d'Algérie",
     home: {
@@ -382,6 +404,13 @@ export const fr: Messages = {
       ogTitle: "Méthodologie — Indice de congestion urbaine d'Algérie",
       ogDescription:
         "Lignes de base en flux libre, charge équivalente à un embouteillage et échelle de congestion expliquées.",
+    },
+    about: {
+      title: "À propos — Indice de congestion urbaine d'Algérie",
+      description:
+        "Les personnes et l'école derrière l'Indice de congestion urbaine d'Algérie : Rehail Taki Eddine et Pr. Faical Azouaou, et l'ESTIN.",
+      ogTitle: "À propos — Indice de congestion urbaine d'Algérie",
+      ogDescription: "L'équipe et l'école derrière l'Indice de congestion urbaine d'Algérie.",
     },
   },
 };

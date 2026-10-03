@@ -1,39 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { Panel } from "@/components/site/Panel";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/locale";
+import { translateFor } from "@/i18n/createI18n";
 
 export const Route = createFileRoute("/$locale/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Algeria Urban Congestion Index" },
-      {
-        name: "description",
-        content:
-          "The people and the school behind the Algeria Urban Congestion Index: Rehail Taki Eddine and Pr. Faical Azouaou, and ESTIN.",
-      },
-      { property: "og:title", content: "About — Algeria Urban Congestion Index" },
-      {
-        property: "og:description",
-        content: "The team and the school behind the Algeria Urban Congestion Index.",
-      },
-    ],
-  }),
+  head: ({ params }) => {
+    const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
+    const t = translateFor(locale);
+    return {
+      meta: [
+        { title: t("meta.about.title") },
+        { name: "description", content: t("meta.about.description") },
+        { property: "og:title", content: t("meta.about.ogTitle") },
+        { property: "og:description", content: t("meta.about.ogDescription") },
+      ],
+    };
+  },
   component: AboutPage,
 });
 
+type PersonSlug = "rehail" | "azouaou";
+type PersonKey = `about.people.${PersonSlug}.${"role" | "bio"}`;
+
 type Person = {
   name: string;
-  role: string;
+  roleKey: PersonKey;
   org: string;
-  bio: string;
+  bioKey: PersonKey;
   links: { label: string; href: string; handle: string }[];
 };
 
 const TEAM: Person[] = [
   {
     name: "Rehail Taki Eddine",
-    role: "5th-year student — Artificial Intelligence & Data Science",
+    roleKey: "about.people.rehail.role",
     org: "ESTIN",
-    bio: "I designed and built the measurement pipeline, the congestion index and this web application, from street-level image capture through to the published per-city reports.",
+    bioKey: "about.people.rehail.bio",
     links: [
       { label: "GitHub", href: "https://github.com/TAK1EDD1NE", handle: "github.com/TAK1EDD1NE" },
       {
@@ -46,9 +49,9 @@ const TEAM: Person[] = [
   },
   {
     name: "Pr. Faical Azouaou",
-    role: "Professor & teacher — Adjunct Director in charge of Information & Communication Systems and External Relations",
+    roleKey: "about.people.azouaou.role",
     org: "ESTIN · Laboratoire LITAN",
-    bio: "I am a professor and researcher at ESTIN. My published work covers Arabic natural language processing, information retrieval and low-resource AI, and I lead the school's external-relations activity.",
+    bioKey: "about.people.azouaou.bio",
     links: [
       {
         label: "Google Scholar",
@@ -66,28 +69,24 @@ const TEAM: Person[] = [
 ];
 
 function AboutPage() {
+  const { t } = useTranslation();
   return (
     <main className="mx-auto max-w-7xl px-6 py-8">
       <header className="mb-10 max-w-3xl animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
-        <div className="label-xs mb-3">About</div>
-        <h1 className="text-3xl font-bold tracking-tight">About this project</h1>
-        <p className="mt-3 text-muted-foreground">
-          The Algeria Urban Congestion Index measures urban road congestion across 27 Algerian
-          metropolitan areas from street-level traffic imagery. It was developed as an engineering
-          internship project at ESTIN, the École Supérieure en Sciences et Technologies de
-          l'Informatique et du Numérique.
-        </p>
+        <div className="label-xs mb-3">{t("about.title")}</div>
+        <h1 className="text-3xl font-bold tracking-tight">{t("about.heading")}</h1>
+        <p className="mt-3 text-muted-foreground">{t("about.intro")}</p>
       </header>
 
-      <h2 className="label-xs mb-4">The team</h2>
+      <h2 className="label-xs mb-4">{t("about.teamHeading")}</h2>
       <div className="grid gap-6 md:grid-cols-2">
         {TEAM.map((p, i) => (
           <Panel key={p.name} className="p-6">
             <div style={{ animation: `rise 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 90}ms both` }}>
               <div className="label-xs mb-2">{p.org}</div>
               <h3 className="text-xl font-bold tracking-tight">{p.name}</h3>
-              <p className="mt-1 text-sm font-medium text-signal">{p.role}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.bio}</p>
+              <p className="mt-1 text-sm font-medium text-signal">{t(p.roleKey)}</p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t(p.bioKey)}</p>
               <div className="mt-5 space-y-2 border-t border-border pt-4">
                 {p.links.map((l) => (
                   <a
@@ -107,19 +106,13 @@ function AboutPage() {
         ))}
       </div>
 
-      <h2 className="label-xs mt-10 mb-4">The school</h2>
+      <h2 className="label-xs mt-10 mb-4">{t("about.schoolHeading")}</h2>
       <Panel className="p-6 md:p-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl">
-            <h3 className="text-xl font-bold tracking-tight">
-              ESTIN — École Supérieure en Sciences et Technologies de l'Informatique et du Numérique
-            </h3>
+            <h3 className="text-xl font-bold tracking-tight">{t("about.schoolName")}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              A public Algerian engineering school on the Amizour campus, Béjaïa. It recruits
-              nationwide and, after a common core in computer science, students specialise in
-              artificial intelligence / data science or cybersecurity. The school also hosts the
-              LITAN research laboratory. This is the school where the project was built and where
-              Rehail Taki Eddine is a 5th-year student.
+              {t("about.schoolBody")}
             </p>
           </div>
           <div className="shrink-0">
