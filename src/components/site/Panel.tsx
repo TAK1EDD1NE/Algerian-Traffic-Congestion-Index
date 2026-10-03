@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
 export function Panel({ className, children }: { className?: string; children: ReactNode }) {
@@ -30,6 +31,7 @@ export function PanelHeader({
 }
 
 export function PageState({ loading, error }: { loading: boolean; error: Error | null }) {
+  const { t } = useTranslation();
   return (
     <main className="mx-auto max-w-7xl px-6 py-24">
       <div className="rounded-2xl border border-border bg-card p-12 text-center shadow-panel">
@@ -38,13 +40,13 @@ export function PageState({ loading, error }: { loading: boolean; error: Error |
             <div className="mx-auto mb-4 flex size-10 items-center justify-center">
               <span className="size-3 animate-[signal_1.6s_ease-in-out_infinite] rounded-full bg-signal" />
             </div>
-            <p className="label-xs">Reading CSV dataset…</p>
+            <p className="label-xs">{t("errors.datasetLoading")}</p>
           </>
         ) : (
           <>
-            <p className="font-semibold text-destructive">Dataset could not be read</p>
+            <p className="font-semibold text-destructive">{t("errors.datasetErrorTitle")}</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              {error?.message ?? "Unknown error while parsing the CSV files."}
+              {error?.message ?? t("errors.datasetErrorUnknown")}
             </p>
           </>
         )}
