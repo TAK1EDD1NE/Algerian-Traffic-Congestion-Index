@@ -1,0 +1,82 @@
+export const en = {
+  nav: {
+    liveIndex: "Live Index",
+    cityReports: "City Reports",
+    explorer: "Explorer",
+    dataset: "Dataset",
+    methodology: "Methodology",
+    about: "About",
+    indexOnline: "Index Online",
+    brandSub: "Algeria Urban Congestion Index",
+  },
+  common: {
+    days: {
+      sun: "Sun",
+      mon: "Mon",
+      tue: "Tue",
+      wed: "Wed",
+      thu: "Thu",
+      fri: "Fri",
+      sat: "Sat",
+    },
+    months: {
+      jan: "Jan",
+      feb: "Feb",
+      mar: "Mar",
+      apr: "Apr",
+      may: "May",
+      jun: "Jun",
+      jul: "Jul",
+      aug: "Aug",
+      sep: "Sep",
+      oct: "Oct",
+      nov: "Nov",
+      dec: "Dec",
+    },
+    workday: "Sun–Thu",
+    weekend: "Fri–Sat",
+    highways: "Highways",
+    normalRoutes: "Normal routes",
+    allRoads: "All roads",
+    low: "Low",
+    high: "High",
+    km: "km",
+    switchCity: "Switch city",
+  },
+  level: {
+    free: "Fluid",
+    moderate: "Moderate",
+    high: "High",
+    critical: "Critical",
+  },
+  class: {
+    green: "Free flow",
+    yellow: "Moderate",
+    red: "Heavy",
+    dark_red: "Gridlock",
+  },
+  errors: {
+    notFoundTitle: "Page not found",
+    notFoundBody: "The page you're looking for doesn't exist or has been moved.",
+    goHome: "Go home",
+    crashTitle: "This page didn't load",
+    crashBody: "Something went wrong on our end. You can try refreshing or head back home.",
+    tryAgain: "Try again",
+    datasetLoading: "Reading CSV dataset…",
+    datasetErrorTitle: "Dataset could not be read",
+    datasetErrorUnknown: "Unknown error while parsing the CSV files.",
+  },
+  meta: {
+    siteName: "Algeria Urban Congestion Index",
+    home: {
+      title: "Algeria Urban Congestion Index",
+      description:
+        "Congestion index for 27 Algerian metropolitan areas: rankings, peak-hour curves, road-network coverage and daily trends.",
+      ogTitle: "Algeria Urban Congestion Index",
+      ogDescription:
+        "Congestion rankings, peak-hour analysis and network coverage across Algerian cities.",
+    },
+  },
+};
+
+export type Messages = typeof en;
