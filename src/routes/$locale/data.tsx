@@ -45,7 +45,7 @@ const HEADER_KEYS = [
 
 function DataPage() {
   const { t } = useTranslation();
-  const { fmt } = useFormat();
+  const { fmt, raw } = useFormat();
   const { data, isLoading, error } = useQuery(datasetQuery);
   const qc = useQueryClient();
   const [status, setStatus] = useState<string | null>(null);
@@ -180,12 +180,14 @@ function DataPage() {
                 <tr key={c.city} className="transition-colors hover:bg-secondary/60">
                   <td className="px-4 py-3 font-semibold">{c.city}</td>
                   <td className="px-4 py-3 text-muted-foreground">{c.wilaya}</td>
-                  <td className="num px-4 py-3">{c.congestionIndex}</td>
-                  <td className="num px-4 py-3 text-muted-foreground">{c.previousIndex}</td>
-                  <td className="num px-4 py-3">{c.capacityKm} km</td>
-                  <td className="num px-4 py-3">{c.freeFlowMinPer10km}</td>
-                  <td className="num px-4 py-3">{c.peakAmDelayMin}</td>
-                  <td className="num px-4 py-3">{c.peakPmDelayMin}</td>
+                  <td className="num px-4 py-3">{raw(c.congestionIndex)}</td>
+                  <td className="num px-4 py-3 text-muted-foreground">{raw(c.previousIndex)}</td>
+                  <td className="num px-4 py-3">
+                    {raw(c.capacityKm)} {t("common.km")}
+                  </td>
+                  <td className="num px-4 py-3">{raw(c.freeFlowMinPer10km)}</td>
+                  <td className="num px-4 py-3">{raw(c.peakAmDelayMin)}</td>
+                  <td className="num px-4 py-3">{raw(c.peakPmDelayMin)}</td>
                 </tr>
               ))}
             </tbody>
