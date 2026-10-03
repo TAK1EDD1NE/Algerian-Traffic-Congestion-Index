@@ -68,6 +68,16 @@ export type Dataset = {
 };
 
 export const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+/** Display keys for DAYS, in the same order. Render with t(DAYS_KEY[dow]). */
+export const DAYS_KEY = [
+  "common.days.sun",
+  "common.days.mon",
+  "common.days.tue",
+  "common.days.wed",
+  "common.days.thu",
+  "common.days.fri",
+  "common.days.sat",
+] as const;
 export const MONTHS = [
   "Jan",
   "Feb",
@@ -292,12 +302,12 @@ export function level(index: number): Level {
   return "free";
 }
 
-export const LEVEL_LABEL: Record<Level, string> = {
-  critical: "Critical",
-  high: "High",
-  moderate: "Moderate",
-  free: "Fluid",
-};
+export const LEVEL_LABEL_KEY = {
+  critical: "level.critical",
+  high: "level.high",
+  moderate: "level.moderate",
+  free: "level.free",
+} as const satisfies Record<Level, string>;
 
 export const LEVEL_VAR: Record<Level, string> = {
   critical: "var(--critical)",
@@ -374,12 +384,12 @@ export const CLASS_COLOR: Record<ColorClass, string> = {
   dark_red: "var(--critical)",
 };
 
-export const CLASS_LABEL: Record<ColorClass, string> = {
-  green: "Free flow",
-  yellow: "Moderate",
-  red: "Heavy",
-  dark_red: "Gridlock",
-};
+export const CLASS_LABEL_KEY = {
+  green: "class.green",
+  yellow: "class.yellow",
+  red: "class.red",
+  dark_red: "class.dark_red",
+} as const satisfies Record<ColorClass, string>;
 
 /** Per-date congestion series for one city (sorted by date). */
 export function dailyCitySeries(daily: DailyRow[], city: string) {

@@ -87,6 +87,81 @@ export const fr: Messages = {
     nationalMeanWindow: "Indice moyen national sur la fenêtre de mesure",
     daysRange: "{{count}} jours · du {{from}} au {{to}}",
   },
+  cities: {
+    breadcrumbCityReports: "Rapports par ville",
+    wilayaOf: "Wilaya de {{wilaya}}",
+    rankOf: "Rang {{rank}} sur {{total}}",
+    population: "population",
+    ptsYoY: "{{value}} pts sur un an",
+    stat: {
+      index: "Indice de congestion",
+      areas: "Zones surveillées",
+      network: "Réseau routier",
+      visibility: "Visibilité moy.",
+    },
+    throughTheDay: "Congestion au fil de la journée",
+    throughTheDayNote: "Indice moyen par tranche de 2 heures · pic à {{peak}}",
+    weeklyHeatmap: "Carte de densité hebdomadaire",
+    weeklyHeatmapNote: "7 jours × créneaux de 2 heures, intensité de la congestion",
+    coverageNetwork: "Couverture et réseau",
+    coverageNetworkNote:
+      "La part de route vue par chaque relevé, et la répartition du réseau surveillé",
+    levelMixByRoadClass: "Répartition des niveaux de congestion par classe de route",
+    levelMixNote: "Couleurs du trafic Google sur les routes normales et les autoroutes",
+    noComposition: "Aucune donnée de composition disponible.",
+    areaBreakdown: "Détail par zone",
+    areaBreakdownNote: "{{count}} zones surveillées · triées par congestion",
+  },
+  network: {
+    roadNetworkMonitored: "Réseau routier surveillé",
+    referenceNetworkAcross: "réseau de référence sur {{count}} zones",
+    avgVisibility: "Visibilité moy.",
+    snapshots: "{{count}} relevés",
+    coverageNote:
+      "Google ne colore que les routes disposant de données de trafic en direct, donc les relevés nocturnes voient moins de routes. La couverture compare ce que chaque relevé a réellement vu au réseau de référence de la zone (99e centile de la longueur de route jamais observée).",
+    normalRoutesNote: "routes normales",
+    tableLevel: "Niveau",
+    tableNormal: "Normales",
+    tableHighway: "Autoroute",
+    colorNote:
+      "Part de la capacité de chaque classe de route affichée dans chaque couleur de trafic, moyennée sur toute la fenêtre. Une part rouge foncé supérieure à zéro signifie qu'une partie du réseau était à l'arrêt.",
+    area: "Zone",
+    congestion: "Congestion",
+    avgCoverage: "Couverture moy.",
+    network: "Réseau",
+    calmLevel: "Niveau de calme",
+    snapshotsCol: "Relevés",
+    zone: "Zone {{area}}",
+  },
+  ranking: {
+    rank: "Rang",
+    cityWilaya: "Ville / Wilaya",
+    congestion: "Congestion",
+    roadNetwork: "Réseau routier",
+    status: "Statut",
+    trend: "Tendance",
+  },
+  heatmap: {
+    hoverHint: "Survolez une cellule pour voir l'heure",
+    cellValue: "{{day}} {{hour}} — {{value}} % au-dessus du flux libre",
+    cellAria: "{{day}} {{hour}} — {{value}} %",
+  },
+  map: {
+    ariaMap: "Carte de congestion du nord de l'Algérie",
+    ariaCity: "{{city}}, indice de congestion {{value}} pour cent",
+    geospatialView: "Vue géospatiale",
+    northernCorridor: "Couloir nord · {{count}} villes",
+    bubbleLegend: "Taille et couleur des bulles = indice de congestion",
+    clickToOpen: "Cliquez pour ouvrir le rapport de la ville",
+    areasNetwork: "{{count}} zones · réseau de {{km}} km",
+    congestionScale: "Échelle de congestion",
+    scale: {
+      critical: "Critique (14 %+)",
+      high: "Élevé (11–14 %)",
+      moderate: "Modéré (7–11 %)",
+      free: "Fluide (<7 %)",
+    },
+  },
   meta: {
     siteName: "Indice de congestion urbaine d'Algérie",
     home: {
@@ -96,6 +171,22 @@ export const fr: Messages = {
       ogTitle: "Indice de congestion urbaine d'Algérie",
       ogDescription:
         "Classements de congestion, analyse des heures de pointe et couverture du réseau dans les villes algériennes.",
+    },
+    cities: {
+      title: "Rapports par ville — Indice de congestion urbaine d'Algérie",
+      description:
+        "Rapport détaillé de congestion pour chaque ville algérienne : profil horaire, carte de densité hebdomadaire, couverture du réseau routier et détail zone par zone.",
+      ogTitle: "Rapports par ville — Indice de congestion urbaine d'Algérie",
+      ogDescription:
+        "Rapports de congestion par ville pour l'indice de congestion urbaine d'Algérie.",
+    },
+    city: {
+      title: "Rapport de congestion de {{city}} — Indice de congestion urbaine d'Algérie",
+      description:
+        "Profil de congestion horaire, carte de densité hebdomadaire, couverture du réseau routier et détail par zone pour {{city}}, Algérie.",
+      ogTitle: "Rapport de congestion de {{city}} — Indice de congestion urbaine d'Algérie",
+      ogDescription:
+        "Profil horaire, carte de densité hebdomadaire et détail par zone pour {{city}}.",
     },
   },
 };

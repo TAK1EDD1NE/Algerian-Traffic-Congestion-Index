@@ -1,5 +1,6 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 /**
  * City picker for the report header. Radix Select (already a dependency) replaces
@@ -15,10 +16,11 @@ export function CitySwitcher({
   value: string;
   onSelect: (city: string) => void;
 }) {
+  const { t } = useTranslation();
   return (
     <SelectPrimitive.Root value={value} onValueChange={onSelect}>
       <SelectPrimitive.Trigger
-        aria-label="Switch city"
+        aria-label={t("common.switchCity")}
         className="group flex cursor-pointer items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-semibold outline-none transition-colors hover:bg-secondary data-[state=open]:border-signal"
       >
         <SelectPrimitive.Value />

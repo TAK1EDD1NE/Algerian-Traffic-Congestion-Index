@@ -1,9 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { type CityRow, LEVEL_LABEL, fmt, level, levelColor, slug } from "@/lib/traffic";
+import { useTranslation } from "react-i18next";
+import { type CityRow, LEVEL_LABEL_KEY, level, levelColor, slug } from "@/lib/traffic";
 import { useLocale } from "@/i18n/locale";
+import { useFormat } from "@/i18n/format";
 
 export function RankingTable({ cities, limit }: { cities: CityRow[]; limit?: number }) {
   const locale = useLocale();
+  const { t } = useTranslation();
+  const { fmt } = useFormat();
   const rows = limit ? cities.slice(0, limit) : cities;
   const max = Math.max(...cities.map((c) => c.congestionIndex), 1);
 
@@ -11,12 +15,12 @@ export function RankingTable({ cities, limit }: { cities: CityRow[]; limit?: num
     <table className="w-full text-left">
       <thead>
         <tr className="bg-secondary/50">
-          <th className="label-xs px-6 py-3">Rank</th>
-          <th className="label-xs px-6 py-3">City / Wilaya</th>
-          <th className="label-xs px-6 py-3">Congestion</th>
-          <th className="label-xs px-6 py-3">Road network</th>
-          <th className="label-xs px-6 py-3">Status</th>
-          <th className="label-xs px-6 py-3 text-right">Trend</th>
+          <th className="label-xs px-6 py-3">{t("ranking.rank")}</th>
+          <th className="label-xs px-6 py-3">{t("ranking.cityWilaya")}</th>
+          <th className="label-xs px-6 py-3">{t("ranking.congestion")}</th>
+          <th className="label-xs px-6 py-3">{t("ranking.roadNetwork")}</th>
+          <th className="label-xs px-6 py-3">{t("ranking.status")}</th>
+          <th className="label-xs px-6 py-3 text-right">{t("ranking.trend")}</th>
         </tr>
       </thead>
       <tbody className="divide-y divide-border text-sm">
@@ -60,7 +64,9 @@ export function RankingTable({ cities, limit }: { cities: CityRow[]; limit?: num
                   </span>
                 </div>
               </td>
-              <td className="num px-6 py-4">{fmt(c.capacityKm, 0)} km</td>
+              <td className="num px-6 py-4">
+                {fmt(c.capacityKm, 0)} {t("common.km")}
+              </td>
               <td className="px-6 py-4">
                 <span
                   className="rounded px-2 py-1 text-xs font-bold"
@@ -69,7 +75,7 @@ export function RankingTable({ cities, limit }: { cities: CityRow[]; limit?: num
                     background: `color-mix(in oklab, ${levelColor(c.congestionIndex)} 12%, transparent)`,
                   }}
                 >
-                  {LEVEL_LABEL[level(c.congestionIndex)]}
+                  {t(LEVEL_LABEL_KEY[level(c.congestionIndex)])}
                 </span>
               </td>
               <td

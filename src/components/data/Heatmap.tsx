@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { DAYS, type HourlyRow, heatmapMatrix, levelColor, fmt } from "@/lib/traffic";
+import { useTranslation } from "react-i18next";
+import { DAYS_KEY, type HourlyRow, heatmapMatrix, levelColor } from "@/lib/traffic";
+import { useFormat } from "@/i18n/format";
 
 export function Heatmap({ hourly, city }: { hourly: HourlyRow[]; city: string }) {
+  const { t } = useTranslation();
+  const { fmt } = useFormat();
   const matrix = heatmapMatrix(hourly, city);
   const max = Math.max(...matrix.flat(), 1);
   const [cell, setCell] = useState<{ d: number; h: number; v: number } | null>(null);
@@ -10,9 +14,9 @@ export function Heatmap({ hourly, city }: { hourly: HourlyRow[]; city: string })
     <div>
       <div className="flex items-start gap-2">
         <div className="num flex flex-col gap-[3px] pt-[18px] text-[10px] text-muted-foreground">
-          {DAYS.map((d) => (
-            <span key={d} className="flex h-5 items-center">
-              {d}
+          {DAYS_KEY.map((k) => (
+            <span key={k} className="flex h-5 items-center">
+              {t(k)}
             </span>
           ))}
         </div>
@@ -40,7 +44,11 @@ export function Heatmap({ hourly, city }: { hourly: HourlyRow[]; city: string })
                       outline:
                         cell?.d === d && cell?.h === h ? "2px solid var(--foreground)" : undefined,
                     }}
-                    aria-label={`${DAYS[d]} ${String(h * 2).padStart(2, "0")}:00 — ${fmt(v)}%`}
+                    aria-label={t("heatmap.cellAria", {
+                      day: t(DAYS_KEY[d]!),
+                      hour: `${String(h * 2).padStart(2, "0")}:00`,
+                      value: fmt(v),
+                    })}
                   />
                 ))}
               </div>
@@ -53,17 +61,18 @@ export function Heatmap({ hourly, city }: { hourly: HourlyRow[]; city: string })
         <div className="text-xs text-muted-foreground">
           {cell ? (
             <span>
-              <span className="font-semibold text-foreground">
-                {DAYS[cell.d]} {String(cell.h * 2).padStart(2, "0")}:00
-              </span>{" "}
-              — <span className="num">{fmt(cell.v)}%</span> above free flow
+              {t("heatmap.cellValue", {
+                day: t(DAYS_KEY[cell.d]!),
+                hour: `${String(cell.h * 2).padStart(2, "0")}:00`,
+                value: fmt(cell.v),
+              })}
             </span>
           ) : (
-            "Hover a cell to inspect the hour"
+            t("heatmap.hoverHint")
           )}
         </div>
         <div className="flex items-center gap-1">
-          <span className="label-xs">Low</span>
+          <span className="label-xs">{t("common.low")}</span>
           {[0.2, 0.4, 0.6, 0.8, 1].map((o) => (
             <span
               key={o}
@@ -71,7 +80,7 @@ export function Heatmap({ hourly, city }: { hourly: HourlyRow[]; city: string })
               style={{ background: levelColor(max * o), opacity: 0.2 + o * 0.8 }}
             />
           ))}
-          <span className="label-xs">High</span>
+          <span className="label-xs">{t("common.high")}</span>
         </div>
       </div>
     </div>

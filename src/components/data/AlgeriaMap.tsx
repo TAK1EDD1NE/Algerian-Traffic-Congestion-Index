@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { type CityRow, levelColor, level, LEVEL_LABEL, slug, fmt } from "@/lib/traffic";
+import { useTranslation } from "react-i18next";
+import { type CityRow, level, LEVEL_LABEL_KEY, levelColor, slug } from "@/lib/traffic";
 import { useLocale } from "@/i18n/locale";
+import { useFormat } from "@/i18n/format";
 
 const BOUNDS = { minLng: -3.2, maxLng: 9.2, minLat: 30.6, maxLat: 37.6 };
 const W = 1000;
@@ -58,6 +60,8 @@ const path = (pts: [number, number][], close = false) =>
 type Tooltip = { city: CityRow; left: number; top: number };
 
 export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?: string }) {
+  const { t } = useTranslation();
+  const { fmt } = useFormat();
   const [tip, setTip] = useState<Tooltip | null>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -110,7 +114,7 @@ export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?:
         viewBox={`0 0 ${W} ${H}`}
         className="size-full"
         role="img"
-        aria-label="Congestion map of northern Algeria"
+        aria-label={t("map.ariaMap")}
       >
         <path
           d={path(border, true)}
@@ -132,7 +136,7 @@ export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?:
               className="cursor-pointer"
               tabIndex={0}
               role="button"
-              aria-label={`${c.city}, congestion index ${fmt(c.congestionIndex)} percent`}
+              aria-label={t("map.ariaCity", { city: c.city, value: fmt(c.congestionIndex) })}
               onMouseEnter={() => show(c)}
               onMouseLeave={hide}
               onFocus={() => show(c)}
@@ -197,11 +201,11 @@ export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?:
       </svg>
 
       <div className="pointer-events-none absolute top-6 left-6 rounded-xl border border-border bg-card/90 p-4 shadow-float backdrop-blur">
-        <div className="label-xs mb-1">Geospatial view</div>
-        <div className="text-sm font-semibold">Northern corridor · {cities.length} cities</div>
-        <div className="mt-1 text-xs text-muted-foreground">
-          Bubble size and color = congestion index
+        <div className="label-xs mb-1">{t("map.geospatialView")}</div>
+        <div className="text-sm font-semibold">
+          {t("map.northernCorridor", { count: cities.length })}
         </div>
+        <div className="mt-1 text-xs text-muted-foreground">{t("map.bubbleLegend")}</div>
       </div>
 
       {tip && (
@@ -220,29 +224,34 @@ export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?:
               {fmt(tip.city.congestionIndex)}%
             </span>
             <span className="text-xs text-muted-foreground">
-              {LEVEL_LABEL[level(tip.city.congestionIndex)]}
+              {t(LEVEL_LABEL_KEY[level(tip.city.congestionIndex)])}
             </span>
           </div>
           <div className="num mt-2 text-xs text-muted-foreground">
-            {tip.city.nAreas} areas · {fmt(tip.city.capacityKm, 0)} km network
+            {t("map.areasNetwork", {
+              count: tip.city.nAreas,
+              km: fmt(tip.city.capacityKm, 0),
+            })}
           </div>
           <div className="mt-3 border-t border-border pt-2 text-[11px] text-muted-foreground">
-            Click to open the city report
+            {t("map.clickToOpen")}
           </div>
         </div>
       )}
 
       <div className="absolute right-6 bottom-6 w-60 rounded-xl border border-border bg-card/90 p-4 shadow-float backdrop-blur">
-        <div className="label-xs mb-3">Congestion scale</div>
+        <div className="label-xs mb-3">{t("map.congestionScale")}</div>
         <div className="space-y-2.5">
-          {[
-            ["Critical (14%+)", "var(--critical)"],
-            ["High (11–14%)", "var(--high)"],
-            ["Moderate (7–11%)", "var(--moderate)"],
-            ["Fluid (<7%)", "var(--free)"],
-          ].map(([label, color]) => (
+          {(
+            [
+              ["map.scale.critical", "var(--critical)"],
+              ["map.scale.high", "var(--high)"],
+              ["map.scale.moderate", "var(--moderate)"],
+              ["map.scale.free", "var(--free)"],
+            ] as const
+          ).map(([label, color]) => (
             <div key={label} className="flex items-center justify-between">
-              <span className="text-xs font-medium">{label}</span>
+              <span className="text-xs font-medium">{t(label)}</span>
               <span className="h-2 w-14 rounded-full" style={{ background: color }} />
             </div>
           ))}

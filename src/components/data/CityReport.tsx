@@ -1,14 +1,15 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import {
   type CityRow,
   type Dataset,
-  fmt,
   hourlyProfile,
-  LEVEL_LABEL,
   level,
+  LEVEL_LABEL_KEY,
   levelColor,
   peakHour,
 } from "@/lib/traffic";
+import { useFormat } from "@/i18n/format";
 import { CountUp } from "@/components/data/CountUp";
 import { Heatmap } from "@/components/data/Heatmap";
 import { HourlyChart } from "@/components/data/HourlyChart";
@@ -29,6 +30,8 @@ export function CityReport({
   city: CityRow;
   onSelectCity: (city: string) => void;
 }) {
+  const { t } = useTranslation();
+  const { fmt } = useFormat();
   const profile = hourlyProfile(data.hourly, city.city);
   const peak = peakHour(profile);
   const cityAreas = useMemo(
@@ -45,16 +48,41 @@ export function CityReport({
   const rank = data.cities.findIndex((c) => c.city === city.city) + 1;
   const delta = city.congestionIndex - city.previousIndex;
 
+  const stats = [
+    {
+      label: t("cities.stat.index"),
+      value: city.congestionIndex,
+      unit: "%",
+      digits: 1,
+      ink: true,
+    },
+    { label: t("cities.stat.areas"), value: city.nAreas, unit: "", digits: 0, ink: false },
+    {
+      label: t("cities.stat.network"),
+      value: city.capacityKm,
+      unit: t("common.km"),
+      digits: 0,
+      ink: false,
+    },
+    {
+      label: t("cities.stat.visibility"),
+      value: city.coveragePct,
+      unit: "%",
+      digits: 1,
+      ink: false,
+    },
+  ];
+
   return (
     <>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          <span className="label-xs">City reports</span>
+          <span className="label-xs">{t("cities.breadcrumbCityReports")}</span>
           <span>/</span>
           <span className="font-semibold text-foreground">{city.city}</span>
         </div>
         <label className="flex items-center gap-2">
-          <span className="label-xs">Switch city</span>
+          <span className="label-xs">{t("common.switchCity")}</span>
           <CitySwitcher
             cities={data.cities.map((c) => c.city)}
             value={city.city}
@@ -65,11 +93,11 @@ export function CityReport({
 
       <header className="mb-8 flex flex-wrap items-end justify-between gap-6 animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
         <div>
-          <div className="label-xs mb-1">Wilaya of {city.wilaya}</div>
+          <div className="label-xs mb-1">{t("cities.wilayaOf", { wilaya: city.wilaya })}</div>
           <h1 className="text-4xl font-bold tracking-tight">{city.city}</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Rank {rank} of {data.cities.length} · population{" "}
-            <span className="num">{city.population.toLocaleString("en-US")}</span>
+            {t("cities.rankOf", { rank, total: data.cities.length })} · {t("cities.population")}{" "}
+            <span className="num">{fmt(city.population, 0)}</span>
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -80,31 +108,19 @@ export function CityReport({
               background: `color-mix(in oklab, ${levelColor(city.congestionIndex)} 12%, transparent)`,
             }}
           >
-            {LEVEL_LABEL[level(city.congestionIndex)]}
+            {t(LEVEL_LABEL_KEY[level(city.congestionIndex)])}
           </span>
           <span
             className="num text-xs font-semibold"
             style={{ color: delta > 0 ? "var(--critical)" : "var(--free)" }}
           >
-            {delta > 0 ? "+" : ""}
-            {fmt(delta)} pts YoY
+            {t("cities.ptsYoY", { value: `${delta > 0 ? "+" : ""}${fmt(delta)}` })}
           </span>
         </div>
       </header>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          {
-            label: "Congestion index",
-            value: city.congestionIndex,
-            unit: "%",
-            digits: 1,
-            ink: true,
-          },
-          { label: "Monitored areas", value: city.nAreas, unit: "", digits: 0 },
-          { label: "Road network", value: city.capacityKm, unit: "km", digits: 0 },
-          { label: "Avg visibility", value: city.coveragePct, unit: "%", digits: 1 },
-        ].map((stat, i) => (
+        {stats.map((stat, i) => (
           <div
             key={stat.label}
             className={`rounded-2xl p-6 shadow-panel ${
@@ -128,10 +144,9 @@ export function CityReport({
       <div className="grid gap-8 lg:grid-cols-2">
         <Panel className="p-6">
           <div className="mb-6">
-            <h2 className="font-bold">Congestion through the day</h2>
+            <h2 className="font-bold">{t("cities.throughTheDay")}</h2>
             <p className="text-xs text-muted-foreground">
-              Mean index per 2-hour window · peak at{" "}
-              <span className="num font-semibold text-foreground">{peak.label}</span>
+              {t("cities.throughTheDayNote", { peak: peak.label })}
             </p>
           </div>
           <HourlyChart hourly={data.hourly} city={city.city} />
@@ -139,10 +154,8 @@ export function CityReport({
 
         <Panel className="p-6">
           <div className="mb-6">
-            <h2 className="font-bold">Weekly density heatmap</h2>
-            <p className="text-xs text-muted-foreground">
-              7 days × 2-hour slots, congestion intensity
-            </p>
+            <h2 className="font-bold">{t("cities.weeklyHeatmap")}</h2>
+            <p className="text-xs text-muted-foreground">{t("cities.weeklyHeatmapNote")}</p>
           </div>
           <Heatmap hourly={data.hourly} city={city.city} />
         </Panel>
@@ -151,25 +164,21 @@ export function CityReport({
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <Panel className="p-6">
           <div className="mb-6">
-            <h2 className="font-bold">Coverage &amp; network</h2>
-            <p className="text-xs text-muted-foreground">
-              How much road each snapshot sees, and how the monitored network splits
-            </p>
+            <h2 className="font-bold">{t("cities.coverageNetwork")}</h2>
+            <p className="text-xs text-muted-foreground">{t("cities.coverageNetworkNote")}</p>
           </div>
           <CoveragePanel city={city} />
         </Panel>
 
         <Panel className="p-6">
           <div className="mb-6">
-            <h2 className="font-bold">Congestion level mix by road class</h2>
-            <p className="text-xs text-muted-foreground">
-              Google traffic colors across normal routes and highways
-            </p>
+            <h2 className="font-bold">{t("cities.levelMixByRoadClass")}</h2>
+            <p className="text-xs text-muted-foreground">{t("cities.levelMixNote")}</p>
           </div>
           {cityComp.length ? (
             <ColorDistribution comp={cityComp} />
           ) : (
-            <p className="text-sm text-muted-foreground">No composition data available.</p>
+            <p className="text-sm text-muted-foreground">{t("cities.noComposition")}</p>
           )}
         </Panel>
       </div>
@@ -177,8 +186,8 @@ export function CityReport({
       {cityAreas.length > 0 && (
         <Panel className="mt-8 overflow-hidden">
           <PanelHeader
-            title="Area breakdown"
-            subtitle={`${cityAreas.length} monitored areas · sorted by congestion`}
+            title={t("cities.areaBreakdown")}
+            subtitle={t("cities.areaBreakdownNote", { count: cityAreas.length })}
           />
           <AreasTable areas={cityAreas} />
         </Panel>

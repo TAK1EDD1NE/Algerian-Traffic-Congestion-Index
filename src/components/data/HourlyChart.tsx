@@ -7,10 +7,12 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 import { type HourlyRow, hourlyProfile } from "@/lib/traffic";
 import { ChartTooltip } from "./ChartTooltip";
 
 export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: string }) {
+  const { t } = useTranslation();
   const data = hourlyProfile(hourly, city);
 
   return (
@@ -44,7 +46,7 @@ export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: stri
         <Area
           type="monotone"
           dataKey="workday"
-          name="Sun–Thu"
+          name={t("common.workday")}
           stroke="var(--signal)"
           strokeWidth={2.5}
           fill="url(#workdayFill)"
@@ -53,7 +55,7 @@ export function HourlyChart({ hourly, city }: { hourly: HourlyRow[]; city?: stri
         <Area
           type="monotone"
           dataKey="weekend"
-          name="Fri–Sat"
+          name={t("common.weekend")}
           stroke="var(--muted-foreground)"
           strokeWidth={1.5}
           strokeDasharray="4 4"
