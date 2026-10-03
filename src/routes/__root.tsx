@@ -6,6 +6,8 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  notFound,
+  redirect,
 } from "@tanstack/react-router";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { useMemo, useEffect, type ReactNode } from "react";
@@ -15,7 +17,10 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { createI18n } from "@/i18n/createI18n";
-import { LOCALE_DIR, useLocale } from "@/i18n/locale";
+import { LOCALE_DIR, isLocale, preferredLocale, useLocale } from "@/i18n/locale";
+
+/** Pre-locale paths that users may have bookmarked or shared; they are rescued, not 404'd. */
+const LEGACY_SEGMENTS = new Set(["cities", "explore", "data", "methodology", "about", "city"]);
 
 /** One i18n instance per render pass — see createI18n for why it is not a module singleton. */
 function useI18n() {
@@ -35,15 +40,13 @@ function NotFoundComponent() {
         <h2 className="mt-4 text-xl font-semibold text-foreground">{t("errors.notFoundTitle")}</h2>
         <p className="mt-2 text-sm text-muted-foreground">{t("errors.notFoundBody")}</p>
         <div className="mt-6">
-          {/* Plain anchor in Task 3: the typed `/$locale/` route does not exist until Task 4, and a
-              typed `to` pointing at a non-existent route fails typecheck. Task 4 upgrades this to
-              the typed <Link to="/$locale/" params={{ locale }}>. Task 3 must NOT use <Link> here. */}
-          <a
-            href={`/${locale}`}
+          <Link
+            to="/$locale"
+            params={{ locale }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             {t("errors.goHome")}
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -90,6 +93,22 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  beforeLoad: ({ location }) => {
+    const first = location.pathname.split("/").filter(Boolean)[0];
+    if (first === undefined) return; // `/` is handled by the index route
+    if (isLocale(first)) return;
+    // An unknown prefix would otherwise match the `$locale` segment and serve `/xx/about` as a
+    // duplicate of `/about` in the default language.
+    if (LEGACY_SEGMENTS.has(first)) {
+      // `href` (not `to`) because the target is built at runtime; `to` is a literal-path union
+      // and a template string does not typecheck against it.
+      throw redirect({
+        href: `/${preferredLocale()}${location.pathname}${location.searchStr ?? ""}`,
+        replace: true,
+      });
+    }
+    throw notFound();
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },

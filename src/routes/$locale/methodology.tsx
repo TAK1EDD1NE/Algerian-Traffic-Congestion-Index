@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Panel } from "@/components/site/Panel";
 
-export const Route = createFileRoute("/methodology")({
+export const Route = createFileRoute("/$locale/methodology")({
   head: () => ({
     meta: [
       { title: "Methodology — Algeria Urban Congestion Index" },

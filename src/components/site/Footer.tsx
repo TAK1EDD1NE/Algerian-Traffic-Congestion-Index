@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
+import { useLocale } from "@/i18n/locale";
 
 export function Footer() {
+  const locale = useLocale();
   return (
     <footer className="mt-12 border-t border-border bg-card py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
@@ -22,7 +24,11 @@ export function Footer() {
           </div>
           <div>
             <div className="label-xs mb-4">About</div>
-            <Link to="/about" className="text-sm font-medium transition-colors hover:text-signal">
+            <Link
+              to="/$locale/about"
+              params={{ locale }}
+              className="text-sm font-medium transition-colors hover:text-signal"
+            >
               Team &amp; school
             </Link>
           </div>

@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { type CityRow, LEVEL_LABEL, fmt, level, levelColor, slug } from "@/lib/traffic";
+import { useLocale } from "@/i18n/locale";
 
 export function RankingTable({ cities, limit }: { cities: CityRow[]; limit?: number }) {
+  const locale = useLocale();
   const rows = limit ? cities.slice(0, limit) : cities;
   const max = Math.max(...cities.map((c) => c.congestionIndex), 1);
 
@@ -31,8 +33,8 @@ export function RankingTable({ cities, limit }: { cities: CityRow[]; limit?: num
               </td>
               <td className="px-6 py-4">
                 <Link
-                  to="/city/$city"
-                  params={{ city: slug(c.city) }}
+                  to="/$locale/city/$city"
+                  params={{ locale, city: slug(c.city) }}
                   className="font-semibold transition-colors group-hover:text-signal"
                 >
                   {c.city}

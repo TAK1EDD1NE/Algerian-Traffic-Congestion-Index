@@ -23,7 +23,7 @@ import {
   fmt,
 } from "@/lib/traffic";
 
-export const Route = createFileRoute("/explore")({
+export const Route = createFileRoute("/$locale/explore")({
   head: () => ({
     meta: [
       { title: "Explorer — Algeria Urban Congestion Index" },

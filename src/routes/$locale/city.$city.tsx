@@ -1,10 +1,11 @@
 import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
+import { useLocale } from "@/i18n/locale";
 import { CityReport } from "@/components/data/CityReport";
 import { PageState } from "@/components/site/Panel";
 import { datasetQuery, slug } from "@/lib/traffic";
 
-export const Route = createFileRoute("/city/$city")({
+export const Route = createFileRoute("/$locale/city/$city")({
   head: ({ params }) => {
     const name = params.city.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
     return {
@@ -32,6 +33,7 @@ function CityReportRoute() {
   const { city: citySlug } = Route.useParams();
   const { data, isLoading, error } = useQuery(datasetQuery);
   const navigate = useNavigate();
+  const locale = useLocale();
 
   if (isLoading || error || !data)
     return <PageState loading={isLoading} error={error as Error | null} />;
@@ -44,7 +46,12 @@ function CityReportRoute() {
       <CityReport
         data={data}
         city={city}
-        onSelectCity={(name) => navigate({ to: "/city/$city", params: { city: slug(name) } })}
+        onSelectCity={(name) =>
+          navigate({
+            to: "/$locale/city/$city",
+            params: { locale, city: slug(name) },
+          })
+        }
       />
     </main>
   );

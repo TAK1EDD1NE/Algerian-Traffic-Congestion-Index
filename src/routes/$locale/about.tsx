@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Panel } from "@/components/site/Panel";
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/$locale/about")({
   head: () => ({
     meta: [
       { title: "About — Algeria Urban Congestion Index" },

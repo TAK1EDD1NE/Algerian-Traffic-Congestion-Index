@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Panel, PanelHeader, PageState } from "@/components/site/Panel";
 import { CSV_SCHEMA, STORAGE_KEYS, datasetQuery, type DatasetKey } from "@/lib/traffic";
 
-export const Route = createFileRoute("/data")({
+export const Route = createFileRoute("/$locale/data")({
   head: () => ({
     meta: [
       { title: "Dataset & CSV Import — Algeria Urban Congestion Index" },

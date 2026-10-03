@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { type CityRow, levelColor, level, LEVEL_LABEL, slug, fmt } from "@/lib/traffic";
+import { useLocale } from "@/i18n/locale";
 
 const BOUNDS = { minLng: -3.2, maxLng: 9.2, minLat: 30.6, maxLat: 37.6 };
 const W = 1000;
@@ -61,6 +62,7 @@ export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?:
   const boxRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const navigate = useNavigate();
+  const locale = useLocale();
   const max = Math.max(...cities.map((c) => c.congestionIndex), 1);
   const min = Math.min(...cities.map((c) => c.congestionIndex));
 
@@ -135,10 +137,18 @@ export function AlgeriaMap({ cities, selected }: { cities: CityRow[]; selected?:
               onMouseLeave={hide}
               onFocus={() => show(c)}
               onBlur={hide}
-              onClick={() => navigate({ to: "/city/$city", params: { city: slug(c.city) } })}
+              onClick={() =>
+                navigate({
+                  to: "/$locale/city/$city",
+                  params: { locale, city: slug(c.city) },
+                })
+              }
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
-                  navigate({ to: "/city/$city", params: { city: slug(c.city) } });
+                  navigate({
+                    to: "/$locale/city/$city",
+                    params: { locale, city: slug(c.city) },
+                  });
                 }
               }}
             >

@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useLocale } from "@/i18n/locale";
 
 const NAV = [
   { to: "/", label: "Live Index" },
@@ -7,13 +8,14 @@ const NAV = [
   { to: "/data", label: "Dataset" },
   { to: "/methodology", label: "Methodology" },
   { to: "/about", label: "About" },
-] as const;
+] as const; /* strings localized in Task 6 */
 
 export function Header() {
+  const locale = useLocale();
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex shrink-0 items-center gap-3">
+        <Link to="/$locale" params={{ locale }} className="flex shrink-0 items-center gap-3">
           <span className="grid size-8 place-items-center rounded-md bg-ink">
             <span className="size-3 rounded-full bg-signal" />
           </span>
@@ -31,7 +33,8 @@ export function Header() {
           {NAV.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              to={`/$locale${item.to === "/" ? "" : item.to}`}
+              params={{ locale }}
               activeOptions={{ exact: item.to === "/" }}
               className="py-5 transition-colors hover:text-foreground data-[status=active]:border-b-2 data-[status=active]:border-signal data-[status=active]:text-foreground"
             >

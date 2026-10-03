@@ -5,7 +5,7 @@ import { CityReport } from "@/components/data/CityReport";
 import { PageState } from "@/components/site/Panel";
 import { datasetQuery } from "@/lib/traffic";
 
-export const Route = createFileRoute("/cities")({
+export const Route = createFileRoute("/$locale/cities")({
   head: () => ({
     meta: [
       { title: "City Reports — Algeria Urban Congestion Index" },
