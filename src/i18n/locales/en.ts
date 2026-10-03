@@ -237,6 +237,116 @@ export const en = {
       free: "Fluid (<7%)",
     },
   },
+  methodology: {
+    technicalNote: "Technical note · v1.02",
+    title: "Methodology",
+    intro:
+      "The Algeria Urban Congestion Index measures how congested a road network is compared with the same network under free-flow conditions. It is deliberately comparable with international travel-time indices so Algerian cities can be benchmarked abroad.",
+    steps: {
+      capacity: {
+        title: "Zone capacity",
+        body: "For every zone we take the 99th percentile of road length ever observed across its snapshots. That value becomes K, the reference network. Roads missing from a night snapshot count as free-flowing, not as missing data.",
+      },
+      share: {
+        title: "Weighted congestion share",
+        body: "Each snapshot's colored segments collapse into a single number: yellow counts once, red twice, dark red three times, divided by K. The result is the share of the network at gridlock-equivalent load.",
+      },
+      baseline: {
+        title: "Calm baseline & anchoring",
+        body: "Every zone has its own typical calm level: the 20th percentile of its raw values. The published index is how far the current state sits between that calm level and total saturation, scaled 0-100.",
+      },
+      aggregation: {
+        title: "Aggregation",
+        body: "Snapshots average into days weighted by how much road each actually saw, days into zones, zones into cities weighted by network size. Highways and normal routes are scored on their own capacities.",
+      },
+    },
+    formulaLabel: "Index formula",
+    formulaNote:
+      "where K is the zone's reference network (99th percentile of observed road length) and calm its 20th-percentile free-flow state. Peaks are reported separately for the morning (06:00–10:00) and evening (16:00–20:00) windows.",
+    scaleTitle: "Congestion scale",
+    scale: {
+      fluid: "Fluid",
+      fluidRange: "Below {{max}}%",
+      moderate: "Moderate",
+      moderateRange: "{{min}}% – {{max}}%",
+      high: "High",
+      highRange: "{{min}}% – {{max}}%",
+      critical: "Critical",
+      criticalRange: "{{min}}% and above",
+    },
+    limitationsTitle: "Limitations",
+    limitations: {
+      one: "Coverage is concentrated on the northern corridor; Saharan wilayas have thinner sampling and wider confidence intervals.",
+      two: "The working week is Sunday–Thursday; Friday and Saturday profiles are reported as the weekend series.",
+      three:
+        "Public-holiday and Ramadan periods shift peak hours substantially and are flagged but not removed from the monthly series.",
+    },
+    terminologyTitle: "Terminology",
+    terminologyNote: "Every term the site and this methodology page use, in one place.",
+    terms: {
+      congestionIndex: {
+        term: "Congestion index",
+        definition:
+          "The headline 0–100 score for a city, zone or the whole network: how far the current state sits between that unit's calm level and total saturation.",
+      },
+      zone: {
+        term: "Zone (area)",
+        definition:
+          "A monitored district of a city. It is the unit each traffic-image snapshot is cropped to, and the smallest level we publish.",
+      },
+      snapshot: {
+        term: "Snapshot",
+        definition:
+          "One timestamped capture of a zone's street-level traffic imagery. Snapshots arrive roughly every two hours and are the raw input of the whole index.",
+      },
+      referenceNetwork: {
+        term: "Reference network (K)",
+        definition:
+          "The 99th percentile of road length ever observed in a zone. It is the denominator of the congestion share, so a zone is always compared against its own busiest possible state.",
+      },
+      gridlockLoad: {
+        term: "Gridlock-equivalent load (raw)",
+        definition:
+          "The weighted road length in trouble in one snapshot: (1 × yellow + 2 × red + 3 × dark_red) ÷ K. Red counts twice and dark red three times because standstill traffic costs more than slow traffic.",
+      },
+      calmLevel: {
+        term: "Calm level",
+        definition:
+          "A zone's own free-flow baseline: the 20th percentile of its raw values. It removes the structural difference between a permanently busy city and a quiet one.",
+      },
+      coverage: {
+        term: "Coverage",
+        definition:
+          "The share of a zone's reference network that a given snapshot actually saw. It weights the daily averages, so a thin night snapshot counts less than a full daytime one.",
+      },
+      twoHourWindow: {
+        term: "2-hour window",
+        definition:
+          "The reporting slot of every curve on the site. Snapshots are binned into twelve two-hour windows per day, so a plotted point is an average, not a single measurement.",
+      },
+      workday: {
+        term: "Workday",
+        definition: "Sunday to Thursday — the Algerian working week.",
+      },
+      weekend: {
+        term: "Weekend",
+        definition: "Friday and Saturday.",
+      },
+      roadClass: {
+        term: "Road class",
+        definition:
+          "The type of road a figure is computed on: a highway (motorway or expressway) or a normal route. Each class is scored on its own capacity and calm level.",
+      },
+      wilaya: {
+        term: "Wilaya",
+        definition: "The Algerian administrative province a city belongs to.",
+      },
+      congestionScale: {
+        term: "Congestion scale",
+        definition: "Fluid below 7%, Moderate 7–11%, High 11–14%, Critical at 14% and above.",
+      },
+    },
+  },
   meta: {
     siteName: "Algeria Urban Congestion Index",
     home: {
@@ -272,6 +382,14 @@ export const en = {
         "Inspect the CSV schema behind the Algerian congestion index, import your own measurement files, or download the reference dataset.",
       ogTitle: "Dataset & CSV Import — Algeria Urban Congestion Index",
       ogDescription: "CSV schema, import tool and downloads for the Algerian congestion index.",
+    },
+    methodology: {
+      title: "Methodology — Algeria Urban Congestion Index",
+      description:
+        "How the Algerian congestion index is computed: free-flow baselines, gridlock-equivalent load, the four-level congestion scale, and a glossary of every term used on the site.",
+      ogTitle: "Methodology — Algeria Urban Congestion Index",
+      ogDescription:
+        "Free-flow baselines, gridlock-equivalent load and the congestion scale explained.",
     },
   },
 };

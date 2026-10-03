@@ -224,6 +224,118 @@ export const fr: Messages = {
       free: "Fluide (<7 %)",
     },
   },
+  methodology: {
+    technicalNote: "Note technique · v1.02",
+    title: "Méthodologie",
+    intro:
+      "L'indice de congestion urbaine d'Algérie mesure le degré de congestion d'un réseau routier par rapport à ce même réseau en conditions de flux libre. Il est délibérément comparable aux indices internationaux de temps de trajet, afin que les villes algériennes puissent être comparées à l'étranger.",
+    steps: {
+      capacity: {
+        title: "Capacité d'une zone",
+        body: "Pour chaque zone, nous prenons le 99e centile de la longueur de route jamais observée parmi ses relevés. Cette valeur devient K, le réseau de référence. Les routes absentes d'un relevé nocturne sont comptées comme étant en flux libre, et non comme des données manquantes.",
+      },
+      share: {
+        title: "Part de congestion pondérée",
+        body: "Les segments colorés de chaque relevé se réduisent à un seul nombre : le jaune compte une fois, le rouge deux fois, le rouge foncé trois fois, le tout divisé par K. Le résultat est la part du réseau à charge équivalente à un embouteillage.",
+      },
+      baseline: {
+        title: "Ligne de base calme et ancrage",
+        body: "Chaque zone possède son propre niveau de calme typique : le 20e centile de ses valeurs brutes. L'indice publié indique à quelle distance l'état actuel se situe entre ce niveau de calme et la saturation totale, sur une échelle de 0 à 100.",
+      },
+      aggregation: {
+        title: "Agrégation",
+        body: "Les relevés sont moyennés en journées, pondérées par la part de route réellement observée par chacun ; les journées en zones ; les zones en villes, pondérées par la taille du réseau. Les autoroutes et les routes normales sont évaluées selon leurs propres capacités.",
+      },
+    },
+    formulaLabel: "Formule de l'indice",
+    formulaNote:
+      "où K est le réseau de référence de la zone (99e centile de la longueur de route observée) et calm son état de flux libre au 20e centile. Les pics sont rapportés séparément pour les créneaux du matin (06:00–10:00) et du soir (16:00–20:00).",
+    scaleTitle: "Échelle de congestion",
+    scale: {
+      fluid: "Fluide",
+      fluidRange: "Moins de {{max}} %",
+      moderate: "Modéré",
+      moderateRange: "{{min}} % – {{max}} %",
+      high: "Élevé",
+      highRange: "{{min}} % – {{max}} %",
+      critical: "Critique",
+      criticalRange: "{{min}} % et plus",
+    },
+    limitationsTitle: "Limites",
+    limitations: {
+      one: "La couverture est concentrée sur le couloir nord ; les wilayas sahariennes disposent d'un échantillonnage plus clairsemé et d'intervalles de confiance plus larges.",
+      two: "La semaine de travail va du dimanche au jeudi ; les profils du vendredi et du samedi sont rapportés comme la série du week-end.",
+      three:
+        "Les jours fériés et les périodes de Ramadan décalent sensiblement les heures de pointe ; ils sont signalés mais non retirés de la série mensuelle.",
+    },
+    terminologyTitle: "Terminologie",
+    terminologyNote:
+      "Tous les termes utilisés par le site et par cette page de méthodologie, réunis en un seul endroit.",
+    terms: {
+      congestionIndex: {
+        term: "Indice de congestion",
+        definition:
+          "Le score principal de 0 à 100 pour une ville, une zone ou l'ensemble du réseau : à quelle distance l'état actuel se situe entre le niveau de calme de cette unité et la saturation totale.",
+      },
+      zone: {
+        term: "Zone (secteur)",
+        definition:
+          "Un quartier surveillé d'une ville. C'est l'unité sur laquelle chaque relevé d'image de trafic est découpé, et le plus petit niveau que nous publions.",
+      },
+      snapshot: {
+        term: "Relevé",
+        definition:
+          "Une capture horodatée de l'imagerie de trafic au niveau de la rue d'une zone. Les relevés arrivent environ toutes les deux heures et constituent la donnée d'entrée brute de tout l'indice.",
+      },
+      referenceNetwork: {
+        term: "Réseau de référence (K)",
+        definition:
+          "Le 99e centile de la longueur de route jamais observée dans une zone. C'est le dénominateur de la part de congestion, de sorte qu'une zone est toujours comparée à son propre état le plus chargé possible.",
+      },
+      gridlockLoad: {
+        term: "Charge équivalente à un embouteillage (raw)",
+        definition:
+          "La longueur de route pondérée en difficulté dans un relevé : (1 × jaune + 2 × rouge + 3 × rouge foncé) ÷ K. Le rouge compte deux fois et le rouge foncé trois fois, car un trafic à l'arrêt coûte plus qu'un trafic ralenti.",
+      },
+      calmLevel: {
+        term: "Niveau de calme",
+        definition:
+          "La ligne de base en flux libre propre à une zone : le 20e centile de ses valeurs brutes. Elle élimine la différence structurelle entre une ville constamment chargée et une ville calme.",
+      },
+      coverage: {
+        term: "Couverture",
+        definition:
+          "La part du réseau de référence d'une zone qu'un relevé donné a réellement observée. Elle pondère les moyennes journalières, de sorte qu'un relevé nocturne épars compte moins qu'un relevé diurne complet.",
+      },
+      twoHourWindow: {
+        term: "Créneau de 2 heures",
+        definition:
+          "Le créneau de restitution de chaque courbe du site. Les relevés sont regroupés en douze créneaux de deux heures par jour, de sorte qu'un point tracé est une moyenne, et non une mesure unique.",
+      },
+      workday: {
+        term: "Jour de travail",
+        definition: "Du dimanche au jeudi — la semaine de travail algérienne.",
+      },
+      weekend: {
+        term: "Week-end",
+        definition: "Le vendredi et le samedi.",
+      },
+      roadClass: {
+        term: "Classe de route",
+        definition:
+          "Le type de route sur lequel un chiffre est calculé : une autoroute (autoroute ou voie express) ou une route normale. Chaque classe est évaluée selon sa propre capacité et son propre niveau de calme.",
+      },
+      wilaya: {
+        term: "Wilaya",
+        definition: "La province administrative algérienne à laquelle appartient une ville.",
+      },
+      congestionScale: {
+        term: "Échelle de congestion",
+        definition:
+          "Fluide en dessous de 7 %, Modéré de 7 à 11 %, Élevé de 11 à 14 %, Critique à 14 % et au-dessus.",
+      },
+    },
+  },
   meta: {
     siteName: "Indice de congestion urbaine d'Algérie",
     home: {
@@ -262,6 +374,14 @@ export const fr: Messages = {
       ogTitle: "Jeu de données et import CSV — Indice de congestion urbaine d'Algérie",
       ogDescription:
         "Schéma CSV, outil d'import et téléchargements pour l'indice de congestion algérien.",
+    },
+    methodology: {
+      title: "Méthodologie — Indice de congestion urbaine d'Algérie",
+      description:
+        "Comment l'indice de congestion algérien est calculé : lignes de base en flux libre, charge équivalente à un embouteillage, échelle de congestion à quatre niveaux et glossaire de tous les termes utilisés sur le site.",
+      ogTitle: "Méthodologie — Indice de congestion urbaine d'Algérie",
+      ogDescription:
+        "Lignes de base en flux libre, charge équivalente à un embouteillage et échelle de congestion expliquées.",
     },
   },
 };
