@@ -78,6 +78,30 @@ export const en = {
     about: "About",
     teamSchool: "Team & school",
   },
+  home: {
+    title: "Algeria Urban Congestion Index",
+    intro:
+      "Congestion across {{count}} metropolitan areas, measured from street-level traffic imagery against each zone's own free-flow baseline.",
+    nationalAverage: "National average",
+    deltaVsPrevious: "{{value}} pts vs previous period",
+    weightedNote: "Population-weighted across all monitored hubs.",
+    monitoredNetwork: "Monitored network",
+    roadTracked: "of road tracked across {{count}} cities",
+    avgCoverage: "{{value}}% avg coverage",
+    snapshots: "{{count}} snapshots",
+    mostCongested: "Most congested city",
+    indexRank: "{{value}}% index · rank #1 of {{total}}",
+    cityRanking: "City ranking",
+    allReports: "All reports",
+    peakWindowDistribution: "Peak window distribution",
+    nationalAvgPerWindow: "National average per 2-hour window",
+    analysisLabel: "Analysis:",
+    analysisBody:
+      "the national peak lands in the {{window}} window at {{pct}}% above each zone's calm baseline. Friday–Saturday flows stay below weekday saturation, reflecting the Algerian working week.",
+    dayByDay: "Day by day",
+    nationalMeanWindow: "National mean index across the measurement window",
+    daysRange: "{{count}} days · {{from}} to {{to}}",
+  },
   meta: {
     siteName: "Algeria Urban Congestion Index",
     home: {

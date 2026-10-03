@@ -63,6 +63,30 @@ export const fr: Messages = {
     about: "À propos",
     teamSchool: "Équipe et école",
   },
+  home: {
+    title: "Indice de congestion urbaine d'Algérie",
+    intro:
+      "Congestion dans {{count}} zones métropolitaines, mesurée à partir d'images du trafic au niveau de la rue par rapport à la ligne de base de chaque zone.",
+    nationalAverage: "Moyenne nationale",
+    deltaVsPrevious: "{{value}} pts vs période précédente",
+    weightedNote: "Pondérée par la population sur tous les pôles surveillés.",
+    monitoredNetwork: "Réseau surveillé",
+    roadTracked: "de routes suivies dans {{count}} villes",
+    avgCoverage: "{{value}} % de couverture moy.",
+    snapshots: "{{count}} relevés",
+    mostCongested: "Ville la plus congestionnée",
+    indexRank: "{{value}} % d'indice · rang n°1 sur {{total}}",
+    cityRanking: "Classement des villes",
+    allReports: "Tous les rapports",
+    peakWindowDistribution: "Répartition des heures de pointe",
+    nationalAvgPerWindow: "Moyenne nationale par tranche de 2 heures",
+    analysisLabel: "Analyse :",
+    analysisBody:
+      "le pic national se situe dans la tranche {{window}} à {{pct}} % au-dessus de la ligne de base de chaque zone. Les flux du vendredi–samedi restent en dessous de la saturation en semaine, reflétant la semaine de travail algérienne.",
+    dayByDay: "Jour après jour",
+    nationalMeanWindow: "Indice moyen national sur la fenêtre de mesure",
+    daysRange: "{{count}} jours · du {{from}} au {{to}}",
+  },
   meta: {
     siteName: "Indice de congestion urbaine d'Algérie",
     home: {
