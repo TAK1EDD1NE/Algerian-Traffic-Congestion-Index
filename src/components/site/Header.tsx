@@ -21,7 +21,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link to="/$locale" params={{ locale }} className="flex shrink-0 flex-col leading-none">
           <span className="text-xl font-bold tracking-tight">
-            AU<span className="text-signal">CI</span>
+            dz-<span className="text-signal">traffic</span>
           </span>
           <span className="mt-1 hidden text-[9px] font-bold tracking-[0.14em] text-muted-foreground uppercase sm:block">
             {t("nav.brandSub")}
