@@ -33,8 +33,8 @@ export const fr: Messages = {
     },
     workday: "Dim–Jeu",
     weekend: "Ven–Sam",
-    highways: "Autoroutes",
-    normalRoutes: "Routes normales",
+    highways: "Autoroute",
+    normalRoutes: "Grande route",
     allRoads: "Toutes les routes",
     low: "Faible",
     high: "Élevé",
@@ -111,7 +111,7 @@ export const fr: Messages = {
     chartChangeNote: "Différence entre tranches de 2 heures consécutives (positif = dégradation)",
     classOnly: "{{class}} uniquement",
     selectCitiesPrompt: "Sélectionnez une ou plusieurs villes ci-dessus pour tracer leurs courbes.",
-    highwaysVsNormal: "Autoroutes vs routes normales",
+    highwaysVsNormal: "Autoroute vs grande route",
     highwaysVsNormalNote:
       "Même formule d'indice calculée sur la capacité propre à chaque classe de route",
     selectCitiesClasses: "Sélectionnez des villes pour comparer les classes de route.",
@@ -170,7 +170,7 @@ export const fr: Messages = {
     coverageNetworkNote:
       "La part de route vue par chaque relevé, et la répartition du réseau surveillé",
     levelMixByRoadClass: "Répartition des niveaux de congestion par classe de route",
-    levelMixNote: "Couleurs du trafic Google sur les routes normales et les autoroutes",
+    levelMixNote: "Couleurs du trafic Google sur les grandes routes et les autoroutes",
     noComposition: "Aucune donnée de composition disponible.",
     areaBreakdown: "Détail par zone",
     areaBreakdownNote: "{{count}} zones surveillées · triées par congestion",
@@ -182,9 +182,9 @@ export const fr: Messages = {
     snapshots: "{{count}} relevés",
     coverageNote:
       "Google ne colore que les routes disposant de données de trafic en direct, donc les relevés nocturnes voient moins de routes. La couverture compare ce que chaque relevé a réellement vu au réseau de référence de la zone (99e centile de la longueur de route jamais observée).",
-    normalRoutesNote: "routes normales",
+    normalRoutesNote: "grandes routes",
     tableLevel: "Niveau",
-    tableNormal: "Normales",
+    tableNormal: "Grandes routes",
     tableHighway: "Autoroute",
     colorNote:
       "Part de la capacité de chaque classe de route affichée dans chaque couleur de trafic, moyennée sur toute la fenêtre. Une part rouge foncé supérieure à zéro signifie qu'une partie du réseau était à l'arrêt.",
@@ -249,7 +249,7 @@ export const fr: Messages = {
       },
       aggregation: {
         title: "Agrégation",
-        body: "Les relevés sont moyennés en journées, pondérées par la part de route réellement observée par chacun ; les journées en zones ; les zones en villes, pondérées par la taille du réseau. Les autoroutes et les routes normales sont évaluées selon leurs propres capacités.",
+        body: "Les relevés sont moyennés en journées, pondérées par la part de route réellement observée par chacun ; les journées en zones ; les zones en villes, pondérées par la taille du réseau. Les autoroutes et les grandes routes sont évaluées selon leurs propres capacités.",
       },
     },
     formulaLabel: "Formule de l'indice",
@@ -330,7 +330,7 @@ export const fr: Messages = {
       roadClass: {
         term: "Classe de route",
         definition:
-          "Le type de route sur lequel un chiffre est calculé : une autoroute (autoroute ou voie express) ou une route normale. Chaque classe est évaluée selon sa propre capacité et son propre niveau de calme.",
+          "Le type de route sur lequel un chiffre est calculé : une autoroute (autoroute ou voie express) ou une grande route. Chaque classe est évaluée selon sa propre capacité et son propre niveau de calme.",
       },
       wilaya: {
         term: "Wilaya",
@@ -404,7 +404,7 @@ export const fr: Messages = {
     explore: {
       title: "Explorateur — Indice de congestion urbaine d'Algérie",
       description:
-        "Explorateur de congestion détaillé : filtrez par ville, jour de semaine ou week-end et tranche de 2 heures ; comparez autoroutes et routes normales.",
+        "Explorateur de congestion détaillé : filtrez par ville, jour de semaine ou week-end et tranche de 2 heures ; comparez autoroutes et grandes routes.",
     },
     data: {
       title: "Jeu de données et import CSV — Indice de congestion urbaine d'Algérie",
