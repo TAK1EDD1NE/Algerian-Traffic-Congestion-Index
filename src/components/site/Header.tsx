@@ -18,17 +18,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link to="/$locale" params={{ locale }} className="flex shrink-0 items-center gap-3">
-          <span className="grid size-8 place-items-center rounded-md bg-ink">
-            <span className="size-3 rounded-full bg-signal" />
+        <Link to="/$locale" params={{ locale }} className="flex shrink-0 flex-col leading-none">
+          <span className="text-xl font-bold tracking-tight">
+            AU<span className="text-signal">CI</span>
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-xl font-bold tracking-tight">
-              AU<span className="text-signal">CI</span>
-            </span>
-            <span className="mt-1 hidden text-[9px] font-bold tracking-[0.14em] text-muted-foreground uppercase lg:block">
-              {t("nav.brandSub")}
-            </span>
+          <span className="mt-1 hidden text-[9px] font-bold tracking-[0.14em] text-muted-foreground uppercase sm:block">
+            {t("nav.brandSub")}
           </span>
         </Link>
 
