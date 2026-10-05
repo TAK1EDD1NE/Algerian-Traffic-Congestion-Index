@@ -8,6 +8,7 @@ import {
   Scripts,
   notFound,
   redirect,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { useMemo, useEffect, type ReactNode } from "react";
@@ -53,7 +54,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   const { i18n } = useI18n();
@@ -95,8 +96,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   beforeLoad: ({ location }) => {
     const first = location.pathname.split("/").filter(Boolean)[0];
-    if (first === undefined) return; // `/` is handled by the index route
-    if (isLocale(first)) return;
+    if (first === undefined) return undefined; // `/` is handled by the index route
+    if (isLocale(first)) return undefined;
     // An unknown prefix would otherwise match the `$locale` segment and serve `/xx/about` as a
     // duplicate of `/about` in the default language.
     if (LEGACY_SEGMENTS.has(first)) {
