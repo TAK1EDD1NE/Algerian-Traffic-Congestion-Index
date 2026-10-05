@@ -281,10 +281,10 @@ export const en = {
     },
     limitationsTitle: "Limitations",
     limitations: {
-      one: "Coverage is concentrated on the northern corridor; Saharan wilayas have thinner sampling and wider confidence intervals.",
-      two: "The working week is Sunday–Thursday; Friday and Saturday profiles are reported as the weekend series.",
-      three:
-        "Public-holiday and Ramadan periods shift peak hours substantially and are flagged but not removed from the monthly series.",
+      window: "Screenshots were captured from {{from}} to {{to}}.",
+      source: "All screenshots come from Google Maps.",
+      smallRoads: "Some congested small roads do not appear in the screenshots.",
+      lowCoverage: "Roads with low coverage show no colors in Google Maps.",
     },
     terminologyTitle: "Terminology",
     terminologyNote: "Every term the site and this methodology page use, in one place.",

@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import { Panel } from "@/components/site/Panel";
-import { DEFAULT_LOCALE, isLocale } from "@/i18n/locale";
+import { DEFAULT_LOCALE, isLocale, useLocale } from "@/i18n/locale";
 import { translateFor } from "@/i18n/createI18n";
+import { captureWindow, datasetQuery } from "@/lib/traffic";
 
 export const Route = createFileRoute("/$locale/methodology")({
   head: ({ params }) => {
@@ -116,6 +118,10 @@ const TERMS: { key: MethodologyTermSlug }[] = [
 
 function MethodologyPage() {
   const { t } = useTranslation();
+  const locale = useLocale();
+  const { data } = useQuery(datasetQuery);
+  // The window the screenshots cover, read from the shipped daily series — never hardcoded.
+  const captureRange = data ? captureWindow(data.daily, locale) : null;
   return (
     <main className="mx-auto max-w-7xl px-6 py-8">
       <header className="mb-10 max-w-3xl animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
@@ -164,9 +170,10 @@ function MethodologyPage() {
         <Panel className="p-6">
           <h2 className="mb-4 font-bold">{t("methodology.limitationsTitle")}</h2>
           <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-            <li>{t("methodology.limitations.one")}</li>
-            <li>{t("methodology.limitations.two")}</li>
-            <li>{t("methodology.limitations.three")}</li>
+            {captureRange ? <li>{t("methodology.limitations.window", captureRange)}</li> : null}
+            <li>{t("methodology.limitations.source")}</li>
+            <li>{t("methodology.limitations.smallRoads")}</li>
+            <li>{t("methodology.limitations.lowCoverage")}</li>
           </ul>
         </Panel>
       </div>

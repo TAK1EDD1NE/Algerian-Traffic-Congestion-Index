@@ -1,6 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { formatNumber } from "@/i18n/format";
-import type { Locale } from "@/i18n/locale";
+import { BCP47, type Locale } from "@/i18n/locale";
 import { parseCsv, num, type CsvRow } from "./csv";
 
 const g = (r: CsvRow, k: string) => r[k] ?? "";
@@ -396,6 +396,31 @@ export function dailyCitySeries(daily: DailyRow[], city: string) {
     .filter((r) => r.city === city)
     .sort((a, b) => a.date.localeCompare(b.date))
     .map((r) => ({ label: r.date.slice(5), value: r.congestionIndex }));
+}
+
+/**
+ * First and last date of the daily series, formatted for `locale` — the window the
+ * screenshots cover. Returns null when there is no series to bound it.
+ */
+export function captureWindow(
+  daily: DailyRow[],
+  locale: Locale,
+): { from: string; to: string } | null {
+  const dates = daily.map((r) => r.date).sort();
+  const first = dates[0];
+  const last = dates[dates.length - 1];
+  if (!first || !last) return null;
+  const dayMonthYear = new Intl.DateTimeFormat(BCP47[locale], {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  /** Parse a `YYYY-MM-DD` dataset date as local midnight (avoids a UTC day-shift). */
+  const parse = (iso: string) => {
+    const [y, m, d] = iso.split("-").map(Number);
+    return new Date(y ?? 1970, (m ?? 1) - 1, d ?? 1);
+  };
+  return { from: dayMonthYear.format(parse(first)), to: dayMonthYear.format(parse(last)) };
 }
 
 /** National mean per date across all cities (sorted by date). */

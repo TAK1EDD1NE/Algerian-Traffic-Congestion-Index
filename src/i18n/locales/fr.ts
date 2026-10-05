@@ -268,10 +268,12 @@ export const fr: Messages = {
     },
     limitationsTitle: "Limites",
     limitations: {
-      one: "La couverture est concentrée sur le couloir nord ; les wilayas sahariennes disposent d'un échantillonnage plus clairsemé et d'intervalles de confiance plus larges.",
-      two: "La semaine de travail va du dimanche au jeudi ; les profils du vendredi et du samedi sont rapportés comme la série du week-end.",
-      three:
-        "Les jours fériés et les périodes de Ramadan décalent sensiblement les heures de pointe ; ils sont signalés mais non retirés de la série mensuelle.",
+      window: "Les captures d'écran ont été prises du {{from}} au {{to}}.",
+      source: "Toutes les captures d'écran proviennent de Google Maps.",
+      smallRoads:
+        "Certaines petites routes congestionnées n'apparaissent pas dans les captures d'écran.",
+      lowCoverage:
+        "Les routes à faible couverture n'affichent aucune couleur dans Google Maps.",
     },
     terminologyTitle: "Terminologie",
     terminologyNote:
