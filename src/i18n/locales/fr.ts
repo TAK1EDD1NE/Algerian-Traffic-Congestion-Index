@@ -3,6 +3,7 @@ import type { Messages } from "./en";
 export const fr: Messages = {
   nav: {
     liveIndex: "Indice en direct",
+    rankings: "Classement",
     cityReports: "Rapports par ville",
     explorer: "Explorateur",
     dataset: "Jeu de données",
@@ -203,6 +204,10 @@ export const fr: Messages = {
     status: "Statut",
     trend: "Tendance",
   },
+  rankings: {
+    title: "Classement des villes",
+    note: "Les {{count}} agglomérations suivies, classées par indice de congestion. Sélectionnez une ville pour ouvrir son rapport complet.",
+  },
   heatmap: {
     hoverHint: "Survolez une cellule pour voir l'heure",
     cellValue: "{{day}} {{hour}} — {{value}} % au-dessus du flux libre",
@@ -377,6 +382,14 @@ export const fr: Messages = {
       ogTitle: "Rapports par ville — Indice de congestion urbaine d'Algérie",
       ogDescription:
         "Rapports de congestion par ville pour l'indice de congestion urbaine d'Algérie.",
+    },
+    rankings: {
+      title: "Classement des villes — Indice de congestion urbaine d'Algérie",
+      description:
+        "Classement par congestion des agglomérations algériennes suivies, avec la taille du réseau routier, les zones suivies et la visibilité moyenne de chaque ville.",
+      ogTitle: "Classement des villes — Indice de congestion urbaine d'Algérie",
+      ogDescription:
+        "Classement par congestion avec taille du réseau, zones suivies et visibilité moyenne.",
     },
     city: {
       title: "Rapport de congestion de {{city}} — Indice de congestion urbaine d'Algérie",

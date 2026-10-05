@@ -1,6 +1,7 @@
 export const en = {
   nav: {
     liveIndex: "Live Index",
+    rankings: "Rankings",
     cityReports: "City Reports",
     explorer: "Explorer",
     dataset: "Dataset",
@@ -216,6 +217,10 @@ export const en = {
     status: "Status",
     trend: "Trend",
   },
+  rankings: {
+    title: "City rankings",
+    note: "All {{count}} monitored metropolitan areas, ranked by congestion index. Select a city to open its full report.",
+  },
   heatmap: {
     hoverHint: "Hover a cell to inspect the hour",
     cellValue: "{{day}} {{hour}} — {{value}}% above free flow",
@@ -387,6 +392,14 @@ export const en = {
         "Detailed congestion report for each Algerian city: hourly profile, weekly heatmap, road-network coverage and area-by-area breakdown.",
       ogTitle: "City Reports — Algeria Urban Congestion Index",
       ogDescription: "Per-city congestion reports for the Algerian urban congestion index.",
+    },
+    rankings: {
+      title: "City Rankings — Algeria Urban Congestion Index",
+      description:
+        "Congestion ranking of the monitored Algerian metropolitan areas, with road-network size, monitored areas and average visibility for every city.",
+      ogTitle: "City Rankings — Algeria Urban Congestion Index",
+      ogDescription:
+        "Congestion ranking with road-network size, monitored areas and average visibility.",
     },
     city: {
       title: "{{city}} congestion report — Algeria Urban Congestion Index",

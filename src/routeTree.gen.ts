@@ -16,6 +16,7 @@ import { Route as LocaleCitiesRouteImport } from './routes/$locale/cities'
 import { Route as LocaleDataRouteImport } from './routes/$locale/data'
 import { Route as LocaleExploreRouteImport } from './routes/$locale/explore'
 import { Route as LocaleMethodologyRouteImport } from './routes/$locale/methodology'
+import { Route as LocaleRankingsRouteImport } from './routes/$locale/rankings'
 import { Route as LocaleCityCityRouteImport } from './routes/$locale/city.$city'
 
 const IndexRoute = IndexRouteImport.update({
@@ -53,6 +54,11 @@ const LocaleMethodologyRoute = LocaleMethodologyRouteImport.update({
   path: '/$locale/methodology',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocaleRankingsRoute = LocaleRankingsRouteImport.update({
+  id: '/$locale/rankings',
+  path: '/$locale/rankings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocaleCityCityRoute = LocaleCityCityRouteImport.update({
   id: '/$locale/city/$city',
   path: '/$locale/city/$city',
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/$locale/data': typeof LocaleDataRoute
   '/$locale/explore': typeof LocaleExploreRoute
   '/$locale/methodology': typeof LocaleMethodologyRoute
+  '/$locale/rankings': typeof LocaleRankingsRoute
   '/$locale/': typeof LocaleIndexRoute
   '/$locale/city/$city': typeof LocaleCityCityRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/$locale/data': typeof LocaleDataRoute
   '/$locale/explore': typeof LocaleExploreRoute
   '/$locale/methodology': typeof LocaleMethodologyRoute
+  '/$locale/rankings': typeof LocaleRankingsRoute
   '/$locale': typeof LocaleIndexRoute
   '/$locale/city/$city': typeof LocaleCityCityRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/$locale/data': typeof LocaleDataRoute
   '/$locale/explore': typeof LocaleExploreRoute
   '/$locale/methodology': typeof LocaleMethodologyRoute
+  '/$locale/rankings': typeof LocaleRankingsRoute
   '/$locale/': typeof LocaleIndexRoute
   '/$locale/city/$city': typeof LocaleCityCityRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/$locale/data'
     | '/$locale/explore'
     | '/$locale/methodology'
+    | '/$locale/rankings'
     | '/$locale/'
     | '/$locale/city/$city'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/$locale/data'
     | '/$locale/explore'
     | '/$locale/methodology'
+    | '/$locale/rankings'
     | '/$locale'
     | '/$locale/city/$city'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/$locale/data'
     | '/$locale/explore'
     | '/$locale/methodology'
+    | '/$locale/rankings'
     | '/$locale/'
     | '/$locale/city/$city'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   LocaleDataRoute: typeof LocaleDataRoute
   LocaleExploreRoute: typeof LocaleExploreRoute
   LocaleMethodologyRoute: typeof LocaleMethodologyRoute
+  LocaleRankingsRoute: typeof LocaleRankingsRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
   LocaleCityCityRoute: typeof LocaleCityCityRoute
 }
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleMethodologyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$locale/rankings': {
+      id: '/$locale/rankings'
+      path: '/$locale/rankings'
+      fullPath: '/$locale/rankings'
+      preLoaderRoute: typeof LocaleRankingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$locale/city/$city': {
       id: '/$locale/city/$city'
       path: '/$locale/city/$city'
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocaleDataRoute: LocaleDataRoute,
   LocaleExploreRoute: LocaleExploreRoute,
   LocaleMethodologyRoute: LocaleMethodologyRoute,
+  LocaleRankingsRoute: LocaleRankingsRoute,
   LocaleIndexRoute: LocaleIndexRoute,
   LocaleCityCityRoute: LocaleCityCityRoute,
 }

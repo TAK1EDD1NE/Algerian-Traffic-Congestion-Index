@@ -5,6 +5,7 @@ import { useLocale } from "@/i18n/locale";
 
 const NAV = [
   { to: "/", key: "nav.liveIndex" },
+  { to: "/rankings", key: "nav.rankings" },
   { to: "/cities", key: "nav.cityReports" },
   { to: "/explore", key: "nav.explorer" },
   { to: "/data", key: "nav.dataset" },
