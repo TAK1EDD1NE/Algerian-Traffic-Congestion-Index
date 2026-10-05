@@ -40,7 +40,7 @@ const TEAM: Person[] = [
     links: [
       { label: "GitHub", href: "https://github.com/TAK1EDD1NE", handle: "github.com/TAK1EDD1NE" },
       {
-        label: "",
+        label: "LinkedIn",
         href: "https://www.linkedin.com/in/takieddine-rehail-274031274",
         handle: "Rehail Taki Eddine",
       },
