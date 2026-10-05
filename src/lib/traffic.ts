@@ -423,6 +423,116 @@ export function captureWindow(
   return { from: dayMonthYear.format(parse(first)), to: dayMonthYear.format(parse(last)) };
 }
 
+/* ---------- rankings page: filters ---------- */
+
+export type RankingFilters = {
+  dayKey: "all" | "weekday" | "weekend";
+  roadClass: "combined" | "highway" | "normal";
+  /**
+   * A 2-hour slot (0, 2, … 22) or null for every slot. Snapshots arrive roughly every two
+   * hours, so these twelve slots are the finest time resolution the corpus carries — there
+   * is no true hourly series to filter on.
+   */
+  hour: number | null;
+  metric: "level" | "change";
+};
+
+export type RankingRow = {
+  city: string;
+  wilaya: string;
+  /** Congestion index, or mean slot-to-slot change when the change metric is active. */
+  congestion: number;
+  coveragePct: number;
+  capacityKm: number;
+  nAreas: number;
+};
+
+/** The app's week: Sun–Thu (dow 0–4) is the work week, Fri–Sat (5–6) the weekend. */
+const RANKING_DAYS: Record<RankingFilters["dayKey"], number[]> = {
+  all: [0, 1, 2, 3, 4, 5, 6],
+  weekday: [0, 1, 2, 3, 4],
+  weekend: [5, 6],
+};
+
+export type RankingInput = Pick<
+  Dataset,
+  "cities" | "hourly" | "roadClasses" | "roadClassesHourly"
+>;
+
+/**
+ * One row per city, ordered worst-first for the active filters.
+ *
+ * Level + all days + all roads reuses the canonical cities.csv index so the table agrees
+ * with the home ranking and the city reports; any narrower window is recomputed from the
+ * hourly series (the canonical figure is coverage-weighted, and the two differ by up to
+ * ~1.3 pts). The hour filter narrows to a single 2-hour slot (or all of them). The change
+ * metric ranks on the index against its previous period (the site's own change figure,
+ * positive = worse) — that has no day, hour or road class dimension, so those filters are
+ * ignored while it is active. Network size follows the road-class filter — each class carries
+ * its own reference network — while monitored-area counts are city-wide and never move.
+ *
+ * Not used, deliberately: hourly_delta.csv's slot-to-slot deltas. Ranked per city their
+ * mean is 0.00 for all 27 cities (a day of deltas sums to zero), so they cannot order
+ * anything; the previous-period gap is the figure with spread (stdev 1.3, no zeros).
+ */
+export function rankedCityRows(data: RankingInput, filters: RankingFilters): RankingRow[] {
+  const days = RANKING_DAYS[filters.dayKey];
+  const inSlot = (hour: number) => filters.hour === null || hour === filters.hour;
+  const canonical =
+    filters.metric === "level" &&
+    filters.dayKey === "all" &&
+    filters.roadClass === "combined" &&
+    filters.hour === null;
+  const classRow = (city: string, roadClass: "highway" | "normal") =>
+    data.roadClasses.find((r) => r.city === city && r.roadClass === roadClass);
+  const avg = (values: number[]) =>
+    values.length ? values.reduce((sum, v) => sum + v, 0) / values.length : 0;
+
+  const rows: RankingRow[] = data.cities.map((c) => {
+    let congestion: number;
+    if (filters.metric === "change") {
+      congestion = c.congestionIndex - c.previousIndex;
+    } else if (canonical) {
+      congestion = c.congestionIndex;
+    } else if (filters.roadClass === "combined") {
+      congestion = avg(
+        data.hourly
+          .filter((r) => r.city === c.city && days.includes(r.dayOfWeek) && inSlot(r.hour))
+          .map((r) => r.congestionIndex),
+      );
+    } else {
+      congestion = avg(
+        data.roadClassesHourly
+          .filter(
+            (r) =>
+              r.city === c.city &&
+              r.roadClass === filters.roadClass &&
+              days.includes(r.dayOfWeek) &&
+              inSlot(r.hour),
+          )
+          .map((r) => r.congestionIndex),
+      );
+    }
+    // Visibility follows the selected class; the change metric has no class dimension.
+    const cls =
+      filters.metric === "level" && filters.roadClass !== "combined"
+        ? classRow(c.city, filters.roadClass)
+        : undefined;
+    return {
+      city: c.city,
+      wilaya: c.wilaya,
+      congestion,
+      coveragePct: cls ? cls.coveragePct : c.coveragePct,
+      // Each class carries its own reference network, so the km figure follows the filter.
+      capacityKm: cls ? cls.capacityKm : c.capacityKm,
+      nAreas: c.nAreas,
+    };
+  });
+
+  // Worst first. Array.sort is stable, so equal values keep their canonical order.
+  return rows.sort((a, b) => b.congestion - a.congestion);
+}
+
 /** National mean per date across all cities (sorted by date). */
 export function dailyNationalSeries(daily: DailyRow[]) {
   const byDate = new Map<string, { sum: number; n: number }>();

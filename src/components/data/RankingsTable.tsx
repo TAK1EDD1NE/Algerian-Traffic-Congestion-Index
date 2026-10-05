@@ -1,16 +1,21 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { type CityRow, levelColor, slug } from "@/lib/traffic";
+import { type RankingRow, levelColor, slug } from "@/lib/traffic";
 import { useLocale } from "@/i18n/locale";
 import { useFormat } from "@/i18n/format";
 
 /**
- * Full rankings table: every monitored city ordered worst-first, one row per
- * city, with the network/coverage figures the city report's stat cards show.
- * The whole row opens the city report; the city name stays a real link so
+ * One row per city, already scored and ordered for the active filters by `rankedCityRows`
+ * in lib/traffic. The whole row opens the city report; the city name stays a real link so
  * keyboard, middle-click and open-in-new-tab still work.
  */
-export function RankingsTable({ cities }: { cities: CityRow[] }) {
+export function RankingsTable({
+  rows,
+  metric,
+}: {
+  rows: RankingRow[];
+  metric: "level" | "change";
+}) {
   const locale = useLocale();
   const { t } = useTranslation();
   const { fmt } = useFormat();
@@ -22,16 +27,24 @@ export function RankingsTable({ cities }: { cities: CityRow[] }) {
         <tr className="bg-secondary/50">
           <th className="label-xs px-6 py-3">{t("ranking.rank")}</th>
           <th className="label-xs px-6 py-3">{t("ranking.cityWilaya")}</th>
-          <th className="label-xs px-6 py-3">{t("ranking.congestion")}</th>
+          <th className="label-xs px-6 py-3">
+            {metric === "change" ? t("rankings.changeColumn") : t("ranking.congestion")}
+          </th>
           <th className="label-xs px-6 py-3">{t("ranking.roadNetwork")}</th>
           <th className="label-xs px-6 py-3">{t("cities.stat.areas")}</th>
           <th className="label-xs px-6 py-3">{t("cities.stat.visibility")}</th>
         </tr>
       </thead>
       <tbody className="divide-y divide-border text-sm">
-        {cities.map((c, i) => {
+        {rows.map((c, i) => {
           const to = "/$locale/city/$city" as const;
           const params = { locale, city: slug(c.city) };
+          const changeColor =
+            c.congestion > 0.05
+              ? "var(--critical)"
+              : c.congestion < -0.05
+                ? "var(--free)"
+                : "var(--muted-foreground)";
           return (
             <tr
               key={c.city}
@@ -56,8 +69,13 @@ export function RankingsTable({ cities }: { cities: CityRow[] }) {
                 </Link>
                 <div className="text-xs text-muted-foreground">{c.wilaya}</div>
               </td>
-              <td className="num px-6 py-4 font-semibold" style={{ color: levelColor(c.congestionIndex) }}>
-                {fmt(c.congestionIndex)}%
+              <td
+                className="num px-6 py-4 font-semibold"
+                style={{ color: metric === "change" ? changeColor : levelColor(c.congestion) }}
+              >
+                {metric === "change"
+                  ? `${c.congestion > 0 ? "+" : ""}${fmt(c.congestion)}`
+                  : `${fmt(c.congestion)}%`}
               </td>
               <td className="num px-6 py-4">
                 {fmt(c.capacityKm, 0)} {t("common.km")}

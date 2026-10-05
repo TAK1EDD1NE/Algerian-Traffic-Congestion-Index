@@ -220,6 +220,14 @@ export const en = {
   rankings: {
     title: "City rankings",
     note: "All {{count}} monitored metropolitan areas, ranked by congestion index. Select a city to open its full report.",
+    hoursLabel: "Hour",
+    allHours: "All hours",
+    hourNote: "Snapshots arrive roughly every two hours, so each slot covers a 2-hour window.",
+    changeColumn: "Change (pts)",
+    changeNote:
+      "Change is each city's index against its previous period (positive = worse). It has no day or road-class split, so those two filters do not apply to it.",
+    staticNote:
+      "Monitored areas count zones, so they stay the same whatever the filters; the road network figure follows the road-class filter.",
   },
   heatmap: {
     hoverHint: "Hover a cell to inspect the hour",

@@ -207,6 +207,15 @@ export const fr: Messages = {
   rankings: {
     title: "Classement des villes",
     note: "Les {{count}} agglomérations suivies, classées par indice de congestion. Sélectionnez une ville pour ouvrir son rapport complet.",
+    hoursLabel: "Heure",
+    allHours: "Toutes les heures",
+    hourNote:
+      "Les relevés arrivent environ toutes les deux heures : chaque créneau couvre une fenêtre de 2 heures.",
+    changeColumn: "Variation (pts)",
+    changeNote:
+      "La variation est l'indice de chaque ville par rapport à la période précédente (positif = dégradation). Elle n'a pas de découpage par jour ni par classe de route : ces deux filtres ne s'y appliquent pas.",
+    staticNote:
+      "Les zones suivies comptent des zones : elles restent identiques quels que soient les filtres ; le réseau routier, lui, suit le filtre de classe de route.",
   },
   heatmap: {
     hoverHint: "Survolez une cellule pour voir l'heure",
