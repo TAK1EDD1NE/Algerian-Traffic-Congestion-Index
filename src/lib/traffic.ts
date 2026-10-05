@@ -1,4 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
+import { formatNumber } from "@/i18n/format";
+import type { Locale } from "@/i18n/locale";
 import { parseCsv, num, type CsvRow } from "./csv";
 
 const g = (r: CsvRow, k: string) => r[k] ?? "";
@@ -65,7 +67,16 @@ export type Dataset = {
   source: "bundled" | "uploaded";
 };
 
-export const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+/** Display keys for the weekday labels, indexed by day-of-week (Sun=0 … Sat=6). Render with t(DAYS_KEY[dow]). */
+export const DAYS_KEY = [
+  "common.days.sun",
+  "common.days.mon",
+  "common.days.tue",
+  "common.days.wed",
+  "common.days.thu",
+  "common.days.fri",
+  "common.days.sat",
+] as const;
 export const MONTHS = [
   "Jan",
   "Feb",
@@ -133,7 +144,7 @@ export function parseDataset(
   citiesText: string,
   hourlyText: string,
   monthlyText: string,
-): Omit<Dataset, "source"> {
+): Pick<Dataset, "cities" | "hourly" | "monthly"> {
   const cities: CityRow[] = parseCsv(citiesText).map((r) => ({
     city: g(r, "city"),
     wilaya: g(r, "wilaya") || g(r, "city"),
@@ -290,12 +301,12 @@ export function level(index: number): Level {
   return "free";
 }
 
-export const LEVEL_LABEL: Record<Level, string> = {
-  critical: "Critical",
-  high: "High",
-  moderate: "Moderate",
-  free: "Fluid",
-};
+export const LEVEL_LABEL_KEY = {
+  critical: "level.critical",
+  high: "level.high",
+  moderate: "level.moderate",
+  free: "level.free",
+} as const satisfies Record<Level, string>;
 
 export const LEVEL_VAR: Record<Level, string> = {
   critical: "var(--critical)",
@@ -325,8 +336,8 @@ export function hourlyProfile(hourly: HourlyRow[], city?: string) {
   // measurements come in 2-hour slots; build the profile over 12 slots
   return Array.from({ length: 12 }, (_, s) => {
     const hour = s * 2;
-    const workday = rows.filter((r) => r.hour === hour && r.dayOfWeek >= 0 && r.dayOfWeek <= 3);
-    const weekend = rows.filter((r) => r.hour === hour && (r.dayOfWeek === 4 || r.dayOfWeek === 5));
+    const workday = rows.filter((r) => r.hour === hour && r.dayOfWeek >= 0 && r.dayOfWeek <= 4);
+    const weekend = rows.filter((r) => r.hour === hour && (r.dayOfWeek === 5 || r.dayOfWeek === 6));
     const avg = (list: HourlyRow[]) =>
       list.length ? list.reduce((sum, r) => sum + r.congestionIndex, 0) / list.length : 0;
     return {
@@ -372,12 +383,12 @@ export const CLASS_COLOR: Record<ColorClass, string> = {
   dark_red: "var(--critical)",
 };
 
-export const CLASS_LABEL: Record<ColorClass, string> = {
-  green: "Free flow",
-  yellow: "Moderate",
-  red: "Heavy",
-  dark_red: "Gridlock",
-};
+export const CLASS_LABEL_KEY = {
+  green: "class.green",
+  yellow: "class.yellow",
+  red: "class.red",
+  dark_red: "class.dark_red",
+} as const satisfies Record<ColorClass, string>;
 
 /** Per-date congestion series for one city (sorted by date). */
 export function dailyCitySeries(daily: DailyRow[], city: string) {
@@ -406,7 +417,7 @@ export function dailyNationalSeries(daily: DailyRow[]) {
 
 /**
  * Filterable hourly profile: city x day-group x slot.
- * dayGroup: "all" | "workday" (Sun-Wed) | "weekend" (Thu-Fri) | a specific dow number.
+ * dayGroup: "all" | "workday" (Sun-Thu) | "weekend" (Fri-Sat) | a specific dow number.
  * roadClass: undefined = combined index; "highway"/"normal" = class-specific index
  * from road_classes_hourly.csv when available.
  */
@@ -488,5 +499,4 @@ export const slug = (city: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export const fmt = (n: number, digits = 1) =>
-  n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+export const fmt = (n: number, digits = 1, locale: Locale = "en") => formatNumber(n, digits, locale);

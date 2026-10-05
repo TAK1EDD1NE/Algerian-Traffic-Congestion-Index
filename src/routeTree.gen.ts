@@ -10,91 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CitiesRouteImport } from './routes/cities'
-import { Route as DataRouteImport } from './routes/data'
-import { Route as ExploreRouteImport } from './routes/explore'
-import { Route as MethodologyRouteImport } from './routes/methodology'
-import { Route as CityCityRouteImport } from './routes/city.$city'
+import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
+import { Route as LocaleAboutRouteImport } from './routes/$locale/about'
+import { Route as LocaleCitiesRouteImport } from './routes/$locale/cities'
+import { Route as LocaleDataRouteImport } from './routes/$locale/data'
+import { Route as LocaleExploreRouteImport } from './routes/$locale/explore'
+import { Route as LocaleMethodologyRouteImport } from './routes/$locale/methodology'
+import { Route as LocaleCityCityRouteImport } from './routes/$locale/city.$city'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CitiesRoute = CitiesRouteImport.update({
-  id: '/cities',
-  path: '/cities',
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/$locale/',
+  path: '/$locale/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DataRoute = DataRouteImport.update({
-  id: '/data',
-  path: '/data',
+const LocaleAboutRoute = LocaleAboutRouteImport.update({
+  id: '/$locale/about',
+  path: '/$locale/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ExploreRoute = ExploreRouteImport.update({
-  id: '/explore',
-  path: '/explore',
+const LocaleCitiesRoute = LocaleCitiesRouteImport.update({
+  id: '/$locale/cities',
+  path: '/$locale/cities',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MethodologyRoute = MethodologyRouteImport.update({
-  id: '/methodology',
-  path: '/methodology',
+const LocaleDataRoute = LocaleDataRouteImport.update({
+  id: '/$locale/data',
+  path: '/$locale/data',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CityCityRoute = CityCityRouteImport.update({
-  id: '/city/$city',
-  path: '/city/$city',
+const LocaleExploreRoute = LocaleExploreRouteImport.update({
+  id: '/$locale/explore',
+  path: '/$locale/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleMethodologyRoute = LocaleMethodologyRouteImport.update({
+  id: '/$locale/methodology',
+  path: '/$locale/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleCityCityRoute = LocaleCityCityRouteImport.update({
+  id: '/$locale/city/$city',
+  path: '/$locale/city/$city',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/cities': typeof CitiesRoute
-  '/data': typeof DataRoute
-  '/explore': typeof ExploreRoute
-  '/methodology': typeof MethodologyRoute
-  '/city/$city': typeof CityCityRoute
+  '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/cities': typeof LocaleCitiesRoute
+  '/$locale/data': typeof LocaleDataRoute
+  '/$locale/explore': typeof LocaleExploreRoute
+  '/$locale/methodology': typeof LocaleMethodologyRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/$locale/city/$city': typeof LocaleCityCityRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/cities': typeof CitiesRoute
-  '/data': typeof DataRoute
-  '/explore': typeof ExploreRoute
-  '/methodology': typeof MethodologyRoute
-  '/city/$city': typeof CityCityRoute
+  '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/cities': typeof LocaleCitiesRoute
+  '/$locale/data': typeof LocaleDataRoute
+  '/$locale/explore': typeof LocaleExploreRoute
+  '/$locale/methodology': typeof LocaleMethodologyRoute
+  '/$locale': typeof LocaleIndexRoute
+  '/$locale/city/$city': typeof LocaleCityCityRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/cities': typeof CitiesRoute
-  '/data': typeof DataRoute
-  '/explore': typeof ExploreRoute
-  '/methodology': typeof MethodologyRoute
-  '/city/$city': typeof CityCityRoute
+  '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/cities': typeof LocaleCitiesRoute
+  '/$locale/data': typeof LocaleDataRoute
+  '/$locale/explore': typeof LocaleExploreRoute
+  '/$locale/methodology': typeof LocaleMethodologyRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/$locale/city/$city': typeof LocaleCityCityRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/cities' | '/data' | '/explore' | '/methodology' | '/city/$city'
+    | '/'
+    | '/$locale/about'
+    | '/$locale/cities'
+    | '/$locale/data'
+    | '/$locale/explore'
+    | '/$locale/methodology'
+    | '/$locale/'
+    | '/$locale/city/$city'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cities' | '/data' | '/explore' | '/methodology' | '/city/$city'
+  to:
+    | '/'
+    | '/$locale/about'
+    | '/$locale/cities'
+    | '/$locale/data'
+    | '/$locale/explore'
+    | '/$locale/methodology'
+    | '/$locale'
+    | '/$locale/city/$city'
   id:
     | '__root__'
     | '/'
-    | '/cities'
-    | '/data'
-    | '/explore'
-    | '/methodology'
-    | '/city/$city'
+    | '/$locale/about'
+    | '/$locale/cities'
+    | '/$locale/data'
+    | '/$locale/explore'
+    | '/$locale/methodology'
+    | '/$locale/'
+    | '/$locale/city/$city'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CitiesRoute: typeof CitiesRoute
-  DataRoute: typeof DataRoute
-  ExploreRoute: typeof ExploreRoute
-  MethodologyRoute: typeof MethodologyRoute
-  CityCityRoute: typeof CityCityRoute
+  LocaleAboutRoute: typeof LocaleAboutRoute
+  LocaleCitiesRoute: typeof LocaleCitiesRoute
+  LocaleDataRoute: typeof LocaleDataRoute
+  LocaleExploreRoute: typeof LocaleExploreRoute
+  LocaleMethodologyRoute: typeof LocaleMethodologyRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+  LocaleCityCityRoute: typeof LocaleCityCityRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -106,39 +143,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/cities': {
-      id: '/cities'
-      path: '/cities'
-      fullPath: '/cities'
-      preLoaderRoute: typeof CitiesRouteImport
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/$locale'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/data': {
-      id: '/data'
-      path: '/data'
-      fullPath: '/data'
-      preLoaderRoute: typeof DataRouteImport
+    '/$locale/about': {
+      id: '/$locale/about'
+      path: '/$locale/about'
+      fullPath: '/$locale/about'
+      preLoaderRoute: typeof LocaleAboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/explore': {
-      id: '/explore'
-      path: '/explore'
-      fullPath: '/explore'
-      preLoaderRoute: typeof ExploreRouteImport
+    '/$locale/cities': {
+      id: '/$locale/cities'
+      path: '/$locale/cities'
+      fullPath: '/$locale/cities'
+      preLoaderRoute: typeof LocaleCitiesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/methodology': {
-      id: '/methodology'
-      path: '/methodology'
-      fullPath: '/methodology'
-      preLoaderRoute: typeof MethodologyRouteImport
+    '/$locale/data': {
+      id: '/$locale/data'
+      path: '/$locale/data'
+      fullPath: '/$locale/data'
+      preLoaderRoute: typeof LocaleDataRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/city/$city': {
-      id: '/city/$city'
-      path: '/city/$city'
-      fullPath: '/city/$city'
-      preLoaderRoute: typeof CityCityRouteImport
+    '/$locale/explore': {
+      id: '/$locale/explore'
+      path: '/$locale/explore'
+      fullPath: '/$locale/explore'
+      preLoaderRoute: typeof LocaleExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$locale/methodology': {
+      id: '/$locale/methodology'
+      path: '/$locale/methodology'
+      fullPath: '/$locale/methodology'
+      preLoaderRoute: typeof LocaleMethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$locale/city/$city': {
+      id: '/$locale/city/$city'
+      path: '/$locale/city/$city'
+      fullPath: '/$locale/city/$city'
+      preLoaderRoute: typeof LocaleCityCityRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -146,11 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CitiesRoute: CitiesRoute,
-  DataRoute: DataRoute,
-  ExploreRoute: ExploreRoute,
-  MethodologyRoute: MethodologyRoute,
-  CityCityRoute: CityCityRoute,
+  LocaleAboutRoute: LocaleAboutRoute,
+  LocaleCitiesRoute: LocaleCitiesRoute,
+  LocaleDataRoute: LocaleDataRoute,
+  LocaleExploreRoute: LocaleExploreRoute,
+  LocaleMethodologyRoute: LocaleMethodologyRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+  LocaleCityCityRoute: LocaleCityCityRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

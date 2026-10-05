@@ -7,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useFormat } from "@/i18n/format";
 import { ChartTooltip } from "./ChartTooltip";
 
 export type TrendSeries = { key: string; color: string };
@@ -20,6 +21,7 @@ export function TrendChart({
   series: TrendSeries[];
   height?: number;
 }) {
+  const { raw } = useFormat();
   return (
     <ResponsiveContainer width="100%" height={height}>
       <LineChart data={data} margin={{ top: 8, right: 12, left: -18, bottom: 0 }}>
@@ -37,6 +39,7 @@ export function TrendChart({
           axisLine={false}
           width={44}
           unit="%"
+          tickFormatter={(v) => raw(Number(v))}
           tick={{ fontSize: 10, fill: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
         />
         <Tooltip

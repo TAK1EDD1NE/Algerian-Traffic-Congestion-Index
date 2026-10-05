@@ -1,3 +1,5 @@
+import { useFormat } from "@/i18n/format";
+
 type Item = { name?: string; value?: number | string; color?: string; stroke?: string };
 
 export function ChartTooltip({
@@ -11,6 +13,7 @@ export function ChartTooltip({
   label?: string | number;
   unit?: string;
 }) {
+  const { fmt } = useFormat();
   if (!active || !payload?.length) return null;
   return (
     <div className="rounded-lg border border-border bg-card/95 px-3 py-2 shadow-float backdrop-blur">
@@ -24,7 +27,7 @@ export function ChartTooltip({
             />
             <span className="text-muted-foreground">{p.name}</span>
             <span className="num ml-auto font-semibold">
-              {typeof p.value === "number" ? p.value.toFixed(1) : p.value}
+              {typeof p.value === "number" ? fmt(p.value, 1) : p.value}
               {unit}
             </span>
           </div>

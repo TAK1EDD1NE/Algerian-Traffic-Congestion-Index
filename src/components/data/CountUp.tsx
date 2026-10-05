@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { formatNumber } from "@/i18n/format";
+import { useLocale } from "@/i18n/locale";
 
 export function CountUp({
   value,
@@ -11,6 +13,7 @@ export function CountUp({
   duration?: number;
   className?: string;
 }) {
+  const locale = useLocale();
   const [shown, setShown] = useState(0);
   const from = useRef(0);
 
@@ -29,12 +32,5 @@ export function CountUp({
     return () => cancelAnimationFrame(frame);
   }, [value, duration]);
 
-  return (
-    <span className={className}>
-      {shown.toLocaleString("en-US", {
-        minimumFractionDigits: digits,
-        maximumFractionDigits: digits,
-      })}
-    </span>
-  );
+  return <span className={className}>{formatNumber(shown, digits, locale)}</span>;
 }
