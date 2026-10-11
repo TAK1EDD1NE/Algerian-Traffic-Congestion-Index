@@ -281,8 +281,7 @@ export const fr: Messages = {
       source: "Toutes les captures d'écran proviennent de Google Maps.",
       smallRoads:
         "Certaines petites routes congestionnées n'apparaissent pas dans les captures d'écran.",
-      lowCoverage:
-        "Les routes à faible couverture n'affichent aucune couleur dans Google Maps.",
+      lowCoverage: "Les routes à faible couverture n'affichent aucune couleur dans Google Maps.",
     },
     terminologyTitle: "Terminologie",
     terminologyNote:
@@ -365,8 +364,24 @@ export const fr: Messages = {
       "Une école d'ingénieurs publique algérienne, sur le campus d'Amizour, à Béjaïa. Elle recrute au niveau national et, après un tronc commun en informatique, les étudiants se spécialisent en intelligence artificielle / science des données ou en cybersécurité. L'école abrite également le laboratoire de recherche LITAN. C'est l'école où le projet a été réalisé et où Rehail Taki Eddine est étudiant en 5e année.",
     people: {
       rehail: {
-        role: "Étudiant en 5e année — Intelligence artificielle et science des données",
-        bio: "J'ai conçu et développé la chaîne de mesure, l'indice de congestion et cette application web, depuis la capture des images au niveau de la rue jusqu'à la publication des rapports par ville.",
+        role: "Ingénieur logiciel full-stack senior — Apprentissage automatique et science des données",
+        bio: "Je suis ingénieur logiciel senior et je construis des systèmes de données de bout en bout : l'architecture, le code, les modèles et le produit qui les rend utilisables. Mon travail se situe à la rencontre de l'ingénierie full-stack, de l'apprentissage automatique et de la science des données — capture de données à fort volume, mesure par vision par ordinateur, conception d'indices statistiques, et interfaces qui rendent ces résultats lisibles pour leurs utilisateurs.\n\nCette plateforme est mon travail de bout en bout. J'ai conçu et développé la chaîne de mesure qui transforme les images du trafic au niveau de la rue en composition colorimétrique par voie, l'estimateur qui convertit ces mesures en un indice de congestion calibré sur le régime fluide pour 27 agglomérations algériennes et 95 zones suivies, la chaîne d'agrégation et de publication nocturne derrière chaque rapport par ville, ainsi que l'application web qui les présente — infrastructure de capture, ingénierie des données, mathématiques de l'indice et interface.\n\nAu-delà de ce projet, j'ai conçu et livré de grands systèmes dans plusieurs domaines : systèmes d'information cliniques et plateformes de santé multi-clients, plateformes d'examen et d'apprentissage en ligne, chaînes de traitement documentaire et de vision par ordinateur, et génération audio. Je travaille en Python et TypeScript, je mets les systèmes en production avec Docker et PostgreSQL, et je prends en charge un projet de son premier schéma jusqu'au produit déployé.",
+        facts: {
+          fullstack: {
+            label: "Ingénierie full-stack",
+            value: "TypeScript, React, Python et SQL, du schéma de base de données à l'interface",
+          },
+          ml: {
+            label: "Apprentissage automatique",
+            value:
+              "Vision par ordinateur, segmentation d'image et modélisation statistique d'un corpus national de mesures",
+          },
+          product: {
+            label: "Produit et production",
+            value:
+              "Plateformes multi-clients, déploiement et responsabilité de bout en bout des systèmes en production",
+          },
+        },
       },
       azouaou: {
         role: "Professeur et enseignant — Directeur adjoint chargé des systèmes d'information et de communication et des relations extérieures",

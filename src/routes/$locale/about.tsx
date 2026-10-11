@@ -22,12 +22,19 @@ export const Route = createFileRoute("/$locale/about")({
 
 type PersonSlug = "rehail" | "azouaou";
 type PersonKey = `about.people.${PersonSlug}.${"role" | "bio"}`;
+// Only profiles that carry a fact block declare one; the key type names the
+// person explicitly so every literal stays a real dictionary path.
+type FactSlug = "fullstack" | "ml" | "product";
+type PersonFactKey = `about.people.rehail.facts.${FactSlug}.${"label" | "value"}`;
+
+type Fact = { labelKey: PersonFactKey; valueKey: PersonFactKey };
 
 type Person = {
   name: string;
   roleKey: PersonKey;
   org: string;
   bioKey: PersonKey;
+  facts?: Fact[];
   links: { label: string; href: string; handle: string }[];
 };
 
@@ -37,6 +44,20 @@ const TEAM: Person[] = [
     roleKey: "about.people.rehail.role",
     org: "ESTIN",
     bioKey: "about.people.rehail.bio",
+    facts: [
+      {
+        labelKey: "about.people.rehail.facts.fullstack.label",
+        valueKey: "about.people.rehail.facts.fullstack.value",
+      },
+      {
+        labelKey: "about.people.rehail.facts.ml.label",
+        valueKey: "about.people.rehail.facts.ml.value",
+      },
+      {
+        labelKey: "about.people.rehail.facts.product.label",
+        valueKey: "about.people.rehail.facts.product.value",
+      },
+    ],
     links: [
       { label: "GitHub", href: "https://github.com/TAK1EDD1NE", handle: "github.com/TAK1EDD1NE" },
       {
@@ -79,14 +100,28 @@ function AboutPage() {
       </header>
 
       <h2 className="label-xs mb-4">{t("about.teamHeading")}</h2>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid items-start gap-6 md:grid-cols-2">
         {TEAM.map((p, i) => (
           <Panel key={p.name} className="p-6">
             <div style={{ animation: `rise 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 90}ms both` }}>
               <div className="label-xs mb-2">{p.org}</div>
               <h3 className="text-xl font-bold tracking-tight">{p.name}</h3>
               <p className="mt-1 text-sm font-medium text-signal">{t(p.roleKey)}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t(p.bioKey)}</p>
+              <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                {t(p.bioKey)}
+              </p>
+              {p.facts && p.facts.length > 0 && (
+                <dl className="mt-5 space-y-3 border-t border-border pt-4">
+                  {p.facts.map((f) => (
+                    <div key={f.labelKey}>
+                      <dt className="label-xs mb-1">{t(f.labelKey)}</dt>
+                      <dd className="text-sm leading-relaxed text-muted-foreground">
+                        {t(f.valueKey)}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
               <div className="mt-5 space-y-2 border-t border-border pt-4">
                 {p.links.map((l) => (
                   <a

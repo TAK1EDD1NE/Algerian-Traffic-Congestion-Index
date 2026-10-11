@@ -373,8 +373,24 @@ export const en = {
       "A public Algerian engineering school on the Amizour campus, Béjaïa. It recruits nationwide and, after a common core in computer science, students specialise in artificial intelligence / data science or cybersecurity. The school also hosts the LITAN research laboratory. This is the school where the project was built and where Rehail Taki Eddine is a 5th-year student.",
     people: {
       rehail: {
-        role: "5th-year student — Artificial Intelligence & Data Science",
-        bio: "I designed and built the measurement pipeline, the congestion index and this web application, from street-level image capture through to the published per-city reports.",
+        role: "Senior Full-Stack Software Engineer — Machine Learning & Data Science",
+        bio: "I am a senior software engineer who builds data systems from the ground up: the architecture, the code, the models and the product that ships on top of them. My work sits where full-stack engineering meets machine learning and data science — high-volume data capture, computer-vision measurement, statistical index design, and the interfaces that make those results legible to the people who use them.\n\nThis platform is my work end to end. I designed and built the measurement pipeline that turns street-level traffic imagery into per-road colour composition, the estimator that converts those measurements into a free-flow-calibrated congestion index across 27 Algerian metropolitan areas and 95 monitored zones, the nightly aggregation and publication chain behind every per-city report, and the web application that presents it — capture infrastructure, data engineering, the index mathematics and the interface.\n\nBeyond this project I have designed and shipped large systems in several fields: clinical information systems and multi-tenant healthcare platforms, online examination and learning platforms, document-processing and computer-vision pipelines, and generative audio. I work in Python and TypeScript, put systems into production with Docker and PostgreSQL, and take a project from its first schema to the deployed product.",
+        facts: {
+          fullstack: {
+            label: "Full-stack engineering",
+            value: "TypeScript, React, Python and SQL — from database schema to interface",
+          },
+          ml: {
+            label: "Machine learning",
+            value:
+              "Computer vision, image segmentation and statistical modelling of a national measurement corpus",
+          },
+          product: {
+            label: "Product & delivery",
+            value:
+              "Multi-tenant platforms, deployment and end-to-end ownership of production systems",
+          },
+        },
       },
       azouaou: {
         role: "Professor & teacher — Adjunct Director in charge of Information & Communication Systems and External Relations",
