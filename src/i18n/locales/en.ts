@@ -84,7 +84,7 @@ export const en = {
     intro:
       "Congestion across {{count}} metropolitan areas, measured from street-level traffic imagery against each zone's own free-flow baseline.",
     nationalAverage: "National average",
-    deltaVsPrevious: "{{value}} pts vs previous period",
+    deltaVsPrevious: "{{value}} pts vs previous day",
     weightedNote: "Population-weighted across all monitored hubs.",
     monitoredNetwork: "Monitored network",
     roadTracked: "of road tracked across {{count}} cities",
@@ -223,9 +223,9 @@ export const en = {
     hoursLabel: "Hour",
     allHours: "All hours",
     hourNote: "Snapshots arrive roughly every two hours, so each slot covers a 2-hour window.",
-    changeColumn: "Change (pts)",
+    changeColumn: "Change vs previous slot (pts)",
     changeNote:
-      "Change is each city's index against its previous period (positive = worse). It has no day or road-class split, so those two filters do not apply to it.",
+      "Change compares the selected slot with the slot before it, on the selected days and road class (positive = worse). It needs one slot to compare against, so all hours is unavailable; the 00:00 slot is measured against 22:00 of the previous day.",
     staticNote:
       "Monitored areas count zones, so they stay the same whatever the filters; the road network figure follows the road-class filter.",
   },

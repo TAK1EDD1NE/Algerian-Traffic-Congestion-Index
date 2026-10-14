@@ -11,6 +11,12 @@ export type CityRow = {
   population: number;
   congestionIndex: number;
   previousIndex: number;
+  /**
+   * The city's index on the latest day that can be compared with the day before it, minus
+   * that previous day's index (both measured over the slots the two days share). NaN when
+   * the dataset carries no `day_change` column.
+   */
+  dayChange: number;
   freeFlowMinPer10km: number;
   peakAmDelayMin: number;
   peakPmDelayMin: number;
@@ -35,7 +41,12 @@ export type AreaRow = {
   nSnapshots: number;
 };
 export type ColorClass = "green" | "yellow" | "red" | "dark_red";
-export type ColorCompRow = { city: string; class: ColorClass; normalPct: number; highwayPct: number };
+export type ColorCompRow = {
+  city: string;
+  class: ColorClass;
+  normalPct: number;
+  highwayPct: number;
+};
 export type DailyRow = { city: string; date: string; dayOfWeek: number; congestionIndex: number };
 export type RoadClassRow = {
   city: string;
@@ -93,10 +104,11 @@ export const MONTHS = [
 ];
 
 export const STORAGE_KEYS = {
-  // v2.1: bump ignores stale cached datasets missing the v2 columns
-  cities: "dz-traffic:v21:cities.csv",
-  hourly: "dz-traffic:v21:hourly.csv",
-  monthly: "dz-traffic:v21:monthly.csv",
+  // v2.2: cities.csv gained day_change (the day-over-day figure the home card shows), so
+  // stale cached copies are ignored — bump this prefix again on any column-shape change.
+  cities: "dz-traffic:v22:cities.csv",
+  hourly: "dz-traffic:v22:hourly.csv",
+  monthly: "dz-traffic:v22:monthly.csv",
 } as const;
 
 export type DatasetKey = keyof typeof STORAGE_KEYS;
@@ -151,6 +163,9 @@ export function parseDataset(
     population: num(g(r, "population")),
     congestionIndex: num(g(r, "congestion_index")),
     previousIndex: num(g(r, "previous_index"), num(g(r, "congestion_index"))),
+    // num() reads an empty cell as 0, so absence is checked on the raw text: a dataset
+    // without the column reports NaN and the home card hides its change line.
+    dayChange: g(r, "day_change").trim() === "" ? Number.NaN : num(g(r, "day_change")),
     freeFlowMinPer10km: num(g(r, "free_flow_min_per_10km")),
     peakAmDelayMin: num(g(r, "peak_am_delay_min")),
     peakPmDelayMin: num(g(r, "peak_pm_delay_min")),
@@ -317,18 +332,34 @@ export const LEVEL_VAR: Record<Level, string> = {
 
 export const levelColor = (index: number) => LEVEL_VAR[level(index)];
 
+/** The corpus's last 2-hour slot; a slot-to-slot change falls back to it. */
+export const LAST_SLOT = 22;
+
+/**
+ * The 2-hour slot before `hour` on the app's calendar (Sun=0 … Sat=6): 00:00 follows
+ * 22:00 of the previous day, so a slot-to-slot change never spans more than one step.
+ */
+export function previousSlot(hour: number, dayOfWeek: number) {
+  return hour === 0
+    ? { hour: LAST_SLOT, dayOfWeek: (dayOfWeek + 6) % 7 }
+    : { hour: hour - 2, dayOfWeek };
+}
+
 export function nationalAverage(cities: CityRow[]) {
-  if (!cities.length) return { index: 0, previous: 0, delta: 0 };
+  if (!cities.length) return { index: 0, dayChange: Number.NaN };
   const weight = cities.reduce((s, c) => s + c.population, 0) || cities.length;
   const w = (pick: (c: CityRow) => number) =>
     cities.reduce((s, c) => s + pick(c) * (c.population || 1), 0) / weight;
   const index = w((c) => c.congestionIndex);
-  const previous = w((c) => c.previousIndex);
-  return {
-    index,
-    previous,
-    delta: index - previous,
-  };
+  // Day-over-day: the population weights are fixed, so the weighted mean of the per-city
+  // day changes is the change of the weighted index itself. Cities without the figure
+  // (an uploaded CSV) drop out rather than counting as zero.
+  const measured = cities.filter((c) => Number.isFinite(c.dayChange));
+  const dayChange = measured.length
+    ? measured.reduce((s, c) => s + c.dayChange * (c.population || 1), 0) /
+      measured.reduce((s, c) => s + (c.population || 1), 0)
+    : Number.NaN;
+  return { index, dayChange };
 }
 
 export function hourlyProfile(hourly: HourlyRow[], city?: string) {
@@ -454,10 +485,7 @@ const RANKING_DAYS: Record<RankingFilters["dayKey"], number[]> = {
   weekend: [5, 6],
 };
 
-export type RankingInput = Pick<
-  Dataset,
-  "cities" | "hourly" | "roadClasses" | "roadClassesHourly"
->;
+export type RankingInput = Pick<Dataset, "cities" | "hourly" | "roadClasses" | "roadClassesHourly">;
 
 /**
  * One row per city, ordered worst-first for the active filters.
@@ -466,14 +494,13 @@ export type RankingInput = Pick<
  * with the home ranking and the city reports; any narrower window is recomputed from the
  * hourly series (the canonical figure is coverage-weighted, and the two differ by up to
  * ~1.3 pts). The hour filter narrows to a single 2-hour slot (or all of them). The change
- * metric ranks on the index against its previous period (the site's own change figure,
- * positive = worse) — that has no day, hour or road class dimension, so those filters are
- * ignored while it is active. Network size follows the road-class filter — each class carries
- * its own reference network — while monitored-area counts are city-wide and never move.
- *
- * Not used, deliberately: hourly_delta.csv's slot-to-slot deltas. Ranked per city their
- * mean is 0.00 for all 27 cities (a day of deltas sums to zero), so they cannot order
- * anything; the previous-period gap is the figure with spread (stdev 1.3, no zeros).
+ * metric compares the selected slot with the slot before it — the same slot-to-slot
+ * transition the explorer's "how fast congestion changes" chart plots (positive = worse) —
+ * averaged over the selected days and computed on the selected class's own series, so every
+ * filter applies to it. "All hours" has no slot before it, so it falls back to the corpus's
+ * last slot (22:00) and the page pins the dropdown to a slot while the metric is active.
+ * Network size follows the road-class filter — each class carries its own reference network —
+ * while monitored-area counts are city-wide and never move.
  */
 export function rankedCityRows(data: RankingInput, filters: RankingFilters): RankingRow[] {
   const days = RANKING_DAYS[filters.dayKey];
@@ -491,7 +518,36 @@ export function rankedCityRows(data: RankingInput, filters: RankingFilters): Ran
   const rows: RankingRow[] = data.cities.map((c) => {
     let congestion: number;
     if (filters.metric === "change") {
-      congestion = c.congestionIndex - c.previousIndex;
+      const slot = filters.hour ?? LAST_SLOT;
+      // One city × day × slot reading, from the class's own series when a class is picked.
+      const at = (dayOfWeek: number, hour: number): number | null => {
+        const values =
+          filters.roadClass === "combined"
+            ? data.hourly
+                .filter((r) => r.city === c.city && r.dayOfWeek === dayOfWeek && r.hour === hour)
+                .map((r) => r.congestionIndex)
+            : data.roadClassesHourly
+                .filter(
+                  (r) =>
+                    r.city === c.city &&
+                    r.roadClass === filters.roadClass &&
+                    r.dayOfWeek === dayOfWeek &&
+                    r.hour === hour,
+                )
+                .map((r) => r.congestionIndex);
+        return values.length ? avg(values) : null;
+      };
+      // A day whose earlier slot is missing (no capture) drops out instead of scoring the
+      // slot as a fall from zero.
+      const deltas = days
+        .map((d) => {
+          const before = previousSlot(slot, d);
+          const now = at(d, slot);
+          const prev = at(before.dayOfWeek, before.hour);
+          return now === null || prev === null ? null : now - prev;
+        })
+        .filter((v): v is number => v !== null);
+      congestion = avg(deltas);
     } else if (canonical) {
       congestion = c.congestionIndex;
     } else if (filters.roadClass === "combined") {
@@ -513,11 +569,9 @@ export function rankedCityRows(data: RankingInput, filters: RankingFilters): Ran
           .map((r) => r.congestionIndex),
       );
     }
-    // Visibility follows the selected class; the change metric has no class dimension.
-    const cls =
-      filters.metric === "level" && filters.roadClass !== "combined"
-        ? classRow(c.city, filters.roadClass)
-        : undefined;
+    // Visibility and network follow the selected class (the change metric now scores on that
+    // class's own series too); the city-wide values apply to the combined case.
+    const cls = filters.roadClass !== "combined" ? classRow(c.city, filters.roadClass) : undefined;
     return {
       city: c.city,
       wilaya: c.wilaya,
@@ -546,7 +600,7 @@ export function dailyNationalSeries(daily: DailyRow[]) {
     .sort((a, b) => a[0].localeCompare(b[0]))
     .map(([date, e]) => ({
       label: date.slice(5),
-      value: Number(((e.sum / e.n) || 0).toFixed(1)),
+      value: Number((e.sum / e.n || 0).toFixed(1)),
     }));
 }
 
@@ -572,9 +626,7 @@ export function filteredHourlyProfile(
     return Array.from({ length: 12 }, (_, s) => {
       const hour = s * 2;
       const at = rowsC.filter((r) => r.hour === hour);
-      const avg = at.length
-        ? at.reduce((sum, r) => sum + r.congestionIndex, 0) / at.length
-        : 0;
+      const avg = at.length ? at.reduce((sum, r) => sum + r.congestionIndex, 0) / at.length : 0;
       return {
         hour,
         label: `${String(hour).padStart(2, "0")}:00`,
@@ -588,9 +640,7 @@ export function filteredHourlyProfile(
   return Array.from({ length: 12 }, (_, s) => {
     const hour = s * 2;
     const at = rows.filter((r) => r.hour === hour);
-    const avg = at.length
-      ? at.reduce((sum, r) => sum + r.congestionIndex, 0) / at.length
-      : 0;
+    const avg = at.length ? at.reduce((sum, r) => sum + r.congestionIndex, 0) / at.length : 0;
     return {
       hour,
       label: `${String(hour).padStart(2, "0")}:00`,
@@ -621,7 +671,6 @@ export function deltaSeries(hourlyDelta: HourlyDeltaRow[], city?: string) {
   });
 }
 
-
 export function peakHour(profile: ReturnType<typeof hourlyProfile>) {
   return profile.reduce((best, p) => (p.workday > best.workday ? p : best), profile[0]!);
 }
@@ -634,4 +683,5 @@ export const slug = (city: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export const fmt = (n: number, digits = 1, locale: Locale = "en") => formatNumber(n, digits, locale);
+export const fmt = (n: number, digits = 1, locale: Locale = "en") =>
+  formatNumber(n, digits, locale);

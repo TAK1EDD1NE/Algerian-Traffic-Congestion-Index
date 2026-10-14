@@ -6,7 +6,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown } from "lucide-react";
 import { RankingsTable } from "@/components/data/RankingsTable";
 import { Panel, PageState } from "@/components/site/Panel";
-import { datasetQuery, rankedCityRows } from "@/lib/traffic";
+import { datasetQuery, LAST_SLOT, rankedCityRows } from "@/lib/traffic";
 import { DEFAULT_LOCALE, isLocale } from "@/i18n/locale";
 import { translateFor } from "@/i18n/createI18n";
 
@@ -53,13 +53,11 @@ const METRICS: { key: MetricKey; labelKey: "explore.metricLevel" | "explore.metr
   { key: "change", labelKey: "explore.metricChange" },
 ];
 
-const pill = (on: boolean, disabled = false) =>
+const pill = (on: boolean) =>
   `rounded-lg px-2.5 py-1.5 text-left text-xs font-semibold transition-colors ${
-    disabled
-      ? "cursor-not-allowed border border-border text-muted-foreground/50"
-      : on
-        ? "bg-ink text-ink-foreground"
-        : "border border-border text-muted-foreground hover:bg-secondary"
+    on
+      ? "bg-ink text-ink-foreground"
+      : "border border-border text-muted-foreground hover:bg-secondary"
   }`;
 
 /** The twelve 2-hour slots the corpus carries (`null` = every slot). */
@@ -71,22 +69,24 @@ const slotLabel = (hour: number) => `${String(hour).padStart(2, "0")}:00`;
  * Hour picker. Built on the Radix Select the city switcher uses rather than a native
  * <select>: the popup gets the panel styling, a height cap and a scroll instead of the
  * browser default list.
+ *
+ * `allHoursDisabled` retires the "all hours" row while the change metric is active: a
+ * slot-to-slot change needs one slot to compare against.
  */
 function HourSelect({
   value,
   onSelect,
-  disabled,
+  allHoursDisabled,
 }: {
   value: number | null;
   onSelect: (hour: number | null) => void;
-  disabled: boolean;
+  allHoursDisabled: boolean;
 }) {
   const { t } = useTranslation();
   return (
     <SelectPrimitive.Root
       value={value === null ? "all" : String(value)}
       onValueChange={(next) => onSelect(next === "all" ? null : Number(next))}
-      disabled={disabled}
     >
       <SelectPrimitive.Trigger
         aria-label={t("rankings.hoursLabel")}
@@ -110,7 +110,8 @@ function HourSelect({
               <SelectPrimitive.Item
                 key={h === null ? "all" : h}
                 value={h === null ? "all" : String(h)}
-                className="relative flex cursor-pointer select-none items-center rounded-md py-1 pl-2.5 pr-7 text-xs outline-none data-[highlighted]:bg-secondary data-[state=checked]:font-semibold"
+                disabled={h === null && allHoursDisabled}
+                className="relative flex cursor-pointer select-none items-center rounded-md py-1 pl-2.5 pr-7 text-xs outline-none data-[disabled]:cursor-not-allowed data-[disabled]:text-muted-foreground/50 data-[highlighted]:bg-secondary data-[state=checked]:font-semibold"
               >
                 <SelectPrimitive.ItemText>
                   {h === null ? t("rankings.allHours") : slotLabel(h)}
@@ -140,10 +141,14 @@ function RankingsPage() {
   if (isLoading || error || !data)
     return <PageState loading={isLoading} error={error as Error | null} />;
 
-  // The change figure has no day, hour or road-class dimension, so those controls are inert
-  // while it is selected.
-  const levelOnly = metric === "level";
-  const narrowed = levelOnly && !(dayKey === "all" && roadClass === "combined" && hour === null);
+  // Every filter applies to both metrics now: the change figure is the selected slot against
+  // the slot before it, so it needs one slot — pick the corpus's last one on the way in.
+  const changeMetric = metric === "change";
+  const selectMetric = (next: MetricKey) => {
+    setMetric(next);
+    if (next === "change" && hour === null) setHour(LAST_SLOT);
+  };
+  const narrowed = !(dayKey === "all" && roadClass === "combined" && hour === null);
   const rows = rankedCityRows(data, { dayKey, roadClass, hour, metric });
   const activeClass = roadClass === "highway" ? t("common.highways") : t("common.normalRoutes");
   const dayLabel = DAY_GROUPS.find((g) => g.key === dayKey)?.labelKey ?? "explore.allDays";
@@ -164,8 +169,7 @@ function RankingsPage() {
                 <button
                   key={g.key}
                   onClick={() => setDayKey(g.key)}
-                  disabled={!levelOnly}
-                  className={pill(levelOnly && dayKey === g.key, !levelOnly)}
+                  className={pill(dayKey === g.key)}
                 >
                   {t(g.labelKey)}
                 </button>
@@ -179,7 +183,7 @@ function RankingsPage() {
               {METRICS.map((m) => (
                 <button
                   key={m.key}
-                  onClick={() => setMetric(m.key)}
+                  onClick={() => selectMetric(m.key)}
                   className={pill(metric === m.key)}
                 >
                   {t(m.labelKey)}
@@ -195,14 +199,13 @@ function RankingsPage() {
                 <button
                   key={r.key}
                   onClick={() => setRoadClass(r.key)}
-                  disabled={!levelOnly}
-                  className={pill(levelOnly && roadClass === r.key, !levelOnly)}
+                  className={pill(roadClass === r.key)}
                 >
                   {t(r.labelKey)}
                 </button>
               ))}
             </div>
-            {levelOnly && roadClass !== "combined" && (
+            {roadClass !== "combined" && (
               <p className="mt-3 text-[11px] text-muted-foreground">
                 {t("explore.classScoredNote")}
               </p>
@@ -211,7 +214,7 @@ function RankingsPage() {
 
           <div>
             <div className="label-xs mb-3">{t("rankings.hoursLabel")}</div>
-            <HourSelect value={hour} onSelect={setHour} disabled={!levelOnly} />
+            <HourSelect value={hour} onSelect={setHour} allHoursDisabled={changeMetric} />
             <p className="mt-3 text-[11px] text-muted-foreground">{t("rankings.hourNote")}</p>
           </div>
         </div>
@@ -219,7 +222,7 @@ function RankingsPage() {
         <p className="mt-6 text-[11px] leading-relaxed text-muted-foreground">
           {t("rankings.staticNote")}
         </p>
-        {!levelOnly && (
+        {changeMetric && (
           <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
             {t("rankings.changeNote")}
           </p>

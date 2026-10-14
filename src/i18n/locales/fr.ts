@@ -69,7 +69,7 @@ export const fr: Messages = {
     intro:
       "Congestion dans {{count}} zones métropolitaines, mesurée à partir d'images du trafic au niveau de la rue par rapport à la ligne de base de chaque zone.",
     nationalAverage: "Moyenne nationale",
-    deltaVsPrevious: "{{value}} pts vs période précédente",
+    deltaVsPrevious: "{{value}} pts vs la veille",
     weightedNote: "Pondérée par la population sur tous les pôles surveillés.",
     monitoredNetwork: "Réseau surveillé",
     roadTracked: "de routes suivies dans {{count}} villes",
@@ -211,9 +211,9 @@ export const fr: Messages = {
     allHours: "Toutes les heures",
     hourNote:
       "Les relevés arrivent environ toutes les deux heures : chaque créneau couvre une fenêtre de 2 heures.",
-    changeColumn: "Variation (pts)",
+    changeColumn: "Variation vs tranche précédente (pts)",
     changeNote:
-      "La variation est l'indice de chaque ville par rapport à la période précédente (positif = dégradation). Elle n'a pas de découpage par jour ni par classe de route : ces deux filtres ne s'y appliquent pas.",
+      "La variation compare la tranche sélectionnée à la tranche qui la précède, sur les jours et la classe de route sélectionnés (positif = dégradation). Elle a besoin d'une tranche de référence : « toutes les heures » est donc indisponible ; la tranche 00:00 est comparée à 22:00 de la veille.",
     staticNote:
       "Les zones suivies comptent des zones : elles restent identiques quels que soient les filtres ; le réseau routier, lui, suit le filtre de classe de route.",
   },

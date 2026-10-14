@@ -52,6 +52,8 @@ function Dashboard() {
   }
 
   const national = nationalAverage(data.cities);
+  // Day-over-day change; NaN when the dataset carries no day_change column (hidden below).
+  const dayChange = national.dayChange;
   const worst = data.cities[0]!;
   const profile = hourlyProfile(data.hourly);
   const peak = peakHour(profile);
@@ -90,13 +92,15 @@ function Dashboard() {
               <CountUp value={national.index} />
               <span className="ml-1 text-xl font-medium text-ink-muted">%</span>
             </div>
-            <div
-              className="mt-2 flex items-center gap-2 text-sm font-medium"
-              style={{ color: national.delta > 0 ? "var(--critical)" : "var(--free)" }}
-            >
-              <span>{national.delta > 0 ? "▲" : "▼"}</span>
-              <span>{t("home.deltaVsPrevious", { value: fmt(Math.abs(national.delta)) })}</span>
-            </div>
+            {Number.isFinite(dayChange) && (
+              <div
+                className="mt-2 flex items-center gap-2 text-sm font-medium"
+                style={{ color: dayChange > 0 ? "var(--critical)" : "var(--free)" }}
+              >
+                <span>{dayChange > 0 ? "▲" : "▼"}</span>
+                <span>{t("home.deltaVsPrevious", { value: fmt(Math.abs(dayChange)) })}</span>
+              </div>
+            )}
             <p className="mt-4 text-xs text-ink-muted">{t("home.weightedNote")}</p>
           </div>
 
