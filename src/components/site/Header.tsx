@@ -44,15 +44,6 @@ export function Header() {
 
         <div className="flex shrink-0 items-center gap-2">
           <LanguageSwitcher />
-          <div className="flex shrink-0 items-center gap-2 rounded-full border border-free/25 bg-free/10 px-3 py-1.5">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-[signal_2.4s_cubic-bezier(0.4,0,0.6,1)_infinite] rounded-full bg-free" />
-              <span className="relative inline-flex size-2 rounded-full bg-free" />
-            </span>
-            <span className="text-[10px] font-bold tracking-wider text-free uppercase">
-              {t("nav.indexOnline")}
-            </span>
-          </div>
         </div>
       </div>
     </header>
