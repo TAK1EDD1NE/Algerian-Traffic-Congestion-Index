@@ -93,6 +93,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+/**
+ * The tab icons are baked into the image, so their URLs never change between builds — and the
+ * public origin sits behind an edge cache that holds a static file for hours. A version on the URL
+ * is what makes a replaced icon show up immediately; bump it whenever the files change.
+ */
+const ICON_VERSION = "20261020";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   beforeLoad: ({ location }) => {
     const first = location.pathname.split("/").filter(Boolean)[0];
@@ -139,7 +146,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap",
         },
-        { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+        { rel: "icon", href: `/favicon.ico?v=${ICON_VERSION}`, type: "image/x-icon" },
+        {
+          rel: "icon",
+          href: `/favicon-192.png?v=${ICON_VERSION}`,
+          type: "image/png",
+          sizes: "192x192",
+        },
+        { rel: "apple-touch-icon", href: `/apple-touch-icon.png?v=${ICON_VERSION}` },
       ],
     };
   },
