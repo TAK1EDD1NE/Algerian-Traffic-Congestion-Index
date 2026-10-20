@@ -232,7 +232,7 @@ export const en = {
       "Every published day is included. Open the calendar to score a shorter window — one week is the shortest.",
     minRange: "Min. 1 week",
     daysUnavailable:
-      "This dataset carries no dated series, so the day window is unavailable and every published day is used.",
+      "The day picker needs the latest data release — until it lands, every published day is scored.",
     daysRangeNote:
       "The index is recomputed over the selected days only, coverage-weighted, on the selected road class and hour.",
     calendarAria: "Choose the date range",

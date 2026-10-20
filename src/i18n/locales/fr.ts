@@ -220,7 +220,7 @@ export const fr: Messages = {
       "Tous les jours publiés sont inclus. Ouvrez le calendrier pour resserrer la période — une semaine minimum.",
     minRange: "Min. 1 semaine",
     daysUnavailable:
-      "Ce jeu de données ne contient pas de série datée : le filtre par jours est indisponible et tous les jours publiés sont utilisés.",
+      "Le sélecteur de jours attend la dernière publication des données — d'ici là, tous les jours publiés sont pris en compte.",
     daysRangeNote:
       "L'indice est recalculé sur les seuls jours sélectionnés, pondéré par la couverture, pour la classe de route et l'heure choisies.",
     calendarAria: "Choisir la période",
