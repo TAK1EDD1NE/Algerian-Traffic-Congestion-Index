@@ -46,6 +46,8 @@ export const en = {
     high: "High",
     km: "km",
     switchCity: "Switch city",
+    last30Days: "last 30 days",
+    noRecentCaptures: "No captures in the last 30 days.",
   },
   level: {
     free: "Fluid",
@@ -100,7 +102,7 @@ export const en = {
     analysisBody:
       "the national peak lands in the {{window}} window at {{pct}}% above each zone's calm baseline. Friday–Saturday flows stay below weekday saturation, reflecting the Algerian working week.",
     dayByDay: "Day by day",
-    nationalMeanWindow: "National mean index across the measurement window",
+    nationalMeanWindow: "National mean index over the last 30 captured days",
     daysRange: "{{count}} days · {{from}} to {{to}}",
   },
   explore: {
@@ -132,7 +134,6 @@ export const en = {
     dayByDayCity: "{{city}} · day by day",
     dayByDayNational: "National · day by day",
     meanPerDay: "Mean index per calendar day",
-    noDailyData: "No daily data.",
     indexSeries: "index",
   },
   data: {
@@ -223,6 +224,18 @@ export const en = {
     hoursLabel: "Hour",
     allHours: "All hours",
     hourNote: "Snapshots arrive roughly every two hours, so each slot covers a 2-hour window.",
+    allDays: "All days",
+    daysRange: "{{from}} to {{to}}",
+    daysCount: "{{days}} captured days",
+    daysPickEnd: "{{from}} – pick the end day",
+    daysNote:
+      "Every published day is included. Open the calendar to score a shorter window — one week is the shortest.",
+    minRange: "Min. 1 week",
+    daysUnavailable:
+      "This dataset carries no dated series, so the day window is unavailable and every published day is used.",
+    daysRangeNote:
+      "The index is recomputed over the selected days only, coverage-weighted, on the selected road class and hour.",
+    calendarAria: "Choose the date range",
     changeColumn: "Change vs previous slot (pts)",
     changeNote:
       "Change compares the selected slot with the slot before it, on the selected days and road class (positive = worse). It needs one slot to compare against, so all hours is unavailable; the 00:00 slot is measured against 22:00 of the previous day.",

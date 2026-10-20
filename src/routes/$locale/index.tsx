@@ -17,6 +17,7 @@ import {
   levelColor,
   nationalAverage,
   peakHour,
+  recentDates,
   slug,
 } from "@/lib/traffic";
 
@@ -63,10 +64,11 @@ function Dashboard() {
     data.cities.reduce((s, c) => s + c.coveragePct * c.capacityKm, 0) / (totalCapacityKm || 1);
   const totalSnapshots = data.cities.reduce((s, c) => s + c.nSnapshots, 0);
 
-  // Measurement-window bounds derived from the data (never a hardcoded month).
-  const sortedDates = data.daily.map((d) => d.date).sort();
-  const firstDate = sortedDates[0];
-  const lastDate = sortedDates[sortedDates.length - 1];
+  // Measurement-window bounds derived from the data (never a hardcoded month). The day-by-day
+  // panel reads the recent window only, so its bounds are the window's own captured dates.
+  const windowDates = recentDates(data.daily);
+  const firstDate = windowDates[0];
+  const lastDate = windowDates[windowDates.length - 1];
   const dayMonth = new Intl.DateTimeFormat(BCP47[locale], { day: "numeric", month: "long" });
   const rangeFrom = firstDate ? dayMonth.format(parseIsoDate(firstDate)) : "";
   const rangeTo = lastDate ? dayMonth.format(parseIsoDate(lastDate)) : "";
@@ -204,13 +206,13 @@ function Dashboard() {
         </Panel>
       </div>
 
-      {nationalDaily.length > 1 && (
-        <Panel className="mt-8 p-6">
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="font-bold">{t("home.dayByDay")}</h2>
-              <p className="text-xs text-muted-foreground">{t("home.nationalMeanWindow")}</p>
-            </div>
+      <Panel className="mt-8 p-6">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="font-bold">{t("home.dayByDay")}</h2>
+            <p className="text-xs text-muted-foreground">{t("home.nationalMeanWindow")}</p>
+          </div>
+          {nationalDaily.length > 0 && (
             <div className="num text-xs text-muted-foreground">
               {t("home.daysRange", {
                 count: nationalDaily.length,
@@ -218,14 +220,21 @@ function Dashboard() {
                 to: rangeTo,
               })}
             </div>
-          </div>
+          )}
+        </div>
+        {nationalDaily.length > 0 ? (
           <TrendChart
             data={nationalDaily}
             series={[{ key: "value", color: "var(--signal)" }]}
             height={240}
+            showDots={nationalDaily.length < 2}
           />
-        </Panel>
-      )}
+        ) : (
+          <div className="flex h-52 items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
+            {t("common.noRecentCaptures")}
+          </div>
+        )}
+      </Panel>
     </main>
   );
 }

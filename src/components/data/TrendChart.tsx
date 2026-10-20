@@ -16,10 +16,13 @@ export function TrendChart({
   data,
   series,
   height = 300,
+  showDots = false,
 }: {
   data: Record<string, string | number>[];
   series: TrendSeries[];
   height?: number;
+  /** A window with a single captured day has no segment to draw — mark the point instead. */
+  showDots?: boolean;
 }) {
   const { raw } = useFormat();
   return (
@@ -54,7 +57,7 @@ export function TrendChart({
             name={s.key}
             stroke={s.color}
             strokeWidth={2.25}
-            dot={false}
+            dot={showDots}
             activeDot={{ r: 4, strokeWidth: 2, stroke: "var(--card)" }}
             animationDuration={1000}
             animationBegin={i * 120}

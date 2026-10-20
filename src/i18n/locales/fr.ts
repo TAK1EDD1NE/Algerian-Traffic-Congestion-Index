@@ -40,6 +40,8 @@ export const fr: Messages = {
     high: "Élevé",
     km: "km",
     switchCity: "Changer de ville",
+    last30Days: "30 derniers jours",
+    noRecentCaptures: "Aucune capture au cours des 30 derniers jours.",
   },
   level: { free: "Fluide", moderate: "Modéré", high: "Élevé", critical: "Critique" },
   class: { green: "Fluide", yellow: "Modéré", red: "Dense", dark_red: "Embouteillage" },
@@ -85,7 +87,7 @@ export const fr: Messages = {
     analysisBody:
       "le pic national se situe dans la tranche {{window}} à {{pct}} % au-dessus de la ligne de base de chaque zone. Les flux du vendredi–samedi restent en dessous de la saturation en semaine, reflétant la semaine de travail algérienne.",
     dayByDay: "Jour après jour",
-    nationalMeanWindow: "Indice moyen national sur la fenêtre de mesure",
+    nationalMeanWindow: "Indice moyen national sur les 30 derniers jours capturés",
     daysRange: "{{count}} jours · du {{from}} au {{to}}",
   },
   explore: {
@@ -118,7 +120,6 @@ export const fr: Messages = {
     dayByDayCity: "{{city}} · jour après jour",
     dayByDayNational: "National · jour après jour",
     meanPerDay: "Indice moyen par jour calendaire",
-    noDailyData: "Aucune donnée journalière.",
     indexSeries: "indice",
   },
   data: {
@@ -211,6 +212,18 @@ export const fr: Messages = {
     allHours: "Toutes les heures",
     hourNote:
       "Les relevés arrivent environ toutes les deux heures : chaque créneau couvre une fenêtre de 2 heures.",
+    allDays: "Tous les jours",
+    daysRange: "Du {{from}} au {{to}}",
+    daysCount: "{{days}} jours capturés",
+    daysPickEnd: "{{from}} – choisissez le dernier jour",
+    daysNote:
+      "Tous les jours publiés sont inclus. Ouvrez le calendrier pour resserrer la période — une semaine minimum.",
+    minRange: "Min. 1 semaine",
+    daysUnavailable:
+      "Ce jeu de données ne contient pas de série datée : le filtre par jours est indisponible et tous les jours publiés sont utilisés.",
+    daysRangeNote:
+      "L'indice est recalculé sur les seuls jours sélectionnés, pondéré par la couverture, pour la classe de route et l'heure choisies.",
+    calendarAria: "Choisir la période",
     changeColumn: "Variation vs tranche précédente (pts)",
     changeNote:
       "La variation compare la tranche sélectionnée à la tranche qui la précède, sur les jours et la classe de route sélectionnés (positif = dégradation). Elle a besoin d'une tranche de référence : « toutes les heures » est donc indisponible ; la tranche 00:00 est comparée à 22:00 de la veille.",

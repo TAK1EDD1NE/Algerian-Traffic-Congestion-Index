@@ -403,7 +403,9 @@ function ExplorerPage() {
                 ? t("explore.dayByDayCity", { city: selected[0] ?? "" })
                 : t("explore.dayByDayNational")}
             </h2>
-            <p className="text-xs text-muted-foreground">{t("explore.meanPerDay")}</p>
+            <p className="text-xs text-muted-foreground">
+              {t("explore.meanPerDay")} · {t("common.last30Days")}
+            </p>
           </div>
           <TrendMini
             data={
@@ -424,7 +426,7 @@ function TrendMini({ data }: { data: { label: string; value: number }[] }) {
   if (!data.length)
     return (
       <div className="flex h-52 items-center justify-center rounded-xl border border-dashed border-border text-sm text-muted-foreground">
-        {t("explore.noDailyData")}
+        {t("common.noRecentCaptures")}
       </div>
     );
   return (
