@@ -1,109 +1,109 @@
 city,class,normal_pct,highway_pct
-Ain Temouchent,green,47.83,2.27
-Ain Temouchent,yellow,5.1,6.08
-Ain Temouchent,red,3.03,0.16
+Ain Temouchent,green,48.04,2.28
+Ain Temouchent,yellow,5.11,6.07
+Ain Temouchent,red,3.04,0.16
 Ain Temouchent,dark_red,3.94,5.97
-Alger,green,50.75,20.69
-Alger,yellow,5.2,3.3
-Alger,red,1.75,0.47
-Alger,dark_red,3.33,2.92
-Annaba,green,51.52,9.83
-Annaba,yellow,6.32,2.88
-Annaba,red,1.61,0.26
-Annaba,dark_red,3.9,2.76
-Batna,green,56.27,5.59
-Batna,yellow,6.06,2.89
-Batna,red,1.32,0.2
-Batna,dark_red,2.99,2.87
-Bejaia,green,52.94,8.3
-Bejaia,yellow,6.64,3.16
-Bejaia,red,2.53,0.29
-Bejaia,dark_red,4.18,2.93
-Biskra,green,41.51,2.98
-Biskra,yellow,5.21,4.6
-Biskra,red,1.86,0.17
+Alger,green,50.72,20.66
+Alger,yellow,5.25,3.33
+Alger,red,1.77,0.48
+Alger,dark_red,3.35,2.95
+Annaba,green,51.58,9.84
+Annaba,yellow,6.35,2.88
+Annaba,red,1.63,0.26
+Annaba,dark_red,3.91,2.77
+Batna,green,56.45,5.59
+Batna,yellow,6.1,2.9
+Batna,red,1.34,0.2
+Batna,dark_red,3.01,2.88
+Bejaia,green,53.03,8.31
+Bejaia,yellow,6.68,3.17
+Bejaia,red,2.55,0.3
+Bejaia,dark_red,4.2,2.93
+Biskra,green,41.85,3.01
+Biskra,yellow,5.25,4.6
+Biskra,red,1.87,0.17
 Biskra,dark_red,3.9,4.25
-Blida,green,38.6,26.62
-Blida,yellow,5.68,3.86
-Blida,red,1.61,0.23
-Blida,dark_red,2.95,2.95
-Bordj Bou Arreridj,green,40.65,19.45
-Bordj Bou Arreridj,yellow,4.65,3.14
-Bordj Bou Arreridj,red,1.51,0.21
-Bordj Bou Arreridj,dark_red,2.69,2.54
-Bouira,green,27.39,33.99
-Bouira,yellow,4.35,3.55
+Blida,green,38.7,26.62
+Blida,yellow,5.71,3.88
+Blida,red,1.62,0.23
+Blida,dark_red,2.97,2.96
+Bordj Bou Arreridj,green,40.92,19.48
+Bordj Bou Arreridj,yellow,4.67,3.14
+Bordj Bou Arreridj,red,1.52,0.21
+Bordj Bou Arreridj,dark_red,2.7,2.54
+Bouira,green,27.53,34.07
+Bouira,yellow,4.38,3.56
 Bouira,red,1.24,0.17
-Bouira,dark_red,2.79,2.6
-Boumerdes,green,46.25,23.89
-Boumerdes,yellow,4.57,3.03
-Boumerdes,red,1.68,0.16
-Boumerdes,dark_red,2.7,2.71
-Chlef,green,30.08,28.21
-Chlef,yellow,3.76,5.2
-Chlef,red,1.28,0.24
-Chlef,dark_red,2.78,2.84
-Constantine,green,58.62,4.44
-Constantine,yellow,5.29,3.04
-Constantine,red,1.8,0.27
-Constantine,dark_red,3.38,2.8
-Djelfa,green,47.45,1.5
-Djelfa,yellow,7.24,3.33
-Djelfa,red,2.0,0.22
-Djelfa,dark_red,4.32,3.05
-El Tarf,green,33.99,27.3
-El Tarf,yellow,3.32,4.08
+Bouira,dark_red,2.8,2.6
+Boumerdes,green,46.31,23.94
+Boumerdes,yellow,4.59,3.04
+Boumerdes,red,1.69,0.16
+Boumerdes,dark_red,2.71,2.72
+Chlef,green,30.25,28.24
+Chlef,yellow,3.78,5.21
+Chlef,red,1.29,0.24
+Chlef,dark_red,2.79,2.84
+Constantine,green,58.75,4.45
+Constantine,yellow,5.32,3.04
+Constantine,red,1.81,0.27
+Constantine,dark_red,3.4,2.81
+Djelfa,green,47.72,1.51
+Djelfa,yellow,7.26,3.34
+Djelfa,red,2.01,0.22
+Djelfa,dark_red,4.34,3.05
+El Tarf,green,34.08,27.41
+El Tarf,yellow,3.32,4.07
 El Tarf,red,1.03,0.12
 El Tarf,dark_red,2.85,3.2
-Jijel,green,34.2,19.3
-Jijel,yellow,5.92,5.21
-Jijel,red,2.12,0.27
-Jijel,dark_red,3.99,3.85
-MSila,green,37.19,4.37
-MSila,yellow,6.72,4.26
-MSila,red,3.0,0.26
-MSila,dark_red,4.85,4.49
-Mascara,green,31.43,4.75
-Mascara,yellow,7.22,6.0
-Mascara,red,2.67,0.24
-Mascara,dark_red,5.44,6.5
-Medea,green,24.58,32.97
-Medea,yellow,5.39,3.54
+Jijel,green,34.34,19.4
+Jijel,yellow,5.95,5.22
+Jijel,red,2.13,0.26
+Jijel,dark_red,4.0,3.85
+MSila,green,37.43,4.42
+MSila,yellow,6.78,4.27
+MSila,red,3.01,0.26
+MSila,dark_red,4.86,4.5
+Mascara,green,31.62,4.81
+Mascara,yellow,7.27,6.0
+Mascara,red,2.69,0.24
+Mascara,dark_red,5.45,6.51
+Medea,green,24.67,33.07
+Medea,yellow,5.41,3.54
 Medea,red,1.47,0.15
-Medea,dark_red,3.19,2.82
-Mostaganem,green,52.98,5.82
-Mostaganem,yellow,5.17,2.48
-Mostaganem,red,2.04,0.24
-Mostaganem,dark_red,3.71,2.36
-Oran,green,51.39,15.24
-Oran,yellow,5.78,2.38
-Oran,red,1.68,0.18
-Oran,dark_red,3.09,1.94
-Setif,green,54.78,4.2
-Setif,yellow,6.88,2.26
-Setif,red,1.87,0.15
-Setif,dark_red,3.63,2.3
-Sidi Bel Abbes,green,48.64,9.77
-Sidi Bel Abbes,yellow,4.72,2.5
-Sidi Bel Abbes,red,1.24,0.11
-Sidi Bel Abbes,dark_red,2.56,2.1
-Skikda,green,47.61,3.9
-Skikda,yellow,6.03,3.8
-Skikda,red,1.93,0.27
-Skikda,dark_red,4.91,4.24
-Tiaret,green,38.4,1.9
-Tiaret,yellow,5.37,4.28
-Tiaret,red,2.19,0.16
-Tiaret,dark_red,3.62,3.61
-Tipaza,green,34.93,32.47
-Tipaza,yellow,4.62,3.15
+Medea,dark_red,3.2,2.81
+Mostaganem,green,53.13,5.83
+Mostaganem,yellow,5.2,2.48
+Mostaganem,red,2.05,0.24
+Mostaganem,dark_red,3.73,2.36
+Oran,green,51.43,15.26
+Oran,yellow,5.82,2.39
+Oran,red,1.7,0.18
+Oran,dark_red,3.11,1.95
+Setif,green,54.94,4.2
+Setif,yellow,6.94,2.27
+Setif,red,1.88,0.16
+Setif,dark_red,3.65,2.32
+Sidi Bel Abbes,green,48.77,9.83
+Sidi Bel Abbes,yellow,4.73,2.51
+Sidi Bel Abbes,red,1.25,0.11
+Sidi Bel Abbes,dark_red,2.57,2.09
+Skikda,green,47.68,3.89
+Skikda,yellow,6.07,3.8
+Skikda,red,1.95,0.27
+Skikda,dark_red,4.92,4.27
+Tiaret,green,38.67,1.92
+Tiaret,yellow,5.39,4.29
+Tiaret,red,2.2,0.16
+Tiaret,dark_red,3.63,3.62
+Tipaza,green,35.0,32.56
+Tipaza,yellow,4.64,3.15
 Tipaza,red,0.96,0.18
-Tipaza,dark_red,2.97,2.94
-Tizi Ouzou,green,34.07,26.47
-Tizi Ouzou,yellow,4.97,2.67
-Tizi Ouzou,red,2.02,0.38
-Tizi Ouzou,dark_red,3.15,2.77
-Tlemcen,green,45.92,10.63
-Tlemcen,yellow,5.76,3.1
-Tlemcen,red,2.46,0.23
-Tlemcen,dark_red,3.57,3.38
+Tipaza,dark_red,2.97,2.95
+Tizi Ouzou,green,34.21,26.52
+Tizi Ouzou,yellow,5.01,2.68
+Tizi Ouzou,red,2.04,0.39
+Tizi Ouzou,dark_red,3.17,2.79
+Tlemcen,green,46.05,10.64
+Tlemcen,yellow,5.79,3.09
+Tlemcen,red,2.47,0.23
+Tlemcen,dark_red,3.58,3.39

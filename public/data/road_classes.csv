@@ -1,55 +1,55 @@
 city,road_class,congestion_index,calm_floor,coverage_pct,capacity_km
-Ain Temouchent,highway,50.0,0.792,66.1,12.3
-Ain Temouchent,normal,4.0,0.243,72.6,49.6
-Alger,highway,22.1,0.216,77.9,342.7
-Alger,normal,14.3,0.116,82.4,719.3
-Annaba,highway,45.5,0.385,65.4,38.7
-Annaba,normal,12.1,0.138,76.9,135.0
-Batna,highway,51.4,0.437,68.0,36.7
-Batna,normal,8.4,0.114,78.2,184.2
-Bejaia,highway,57.7,0.447,66.6,30.4
-Bejaia,normal,13.8,0.15,79.8,122.8
-Biskra,highway,102.6,0.596,62.9,12.8
-Biskra,normal,6.1,0.183,62.7,57.2
-Blida,highway,12.0,0.195,76.1,80.8
-Blida,normal,12.9,0.145,74.9,119.6
-Bordj Bou Arreridj,highway,15.2,0.218,76.3,51.8
-Bordj Bou Arreridj,normal,7.3,0.148,69.7,112.5
-Bouira,highway,9.6,0.153,80.3,49.7
-Bouira,normal,8.7,0.215,69.8,53.2
-Boumerdes,highway,17.4,0.237,76.2,90.6
-Boumerdes,normal,7.4,0.162,77.6,170.2
-Chlef,highway,13.9,0.228,69.3,95.6
-Chlef,normal,7.5,0.224,71.4,119.5
-Constantine,highway,55.4,0.445,63.8,27.0
-Constantine,normal,8.9,0.125,80.0,139.0
-Djelfa,highway,107.5,0.688,64.3,5.0
-Djelfa,normal,10.5,0.155,67.3,36.2
-El Tarf,highway,11.9,0.203,73.5,36.4
-El Tarf,normal,3.9,0.232,75.8,41.5
-Jijel,highway,20.4,0.279,66.2,48.4
-Jijel,normal,12.5,0.226,72.0,71.8
-MSila,highway,47.9,0.456,54.0,14.6
-MSila,normal,12.1,0.224,64.6,47.3
-Mascara,highway,78.3,0.675,63.1,13.0
-Mascara,normal,10.5,0.286,60.2,36.3
-Medea,highway,9.2,0.165,78.4,46.0
-Medea,normal,12.0,0.226,64.9,48.9
-Mostaganem,highway,41.4,0.458,74.5,26.5
-Mostaganem,normal,9.2,0.136,73.9,156.7
-Oran,highway,14.7,0.18,67.6,194.3
-Oran,normal,14.2,0.084,80.3,520.4
-Setif,highway,52.9,0.441,63.4,30.9
-Setif,normal,12.6,0.095,76.6,193.6
-Sidi Bel Abbes,highway,27.2,0.325,63.9,25.6
-Sidi Bel Abbes,normal,6.6,0.11,70.9,98.6
-Skikda,highway,60.9,0.472,59.3,14.8
-Skikda,normal,12.2,0.179,73.7,58.8
-Tiaret,highway,82.2,0.602,58.6,11.8
-Tiaret,normal,6.3,0.187,60.3,56.8
-Tipaza,highway,10.9,0.158,72.3,133.0
-Tipaza,normal,8.5,0.2,76.8,143.1
-Tizi Ouzou,highway,13.0,0.137,68.2,83.5
-Tizi Ouzou,normal,12.5,0.166,72.0,107.0
-Tlemcen,highway,27.0,0.351,63.5,51.2
-Tlemcen,normal,9.6,0.184,75.5,142.5
+Ain Temouchent,highway,49.5,0.794,66.4,12.3
+Ain Temouchent,normal,4.0,0.244,72.8,49.6
+Alger,highway,22.4,0.218,78.0,343.0
+Alger,normal,14.5,0.116,82.5,718.6
+Annaba,highway,47.5,0.397,66.0,38.6
+Annaba,normal,12.2,0.138,77.0,135.1
+Batna,highway,52.8,0.443,68.5,36.5
+Batna,normal,8.5,0.114,78.4,184.3
+Bejaia,highway,58.4,0.454,66.7,30.4
+Bejaia,normal,14.1,0.149,79.9,122.8
+Biskra,highway,102.7,0.594,62.9,12.8
+Biskra,normal,6.1,0.183,63.1,57.2
+Blida,highway,12.3,0.194,76.1,80.9
+Blida,normal,13.1,0.145,75.2,119.7
+Bordj Bou Arreridj,highway,15.1,0.218,76.3,51.9
+Bordj Bou Arreridj,normal,7.4,0.149,70.1,112.6
+Bouira,highway,9.5,0.155,80.4,49.7
+Bouira,normal,8.8,0.215,70.0,53.2
+Boumerdes,highway,17.5,0.238,76.4,90.7
+Boumerdes,normal,7.4,0.162,77.6,170.3
+Chlef,highway,13.9,0.228,69.5,95.5
+Chlef,normal,7.6,0.224,71.6,119.5
+Constantine,highway,56.4,0.452,64.3,26.8
+Constantine,normal,9.0,0.125,80.3,139.0
+Djelfa,highway,107.3,0.687,64.3,5.0
+Djelfa,normal,10.6,0.155,67.6,36.3
+El Tarf,highway,11.9,0.203,73.6,36.5
+El Tarf,normal,3.9,0.231,75.9,41.5
+Jijel,highway,20.3,0.278,66.4,48.4
+Jijel,normal,12.5,0.228,72.3,71.9
+MSila,highway,48.2,0.458,54.2,14.6
+MSila,normal,12.4,0.223,65.0,47.4
+Mascara,highway,78.4,0.673,63.2,13.0
+Mascara,normal,10.7,0.286,60.4,36.4
+Medea,highway,9.2,0.165,78.6,46.0
+Medea,normal,12.2,0.225,65.1,48.9
+Mostaganem,highway,41.4,0.455,74.6,26.6
+Mostaganem,normal,9.2,0.137,74.0,156.9
+Oran,highway,14.9,0.18,67.7,194.2
+Oran,normal,14.4,0.084,80.4,520.7
+Setif,highway,53.6,0.44,63.5,31.0
+Setif,normal,12.8,0.095,76.9,193.6
+Sidi Bel Abbes,highway,26.9,0.325,63.8,25.8
+Sidi Bel Abbes,normal,6.7,0.11,71.1,98.6
+Skikda,highway,61.6,0.472,59.3,14.8
+Skikda,normal,12.3,0.179,73.8,58.8
+Tiaret,highway,82.9,0.603,58.7,11.9
+Tiaret,normal,6.4,0.187,60.7,56.9
+Tipaza,highway,11.0,0.159,72.7,132.6
+Tipaza,normal,8.5,0.201,76.9,143.2
+Tizi Ouzou,highway,13.1,0.138,68.3,83.6
+Tizi Ouzou,normal,12.6,0.167,72.3,107.1
+Tlemcen,highway,27.0,0.351,63.6,51.2
+Tlemcen,normal,9.6,0.184,75.6,142.6

@@ -32,12 +32,12 @@ Ain Temouchent,2,10,9.6
 Ain Temouchent,2,12,10.5
 Ain Temouchent,2,14,7.7
 Ain Temouchent,2,16,6.3
-Ain Temouchent,2,18,5.7
+Ain Temouchent,2,18,6.0
 Ain Temouchent,2,20,5.3
-Ain Temouchent,2,22,4.5
-Ain Temouchent,3,0,5.9
-Ain Temouchent,3,2,5.6
-Ain Temouchent,3,4,4.7
+Ain Temouchent,2,22,5.8
+Ain Temouchent,3,0,7.7
+Ain Temouchent,3,2,4.2
+Ain Temouchent,3,4,2.9
 Ain Temouchent,3,6,7.7
 Ain Temouchent,3,8,8.6
 Ain Temouchent,3,10,9.8
@@ -47,7 +47,7 @@ Ain Temouchent,3,16,11.2
 Ain Temouchent,3,18,6.9
 Ain Temouchent,3,20,4.2
 Ain Temouchent,3,22,10.6
-Ain Temouchent,4,0,5.9
+Ain Temouchent,4,0,4.1
 Ain Temouchent,4,2,4.4
 Ain Temouchent,4,4,4.1
 Ain Temouchent,4,6,10.0
@@ -55,7 +55,7 @@ Ain Temouchent,4,8,10.8
 Ain Temouchent,4,10,7.3
 Ain Temouchent,4,12,13.2
 Ain Temouchent,4,14,11.1
-Ain Temouchent,4,16,12.0
+Ain Temouchent,4,16,11.6
 Ain Temouchent,4,18,7.6
 Ain Temouchent,4,20,9.3
 Ain Temouchent,4,22,5.1
@@ -116,11 +116,11 @@ Alger,2,10,29.3
 Alger,2,12,41.4
 Alger,2,14,33.3
 Alger,2,16,34.1
-Alger,2,18,24.2
-Alger,2,20,15.2
-Alger,2,22,10.8
-Alger,3,0,2.3
-Alger,3,2,0.7
+Alger,2,18,27.4
+Alger,2,20,16.8
+Alger,2,22,10.6
+Alger,3,0,2.7
+Alger,3,2,0.9
 Alger,3,4,0.3
 Alger,3,6,0.6
 Alger,3,8,25.8
@@ -131,7 +131,7 @@ Alger,3,16,50.3
 Alger,3,18,32.4
 Alger,3,20,15.9
 Alger,3,22,9.7
-Alger,4,0,3.0
+Alger,4,0,2.8
 Alger,4,2,0.1
 Alger,4,4,0.2
 Alger,4,6,0.1
@@ -139,7 +139,7 @@ Alger,4,8,15.1
 Alger,4,10,29.4
 Alger,4,12,41.5
 Alger,4,14,33.4
-Alger,4,16,28.3
+Alger,4,16,33.5
 Alger,4,18,30.8
 Alger,4,20,22.0
 Alger,4,22,19.5
@@ -200,12 +200,12 @@ Annaba,2,10,20.5
 Annaba,2,12,29.6
 Annaba,2,14,21.7
 Annaba,2,16,18.8
-Annaba,2,18,20.6
+Annaba,2,18,21.4
 Annaba,2,20,22.2
-Annaba,2,22,11.8
-Annaba,3,0,3.0
-Annaba,3,2,0.5
-Annaba,3,4,0.5
+Annaba,2,22,12.7
+Annaba,3,0,2.9
+Annaba,3,2,0.4
+Annaba,3,4,0.7
 Annaba,3,6,0.3
 Annaba,3,8,7.1
 Annaba,3,10,26.1
@@ -223,7 +223,7 @@ Annaba,4,8,6.3
 Annaba,4,10,17.5
 Annaba,4,12,29.7
 Annaba,4,14,31.5
-Annaba,4,16,20.3
+Annaba,4,16,22.3
 Annaba,4,18,30.8
 Annaba,4,20,33.5
 Annaba,4,22,21.6
@@ -284,10 +284,10 @@ Batna,2,10,23.4
 Batna,2,12,24.6
 Batna,2,14,18.0
 Batna,2,16,29.9
-Batna,2,18,20.7
-Batna,2,20,10.3
+Batna,2,18,23.5
+Batna,2,20,12.4
 Batna,2,22,2.5
-Batna,3,0,1.6
+Batna,3,0,2.2
 Batna,3,2,0.2
 Batna,3,4,0.5
 Batna,3,6,0.9
@@ -307,7 +307,7 @@ Batna,4,8,4.8
 Batna,4,10,24.1
 Batna,4,12,31.8
 Batna,4,14,17.7
-Batna,4,16,13.6
+Batna,4,16,14.5
 Batna,4,18,23.6
 Batna,4,20,13.5
 Batna,4,22,4.2
@@ -368,12 +368,12 @@ Bejaia,2,10,30.5
 Bejaia,2,12,34.6
 Bejaia,2,14,28.2
 Bejaia,2,16,29.4
-Bejaia,2,18,25.2
-Bejaia,2,20,13.0
+Bejaia,2,18,24.7
+Bejaia,2,20,15.7
 Bejaia,2,22,6.4
-Bejaia,3,0,1.7
-Bejaia,3,2,0.9
-Bejaia,3,4,0.8
+Bejaia,3,0,1.9
+Bejaia,3,2,1.1
+Bejaia,3,4,0.6
 Bejaia,3,6,2.2
 Bejaia,3,8,21.0
 Bejaia,3,10,32.6
@@ -383,7 +383,7 @@ Bejaia,3,16,38.0
 Bejaia,3,18,24.6
 Bejaia,3,20,15.8
 Bejaia,3,22,7.3
-Bejaia,4,0,2.1
+Bejaia,4,0,2.7
 Bejaia,4,2,0.8
 Bejaia,4,4,1.5
 Bejaia,4,6,1.6
@@ -391,7 +391,7 @@ Bejaia,4,8,17.8
 Bejaia,4,10,35.4
 Bejaia,4,12,44.2
 Bejaia,4,14,33.3
-Bejaia,4,16,32.7
+Bejaia,4,16,37.5
 Bejaia,4,18,30.9
 Bejaia,4,20,25.9
 Bejaia,4,22,11.2
@@ -452,12 +452,12 @@ Biskra,2,10,22.7
 Biskra,2,12,18.0
 Biskra,2,14,12.8
 Biskra,2,16,3.1
-Biskra,2,18,11.5
-Biskra,2,20,4.2
+Biskra,2,18,12.2
+Biskra,2,20,5.3
 Biskra,2,22,0.6
-Biskra,3,0,4.3
-Biskra,3,2,4.4
-Biskra,3,4,3.4
+Biskra,3,0,3.4
+Biskra,3,2,4.3
+Biskra,3,4,2.9
 Biskra,3,6,4.6
 Biskra,3,8,12.6
 Biskra,3,10,24.2
@@ -467,7 +467,7 @@ Biskra,3,16,7.1
 Biskra,3,18,10.6
 Biskra,3,20,3.7
 Biskra,3,22,5.6
-Biskra,4,0,3.6
+Biskra,4,0,5.0
 Biskra,4,2,3.9
 Biskra,4,4,1.8
 Biskra,4,6,4.3
@@ -475,7 +475,7 @@ Biskra,4,8,13.1
 Biskra,4,10,23.7
 Biskra,4,12,21.2
 Biskra,4,14,6.2
-Biskra,4,16,4.7
+Biskra,4,16,5.2
 Biskra,4,18,9.6
 Biskra,4,20,9.0
 Biskra,4,22,9.0
@@ -536,12 +536,12 @@ Blida,2,10,25.1
 Blida,2,12,37.7
 Blida,2,14,22.5
 Blida,2,16,19.2
-Blida,2,18,14.4
-Blida,2,20,13.4
+Blida,2,18,14.0
+Blida,2,20,15.2
 Blida,2,22,10.3
-Blida,3,0,2.1
-Blida,3,2,0.4
-Blida,3,4,0.0
+Blida,3,0,2.7
+Blida,3,2,0.5
+Blida,3,4,0.1
 Blida,3,6,0.4
 Blida,3,8,13.8
 Blida,3,10,29.2
@@ -551,7 +551,7 @@ Blida,3,16,28.5
 Blida,3,18,14.6
 Blida,3,20,15.1
 Blida,3,22,6.7
-Blida,4,0,2.6
+Blida,4,0,2.5
 Blida,4,2,0.0
 Blida,4,4,0.0
 Blida,4,6,0.3
@@ -559,7 +559,7 @@ Blida,4,8,10.6
 Blida,4,10,26.6
 Blida,4,12,38.8
 Blida,4,14,27.2
-Blida,4,16,17.0
+Blida,4,16,19.1
 Blida,4,18,19.8
 Blida,4,20,20.5
 Blida,4,22,10.4
@@ -620,12 +620,12 @@ Bordj Bou Arreridj,2,10,19.5
 Bordj Bou Arreridj,2,12,16.2
 Bordj Bou Arreridj,2,14,13.3
 Bordj Bou Arreridj,2,16,11.1
-Bordj Bou Arreridj,2,18,9.7
+Bordj Bou Arreridj,2,18,9.5
 Bordj Bou Arreridj,2,20,4.2
-Bordj Bou Arreridj,2,22,2.9
+Bordj Bou Arreridj,2,22,2.8
 Bordj Bou Arreridj,3,0,0.6
-Bordj Bou Arreridj,3,2,1.0
-Bordj Bou Arreridj,3,4,0.5
+Bordj Bou Arreridj,3,2,0.4
+Bordj Bou Arreridj,3,4,0.3
 Bordj Bou Arreridj,3,6,0.4
 Bordj Bou Arreridj,3,8,6.7
 Bordj Bou Arreridj,3,10,16.5
@@ -643,7 +643,7 @@ Bordj Bou Arreridj,4,8,4.3
 Bordj Bou Arreridj,4,10,14.2
 Bordj Bou Arreridj,4,12,19.5
 Bordj Bou Arreridj,4,14,12.2
-Bordj Bou Arreridj,4,16,10.2
+Bordj Bou Arreridj,4,16,10.4
 Bordj Bou Arreridj,4,18,7.4
 Bordj Bou Arreridj,4,20,6.0
 Bordj Bou Arreridj,4,22,3.9
@@ -704,12 +704,12 @@ Bouira,2,10,17.2
 Bouira,2,12,19.1
 Bouira,2,14,9.4
 Bouira,2,16,9.6
-Bouira,2,18,4.6
-Bouira,2,20,3.5
+Bouira,2,18,4.2
+Bouira,2,20,4.2
 Bouira,2,22,0.9
-Bouira,3,0,1.8
-Bouira,3,2,1.6
-Bouira,3,4,1.3
+Bouira,3,0,1.9
+Bouira,3,2,1.4
+Bouira,3,4,1.2
 Bouira,3,6,1.1
 Bouira,3,8,5.3
 Bouira,3,10,14.3
@@ -719,7 +719,7 @@ Bouira,3,16,7.3
 Bouira,3,18,4.3
 Bouira,3,20,4.1
 Bouira,3,22,0.8
-Bouira,4,0,0.7
+Bouira,4,0,0.5
 Bouira,4,2,0.8
 Bouira,4,4,0.9
 Bouira,4,6,0.7
@@ -727,7 +727,7 @@ Bouira,4,8,6.4
 Bouira,4,10,16.9
 Bouira,4,12,18.9
 Bouira,4,14,13.8
-Bouira,4,16,8.5
+Bouira,4,16,9.8
 Bouira,4,18,8.3
 Bouira,4,20,3.5
 Bouira,4,22,2.7
@@ -788,11 +788,11 @@ Boumerdes,2,10,12.8
 Boumerdes,2,12,17.1
 Boumerdes,2,14,13.5
 Boumerdes,2,16,14.0
-Boumerdes,2,18,11.0
+Boumerdes,2,18,11.9
 Boumerdes,2,20,7.1
 Boumerdes,2,22,4.9
-Boumerdes,3,0,1.0
-Boumerdes,3,2,0.1
+Boumerdes,3,0,1.1
+Boumerdes,3,2,0.2
 Boumerdes,3,4,0.2
 Boumerdes,3,6,0.4
 Boumerdes,3,8,5.8
@@ -803,7 +803,7 @@ Boumerdes,3,16,21.3
 Boumerdes,3,18,9.5
 Boumerdes,3,20,7.0
 Boumerdes,3,22,4.1
-Boumerdes,4,0,1.4
+Boumerdes,4,0,1.3
 Boumerdes,4,2,0.2
 Boumerdes,4,4,0.0
 Boumerdes,4,6,0.0
@@ -811,7 +811,7 @@ Boumerdes,4,8,2.8
 Boumerdes,4,10,12.2
 Boumerdes,4,12,18.6
 Boumerdes,4,14,11.9
-Boumerdes,4,16,13.0
+Boumerdes,4,16,14.9
 Boumerdes,4,18,13.3
 Boumerdes,4,20,10.8
 Boumerdes,4,22,8.4
@@ -872,12 +872,12 @@ Chlef,2,10,17.2
 Chlef,2,12,18.9
 Chlef,2,14,8.6
 Chlef,2,16,6.6
-Chlef,2,18,3.0
-Chlef,2,20,6.0
+Chlef,2,18,2.8
+Chlef,2,20,6.5
 Chlef,2,22,6.4
-Chlef,3,0,1.7
-Chlef,3,2,1.3
-Chlef,3,4,1.7
+Chlef,3,0,0.3
+Chlef,3,2,1.6
+Chlef,3,4,1.4
 Chlef,3,6,0.3
 Chlef,3,8,4.4
 Chlef,3,10,12.5
@@ -887,7 +887,7 @@ Chlef,3,16,6.3
 Chlef,3,18,5.6
 Chlef,3,20,6.0
 Chlef,3,22,5.9
-Chlef,4,0,1.9
+Chlef,4,0,2.5
 Chlef,4,2,0.5
 Chlef,4,4,1.2
 Chlef,4,6,1.4
@@ -895,7 +895,7 @@ Chlef,4,8,6.0
 Chlef,4,10,14.9
 Chlef,4,12,20.4
 Chlef,4,14,19.3
-Chlef,4,16,6.7
+Chlef,4,16,7.7
 Chlef,4,18,12.1
 Chlef,4,20,10.3
 Chlef,4,22,6.2
@@ -956,12 +956,12 @@ Constantine,2,10,19.1
 Constantine,2,12,29.2
 Constantine,2,14,21.7
 Constantine,2,16,13.5
-Constantine,2,18,18.3
+Constantine,2,18,19.7
 Constantine,2,20,13.9
-Constantine,2,22,4.3
+Constantine,2,22,4.9
 Constantine,3,0,0.7
 Constantine,3,2,0.3
-Constantine,3,4,0.5
+Constantine,3,4,0.6
 Constantine,3,6,0.1
 Constantine,3,8,12.4
 Constantine,3,10,26.7
@@ -971,7 +971,7 @@ Constantine,3,16,18.5
 Constantine,3,18,19.7
 Constantine,3,20,14.7
 Constantine,3,22,5.0
-Constantine,4,0,0.4
+Constantine,4,0,0.5
 Constantine,4,2,0.3
 Constantine,4,4,0.7
 Constantine,4,6,0.3
@@ -979,7 +979,7 @@ Constantine,4,8,6.5
 Constantine,4,10,24.2
 Constantine,4,12,34.7
 Constantine,4,14,22.3
-Constantine,4,16,16.4
+Constantine,4,16,17.6
 Constantine,4,18,26.0
 Constantine,4,20,18.4
 Constantine,4,22,5.7
@@ -1040,12 +1040,12 @@ Djelfa,2,10,25.0
 Djelfa,2,12,29.9
 Djelfa,2,14,21.5
 Djelfa,2,16,10.8
-Djelfa,2,18,22.4
+Djelfa,2,18,25.0
 Djelfa,2,20,17.8
-Djelfa,2,22,12.8
+Djelfa,2,22,13.7
 Djelfa,3,0,2.8
 Djelfa,3,2,0.0
-Djelfa,3,4,0.7
+Djelfa,3,4,0.9
 Djelfa,3,6,0.6
 Djelfa,3,8,6.3
 Djelfa,3,10,26.0
@@ -1055,7 +1055,7 @@ Djelfa,3,16,14.2
 Djelfa,3,18,31.3
 Djelfa,3,20,12.0
 Djelfa,3,22,12.2
-Djelfa,4,0,2.2
+Djelfa,4,0,2.3
 Djelfa,4,2,1.3
 Djelfa,4,4,0.0
 Djelfa,4,6,0.0
@@ -1063,7 +1063,7 @@ Djelfa,4,8,5.8
 Djelfa,4,10,24.2
 Djelfa,4,12,37.3
 Djelfa,4,14,12.7
-Djelfa,4,16,9.2
+Djelfa,4,16,9.3
 Djelfa,4,18,24.7
 Djelfa,4,20,20.1
 Djelfa,4,22,8.9
@@ -1124,12 +1124,12 @@ El Tarf,2,10,7.6
 El Tarf,2,12,4.1
 El Tarf,2,14,3.8
 El Tarf,2,16,5.5
-El Tarf,2,18,4.5
+El Tarf,2,18,5.0
 El Tarf,2,20,2.2
-El Tarf,2,22,3.5
-El Tarf,3,0,5.0
-El Tarf,3,2,5.8
-El Tarf,3,4,2.9
+El Tarf,2,22,3.6
+El Tarf,3,0,3.7
+El Tarf,3,2,6.5
+El Tarf,3,4,2.4
 El Tarf,3,6,3.0
 El Tarf,3,8,3.9
 El Tarf,3,10,5.3
@@ -1139,7 +1139,7 @@ El Tarf,3,16,3.8
 El Tarf,3,18,3.1
 El Tarf,3,20,1.9
 El Tarf,3,22,4.4
-El Tarf,4,0,2.6
+El Tarf,4,0,2.7
 El Tarf,4,2,4.6
 El Tarf,4,4,4.0
 El Tarf,4,6,3.3
@@ -1147,7 +1147,7 @@ El Tarf,4,8,4.3
 El Tarf,4,10,8.3
 El Tarf,4,12,4.4
 El Tarf,4,14,3.1
-El Tarf,4,16,3.3
+El Tarf,4,16,4.3
 El Tarf,4,18,4.5
 El Tarf,4,20,1.6
 El Tarf,4,22,4.1
@@ -1208,12 +1208,12 @@ Jijel,2,10,17.0
 Jijel,2,12,29.5
 Jijel,2,14,20.0
 Jijel,2,16,19.6
-Jijel,2,18,19.4
+Jijel,2,18,21.8
 Jijel,2,20,15.6
-Jijel,2,22,6.6
-Jijel,3,0,4.5
+Jijel,2,22,6.7
+Jijel,3,0,5.4
 Jijel,3,2,2.5
-Jijel,3,4,2.1
+Jijel,3,4,2.0
 Jijel,3,6,0.2
 Jijel,3,8,6.1
 Jijel,3,10,21.5
@@ -1223,7 +1223,7 @@ Jijel,3,16,19.6
 Jijel,3,18,22.8
 Jijel,3,20,13.6
 Jijel,3,22,11.3
-Jijel,4,0,6.4
+Jijel,4,0,4.9
 Jijel,4,2,1.1
 Jijel,4,4,1.4
 Jijel,4,6,1.2
@@ -1231,7 +1231,7 @@ Jijel,4,8,6.3
 Jijel,4,10,21.5
 Jijel,4,12,37.3
 Jijel,4,14,22.6
-Jijel,4,16,21.6
+Jijel,4,16,22.6
 Jijel,4,18,29.4
 Jijel,4,20,24.1
 Jijel,4,22,13.0
@@ -1292,12 +1292,12 @@ MSila,2,10,39.5
 MSila,2,12,44.0
 MSila,2,14,26.7
 MSila,2,16,17.4
-MSila,2,18,15.9
+MSila,2,18,15.5
 MSila,2,20,4.5
-MSila,2,22,2.9
+MSila,2,22,2.5
 MSila,3,0,4.1
-MSila,3,2,2.2
-MSila,3,4,2.5
+MSila,3,2,2.9
+MSila,3,4,3.6
 MSila,3,6,1.9
 MSila,3,8,25.2
 MSila,3,10,48.0
@@ -1307,7 +1307,7 @@ MSila,3,16,18.3
 MSila,3,18,18.9
 MSila,3,20,4.5
 MSila,3,22,3.4
-MSila,4,0,5.6
+MSila,4,0,7.8
 MSila,4,2,1.0
 MSila,4,4,2.2
 MSila,4,6,4.3
@@ -1315,7 +1315,7 @@ MSila,4,8,25.3
 MSila,4,10,43.1
 MSila,4,12,39.8
 MSila,4,14,25.2
-MSila,4,16,19.0
+MSila,4,16,22.0
 MSila,4,18,9.4
 MSila,4,20,9.6
 MSila,4,22,6.2
@@ -1376,12 +1376,12 @@ Mascara,2,10,35.6
 Mascara,2,12,31.1
 Mascara,2,14,24.6
 Mascara,2,16,14.1
-Mascara,2,18,21.9
+Mascara,2,18,26.3
 Mascara,2,20,14.9
-Mascara,2,22,7.5
-Mascara,3,0,7.5
-Mascara,3,2,3.8
-Mascara,3,4,4.6
+Mascara,2,22,6.6
+Mascara,3,0,7.0
+Mascara,3,2,5.0
+Mascara,3,4,5.1
 Mascara,3,6,7.1
 Mascara,3,8,11.0
 Mascara,3,10,39.0
@@ -1399,7 +1399,7 @@ Mascara,4,8,4.3
 Mascara,4,10,22.3
 Mascara,4,12,24.5
 Mascara,4,14,17.0
-Mascara,4,16,7.2
+Mascara,4,16,9.3
 Mascara,4,18,14.3
 Mascara,4,20,29.3
 Mascara,4,22,11.8
@@ -1460,12 +1460,12 @@ Medea,2,10,14.3
 Medea,2,12,18.0
 Medea,2,14,13.9
 Medea,2,16,16.7
-Medea,2,18,10.7
+Medea,2,18,9.4
 Medea,2,20,8.3
-Medea,2,22,2.7
-Medea,3,0,2.0
-Medea,3,2,0.3
-Medea,3,4,0.5
+Medea,2,22,2.2
+Medea,3,0,1.6
+Medea,3,2,0.4
+Medea,3,4,0.3
 Medea,3,6,0.6
 Medea,3,8,5.6
 Medea,3,10,17.8
@@ -1475,7 +1475,7 @@ Medea,3,16,16.1
 Medea,3,18,11.8
 Medea,3,20,8.3
 Medea,3,22,3.3
-Medea,4,0,1.1
+Medea,4,0,0.3
 Medea,4,2,1.0
 Medea,4,4,0.3
 Medea,4,6,0.3
@@ -1483,7 +1483,7 @@ Medea,4,8,1.2
 Medea,4,10,15.6
 Medea,4,12,16.9
 Medea,4,14,12.1
-Medea,4,16,15.9
+Medea,4,16,16.8
 Medea,4,18,16.0
 Medea,4,20,17.3
 Medea,4,22,5.3
@@ -1544,11 +1544,11 @@ Mostaganem,2,10,19.0
 Mostaganem,2,12,24.3
 Mostaganem,2,14,20.3
 Mostaganem,2,16,17.9
-Mostaganem,2,18,12.7
+Mostaganem,2,18,12.6
 Mostaganem,2,20,8.3
-Mostaganem,2,22,6.5
-Mostaganem,3,0,1.7
-Mostaganem,3,2,0.1
+Mostaganem,2,22,6.1
+Mostaganem,3,0,2.0
+Mostaganem,3,2,0.0
 Mostaganem,3,4,0.0
 Mostaganem,3,6,0.1
 Mostaganem,3,8,2.3
@@ -1559,7 +1559,7 @@ Mostaganem,3,16,19.4
 Mostaganem,3,18,15.7
 Mostaganem,3,20,11.6
 Mostaganem,3,22,6.9
-Mostaganem,4,0,2.4
+Mostaganem,4,0,2.1
 Mostaganem,4,2,0.0
 Mostaganem,4,4,0.0
 Mostaganem,4,6,0.4
@@ -1567,7 +1567,7 @@ Mostaganem,4,8,4.0
 Mostaganem,4,10,23.6
 Mostaganem,4,12,27.7
 Mostaganem,4,14,21.7
-Mostaganem,4,16,19.8
+Mostaganem,4,16,21.8
 Mostaganem,4,18,16.9
 Mostaganem,4,20,17.2
 Mostaganem,4,22,10.5
@@ -1628,11 +1628,11 @@ Oran,2,10,27.0
 Oran,2,12,42.6
 Oran,2,14,32.6
 Oran,2,16,30.2
-Oran,2,18,17.8
+Oran,2,18,18.5
 Oran,2,20,14.4
-Oran,2,22,8.3
-Oran,3,0,2.9
-Oran,3,2,0.3
+Oran,2,22,8.5
+Oran,3,0,3.2
+Oran,3,2,0.4
 Oran,3,4,0.0
 Oran,3,6,0.2
 Oran,3,8,10.6
@@ -1643,7 +1643,7 @@ Oran,3,16,35.6
 Oran,3,18,16.5
 Oran,3,20,15.3
 Oran,3,22,9.7
-Oran,4,0,3.7
+Oran,4,0,3.3
 Oran,4,2,0.1
 Oran,4,4,0.1
 Oran,4,6,0.2
@@ -1651,7 +1651,7 @@ Oran,4,8,7.5
 Oran,4,10,34.0
 Oran,4,12,46.7
 Oran,4,14,35.0
-Oran,4,16,26.7
+Oran,4,16,29.3
 Oran,4,18,20.9
 Oran,4,20,21.6
 Oran,4,22,13.8
@@ -1712,10 +1712,10 @@ Setif,2,10,33.8
 Setif,2,12,38.4
 Setif,2,14,32.1
 Setif,2,16,23.7
-Setif,2,18,20.8
+Setif,2,18,22.0
 Setif,2,20,16.2
-Setif,2,22,6.0
-Setif,3,0,1.4
+Setif,2,22,6.3
+Setif,3,0,1.9
 Setif,3,2,0.1
 Setif,3,4,0.0
 Setif,3,6,0.0
@@ -1727,7 +1727,7 @@ Setif,3,16,27.8
 Setif,3,18,24.9
 Setif,3,20,13.4
 Setif,3,22,5.9
-Setif,4,0,1.1
+Setif,4,0,0.6
 Setif,4,2,0.1
 Setif,4,4,0.6
 Setif,4,6,0.0
@@ -1735,7 +1735,7 @@ Setif,4,8,13.0
 Setif,4,10,34.6
 Setif,4,12,46.4
 Setif,4,14,30.5
-Setif,4,16,21.2
+Setif,4,16,22.2
 Setif,4,18,30.3
 Setif,4,20,19.2
 Setif,4,22,9.5
@@ -1796,10 +1796,10 @@ Sidi Bel Abbes,2,10,12.0
 Sidi Bel Abbes,2,12,15.7
 Sidi Bel Abbes,2,14,9.5
 Sidi Bel Abbes,2,16,7.8
-Sidi Bel Abbes,2,18,8.4
+Sidi Bel Abbes,2,18,6.9
 Sidi Bel Abbes,2,20,10.8
-Sidi Bel Abbes,2,22,4.6
-Sidi Bel Abbes,3,0,1.2
+Sidi Bel Abbes,2,22,3.7
+Sidi Bel Abbes,3,0,1.3
 Sidi Bel Abbes,3,2,0.1
 Sidi Bel Abbes,3,4,0.0
 Sidi Bel Abbes,3,6,0.0
@@ -1811,7 +1811,7 @@ Sidi Bel Abbes,3,16,5.8
 Sidi Bel Abbes,3,18,7.5
 Sidi Bel Abbes,3,20,10.3
 Sidi Bel Abbes,3,22,6.7
-Sidi Bel Abbes,4,0,2.2
+Sidi Bel Abbes,4,0,3.1
 Sidi Bel Abbes,4,2,0.2
 Sidi Bel Abbes,4,4,0.2
 Sidi Bel Abbes,4,6,0.0
@@ -1819,7 +1819,7 @@ Sidi Bel Abbes,4,8,4.1
 Sidi Bel Abbes,4,10,14.8
 Sidi Bel Abbes,4,12,21.6
 Sidi Bel Abbes,4,14,10.3
-Sidi Bel Abbes,4,16,8.1
+Sidi Bel Abbes,4,16,9.4
 Sidi Bel Abbes,4,18,13.6
 Sidi Bel Abbes,4,20,16.4
 Sidi Bel Abbes,4,22,9.2
@@ -1880,12 +1880,12 @@ Skikda,2,10,25.0
 Skikda,2,12,33.7
 Skikda,2,14,33.5
 Skikda,2,16,32.0
-Skikda,2,18,24.4
+Skikda,2,18,26.6
 Skikda,2,20,12.5
 Skikda,2,22,5.0
 Skikda,3,0,0.3
 Skikda,3,2,0.0
-Skikda,3,4,0.0
+Skikda,3,4,0.1
 Skikda,3,6,0.1
 Skikda,3,8,12.2
 Skikda,3,10,34.8
@@ -1895,7 +1895,7 @@ Skikda,3,16,33.3
 Skikda,3,18,29.1
 Skikda,3,20,17.1
 Skikda,3,22,10.9
-Skikda,4,0,1.5
+Skikda,4,0,1.4
 Skikda,4,2,0.2
 Skikda,4,4,0.1
 Skikda,4,6,0.1
@@ -1903,7 +1903,7 @@ Skikda,4,8,0.7
 Skikda,4,10,38.4
 Skikda,4,12,39.7
 Skikda,4,14,38.5
-Skikda,4,16,32.9
+Skikda,4,16,36.8
 Skikda,4,18,33.9
 Skikda,4,20,26.4
 Skikda,4,22,9.9
@@ -1964,12 +1964,12 @@ Tiaret,2,10,22.5
 Tiaret,2,12,17.8
 Tiaret,2,14,9.3
 Tiaret,2,16,7.1
-Tiaret,2,18,8.1
-Tiaret,2,20,6.3
+Tiaret,2,18,8.2
+Tiaret,2,20,7.0
 Tiaret,2,22,3.0
-Tiaret,3,0,2.0
-Tiaret,3,2,2.7
-Tiaret,3,4,2.2
+Tiaret,3,0,2.9
+Tiaret,3,2,3.1
+Tiaret,3,4,3.0
 Tiaret,3,6,2.6
 Tiaret,3,8,9.2
 Tiaret,3,10,22.0
@@ -1979,7 +1979,7 @@ Tiaret,3,16,17.0
 Tiaret,3,18,9.2
 Tiaret,3,20,3.7
 Tiaret,3,22,1.0
-Tiaret,4,0,3.4
+Tiaret,4,0,3.2
 Tiaret,4,2,2.7
 Tiaret,4,4,2.6
 Tiaret,4,6,1.5
@@ -1987,7 +1987,7 @@ Tiaret,4,8,2.2
 Tiaret,4,10,17.1
 Tiaret,4,12,15.8
 Tiaret,4,14,5.5
-Tiaret,4,16,6.1
+Tiaret,4,16,7.0
 Tiaret,4,18,11.9
 Tiaret,4,20,7.3
 Tiaret,4,22,3.9
@@ -2048,12 +2048,12 @@ Tipaza,2,10,11.3
 Tipaza,2,12,11.5
 Tipaza,2,14,10.1
 Tipaza,2,16,10.7
-Tipaza,2,18,11.4
+Tipaza,2,18,12.5
 Tipaza,2,20,10.6
-Tipaza,2,22,3.8
-Tipaza,3,0,2.0
-Tipaza,3,2,1.1
-Tipaza,3,4,0.4
+Tipaza,2,22,3.9
+Tipaza,3,0,0.9
+Tipaza,3,2,1.3
+Tipaza,3,4,0.2
 Tipaza,3,6,0.2
 Tipaza,3,8,4.1
 Tipaza,3,10,9.7
@@ -2063,7 +2063,7 @@ Tipaza,3,16,9.3
 Tipaza,3,18,11.7
 Tipaza,3,20,6.5
 Tipaza,3,22,4.2
-Tipaza,4,0,1.2
+Tipaza,4,0,1.4
 Tipaza,4,2,0.5
 Tipaza,4,4,0.1
 Tipaza,4,6,0.4
@@ -2071,7 +2071,7 @@ Tipaza,4,8,3.5
 Tipaza,4,10,12.3
 Tipaza,4,12,14.8
 Tipaza,4,14,11.6
-Tipaza,4,16,12.3
+Tipaza,4,16,12.4
 Tipaza,4,18,17.7
 Tipaza,4,20,14.3
 Tipaza,4,22,4.5
@@ -2132,12 +2132,12 @@ Tizi Ouzou,2,10,32.9
 Tizi Ouzou,2,12,35.8
 Tizi Ouzou,2,14,26.1
 Tizi Ouzou,2,16,19.3
-Tizi Ouzou,2,18,8.3
-Tizi Ouzou,2,20,5.8
+Tizi Ouzou,2,18,8.6
+Tizi Ouzou,2,20,6.6
 Tizi Ouzou,2,22,4.0
-Tizi Ouzou,3,0,1.3
-Tizi Ouzou,3,2,0.7
-Tizi Ouzou,3,4,0.5
+Tizi Ouzou,3,0,1.4
+Tizi Ouzou,3,2,1.0
+Tizi Ouzou,3,4,0.4
 Tizi Ouzou,3,6,0.8
 Tizi Ouzou,3,8,24.5
 Tizi Ouzou,3,10,40.3
@@ -2147,7 +2147,7 @@ Tizi Ouzou,3,16,24.6
 Tizi Ouzou,3,18,10.5
 Tizi Ouzou,3,20,7.2
 Tizi Ouzou,3,22,3.9
-Tizi Ouzou,4,0,0.8
+Tizi Ouzou,4,0,0.5
 Tizi Ouzou,4,2,1.1
 Tizi Ouzou,4,4,0.6
 Tizi Ouzou,4,6,1.6
@@ -2155,7 +2155,7 @@ Tizi Ouzou,4,8,11.3
 Tizi Ouzou,4,10,26.9
 Tizi Ouzou,4,12,34.5
 Tizi Ouzou,4,14,23.7
-Tizi Ouzou,4,16,17.9
+Tizi Ouzou,4,16,20.7
 Tizi Ouzou,4,18,10.0
 Tizi Ouzou,4,20,9.8
 Tizi Ouzou,4,22,3.4
@@ -2216,12 +2216,12 @@ Tlemcen,2,10,14.6
 Tlemcen,2,12,29.2
 Tlemcen,2,14,16.1
 Tlemcen,2,16,14.8
-Tlemcen,2,18,9.6
-Tlemcen,2,20,15.8
+Tlemcen,2,18,8.1
+Tlemcen,2,20,17.7
 Tlemcen,2,22,9.1
-Tlemcen,3,0,2.3
-Tlemcen,3,2,1.4
-Tlemcen,3,4,0.9
+Tlemcen,3,0,2.6
+Tlemcen,3,2,1.5
+Tlemcen,3,4,0.8
 Tlemcen,3,6,0.8
 Tlemcen,3,8,5.0
 Tlemcen,3,10,17.3
@@ -2239,7 +2239,7 @@ Tlemcen,4,8,1.3
 Tlemcen,4,10,13.9
 Tlemcen,4,12,35.9
 Tlemcen,4,14,20.1
-Tlemcen,4,16,13.9
+Tlemcen,4,16,15.3
 Tlemcen,4,18,12.0
 Tlemcen,4,20,27.9
 Tlemcen,4,22,16.0
