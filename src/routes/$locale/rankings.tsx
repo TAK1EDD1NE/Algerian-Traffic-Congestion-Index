@@ -318,6 +318,9 @@ function RankingsPage() {
   };
 
   const rows = rankedCityRows(data, { dates: activeRange, roadClass, hour, metric });
+  // Cities the highways filter leaves out (see HIGHWAY_UNRANKED) — said in the UI so the
+  // shorter table does not read as a broken page.
+  const excluded = roadClass === "highway" ? data.cities.length - rows.length : 0;
 
   const fmtDay = dayFormatter(locale);
   const captured = daysInRange(days?.dates ?? [], activeRange).length;
@@ -338,7 +341,7 @@ function RankingsPage() {
     <main className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-8 flex flex-col gap-1 animate-[rise_0.6s_cubic-bezier(0.16,1,0.3,1)_both]">
         <h1 className="text-3xl font-bold tracking-tight">{t("rankings.title")}</h1>
-        <p className="text-muted-foreground">{t("rankings.note", { count: data.cities.length })}</p>
+        <p className="text-muted-foreground">{t("rankings.note", { count: rows.length })}</p>
       </div>
 
       <Panel className="mb-8 p-6">
@@ -385,6 +388,11 @@ function RankingsPage() {
             {roadClass !== "combined" && (
               <p className="mt-3 text-[11px] text-muted-foreground">
                 {t("explore.classScoredNote")}
+              </p>
+            )}
+            {excluded > 0 && (
+              <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+                {t("rankings.highwayExcluded", { count: excluded })}
               </p>
             )}
           </div>

@@ -241,6 +241,8 @@ export const en = {
       "Change compares the selected slot with the slot before it, on the selected days and road class (positive = worse). It needs one slot to compare against, so all hours is unavailable; the 00:00 slot is measured against 22:00 of the previous day.",
     staticNote:
       "Monitored areas count zones, so they stay the same whatever the filters; the road network figure follows the road-class filter.",
+    highwayExcluded:
+      "{{count}} cities are not ranked under this filter — their monitored highway network is too small to score as a road class on its own.",
   },
   heatmap: {
     hoverHint: "Hover a cell to inspect the hour",

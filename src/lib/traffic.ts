@@ -609,6 +609,24 @@ export type RankingInput = Pick<
 >;
 
 /**
+ * Cities left out of the ranking while the HIGHWAYS road class is active.
+ *
+ * Their monitored highway network is a fraction of the others' — 5.0 km (Djelfa) to 14.6 km
+ * (MSila) against 25.8 km for the next smallest — so a class-scored index is computed on a
+ * handful of areas and runs past 100 (Djelfa 107.3, Biskra 102.7). He asked for them not to be
+ * shown under that filter (2026-10-21). All roads and Normal routes keep all 27 cities, and the
+ * explorer/aggregate surfaces are untouched: this is a rankings-table exclusion, not a data cut.
+ */
+export const HIGHWAY_UNRANKED: readonly string[] = [
+  "Ain Temouchent",
+  "Biskra",
+  "Djelfa",
+  "Tiaret",
+  "Mascara",
+  "MSila",
+];
+
+/**
  * One row per city, ordered worst-first for the active filters.
  *
  * Level + all days + all roads reuses the canonical cities.csv index so the table agrees
@@ -627,9 +645,15 @@ export type RankingInput = Pick<
  * the metric is active. Network size follows the road-class filter — each class carries its
  * own reference network — while monitored-area counts are city-wide and never move.
  */
+
 export function rankedCityRows(data: RankingInput, filters: RankingFilters): RankingRow[] {
   const dated = data.hourlyDated ?? [];
   const classKey = filters.roadClass;
+  // A city is only dropped for the highways filter; the other two classes rank every city.
+  const cities =
+    filters.roadClass === "highway"
+      ? data.cities.filter((c) => !HIGHWAY_UNRANKED.includes(c.city))
+      : data.cities;
   // Only the dated series can honour a day window; on an upload without it the window is
   // dropped rather than silently pretending the whole corpus is the answer.
   const window = dated.length ? filters.dates : null;
@@ -653,7 +677,7 @@ export function rankedCityRows(data: RankingInput, filters: RankingFilters): Ran
   const dates = datedDays(series)?.dates ?? [];
   const scoredDates = daysInRange(dates, window);
 
-  const rows: RankingRow[] = data.cities.map((c) => {
+  const rows: RankingRow[] = cities.map((c) => {
     let congestion: number;
     if (filters.metric === "change") {
       const slot = filters.hour ?? LAST_SLOT;

@@ -229,6 +229,8 @@ export const fr: Messages = {
       "La variation compare la tranche sélectionnée à la tranche qui la précède, sur les jours et la classe de route sélectionnés (positif = dégradation). Elle a besoin d'une tranche de référence : « toutes les heures » est donc indisponible ; la tranche 00:00 est comparée à 22:00 de la veille.",
     staticNote:
       "Les zones suivies comptent des zones : elles restent identiques quels que soient les filtres ; le réseau routier, lui, suit le filtre de classe de route.",
+    highwayExcluded:
+      "{{count}} villes ne sont pas classées sous ce filtre — leur réseau autoroutier suivi est trop réduit pour être noté comme classe de route à part entière.",
   },
   heatmap: {
     hoverHint: "Survolez une cellule pour voir l'heure",

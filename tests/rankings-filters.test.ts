@@ -385,6 +385,60 @@ describe("rankedCityRows - change", () => {
   });
 });
 
+describe("rankedCityRows - the highways filter's city list", () => {
+  // Biskra is on HIGHWAY_UNRANKED and carries highway rows in every source, so its absence
+  // under the highways filter is the rule and not missing data.
+  const excludedCity = "Biskra";
+  const withExcluded = {
+    cities: [...data.cities, city(excludedCity, 30, 28, 70, 60, 2)],
+    hourly: [] as HourlyRow[],
+    roadClasses: [
+      ...roadClasses,
+      {
+        city: excludedCity,
+        roadClass: "highway",
+        congestionIndex: 102.7,
+        calmFloor: 0.6,
+        coveragePct: 62.9,
+        capacityKm: 12.8,
+      },
+      {
+        city: excludedCity,
+        roadClass: "normal",
+        congestionIndex: 6.1,
+        calmFloor: 0.18,
+        coveragePct: 63.1,
+        capacityKm: 57.2,
+      },
+    ],
+    roadClassesHourly: [] as RoadClassHourlyRow[],
+    hourlyDated: [...hourlyDated, ...dated(excludedCity, SLOTS)],
+  } as Pick<Dataset, "cities" | "hourly" | "roadClasses" | "roadClassesHourly" | "hourlyDated">;
+
+  test("is dropped from the ranking under highways", () => {
+    const rows = rankedCityRows(withExcluded, { ...ALL, roadClass: "highway" });
+    expect(names(rows).sort()).toEqual(["A", "B"]);
+  });
+
+  test("keeps its row under all roads and normal routes", () => {
+    for (const roadClass of ["combined", "normal"] as const) {
+      const rows = rankedCityRows(withExcluded, { ...ALL, roadClass });
+      expect(names(rows)).toContain(excludedCity);
+      expect(rows).toHaveLength(3);
+    }
+  });
+
+  test("is dropped from the change metric too, whatever the hour or window", () => {
+    const rows = rankedCityRows(withExcluded, {
+      ...ALL,
+      roadClass: "highway",
+      hour: 8,
+      metric: "change",
+    });
+    expect(names(rows).sort()).toEqual(["A", "B"]);
+  });
+});
+
 describe("rankedCityRows - a dataset without the dated series", () => {
   const undatedHourly: HourlyRow[] = [
     ...[0, 1, 2, 3, 4, 5, 6].map((d) => ({
