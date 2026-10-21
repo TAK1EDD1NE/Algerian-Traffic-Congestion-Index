@@ -27,7 +27,7 @@ export function Header() {
           <img src="/logo.png" alt="" width={36} height={36} className="h-9 w-9 shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="text-xl font-bold tracking-tight">
-              DZ-<span className="text-signal">traffic</span>
+              DZ<span className="text-signal">traffic</span>
             </span>
             <span className="mt-1 hidden text-[9px] font-bold tracking-[0.14em] text-muted-foreground uppercase sm:block">
               {t("nav.brandSub")}
