@@ -98,7 +98,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
  * public origin sits behind an edge cache that holds a static file for hours. A version on the URL
  * is what makes a replaced icon show up immediately; bump it whenever the files change.
  */
-const ICON_VERSION = "20261020";
+const ICON_VERSION = "20261021";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   beforeLoad: ({ location }) => {
